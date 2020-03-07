@@ -1,0 +1,82 @@
+{
+    "warframes": [
+        {
+            "name": "loki_prime"
+        },
+        {
+            "name": "equinox_prime"
+        },
+        {
+            "name": "rhino_prime"
+        },
+        {
+            "name": "mesa_prime"
+        },
+        {
+            "name": "ember_prime"
+        },
+        {
+            "name": "limbo_prime"
+        },
+        {
+            "name": "ivara_prime"
+        },
+        {
+            "name": "chroma_prime"
+        },
+        {
+            "name": "nyx_prime"
+        },
+        {
+            "name": "frost_prime"
+        },
+        {
+            "name": "trinity_prime"
+        },
+        {
+            "name": "hydroid_prime"
+        },
+        {
+            "name": "nova_prime"
+        },
+        {
+            "name": "saryn_prime"
+        },
+        {
+            "name": "mirage_prime"
+        },
+        {
+            "name": "valkyr_prime"
+        },
+        {
+            "name": "mag_prime"
+        },
+        {
+            "name": "ash_prime"
+        },
+        {
+            "name": "zephyr_prime"
+        },
+        {
+            "name": "wukong_prime"
+        },
+        {
+            "name": "vauban_prime"
+        },
+        {
+            "name": "banshee_prime"
+        },
+        {
+            "name": "oberon_prime"
+        },
+        {
+            "name": "nekros_prime"
+        },
+        {
+            "name": "volt_prime"
+        },
+        {
+            "name": "atlas_prime"
+        }
+    ]
+}
