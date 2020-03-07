@@ -33,9 +33,9 @@ def write_plot(item):
     dayly_data['dayly_data_median'] = result_data.platinum.resample('1D').median()
     dayly_data['dayly_data_max'] = result_data.platinum.resample('1D').max()
     dayly_data['dayly_data_mean'] = result_data.platinum.resample('1D').mean()
-
+    
     save = dayly_data.plot(kind = 'line', title = 'Warframe Data', figsize = (8, 4), legend = True, fontsize = 12, marker = 'o')
-
+    
     plt.show()
     plt.savefig(get_path_0)
     
@@ -43,4 +43,4 @@ def write_plot(item):
     
     return dayly_data
     
-#write_plot()
+#write_plot('frost_prime')

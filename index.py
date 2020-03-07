@@ -77,7 +77,7 @@ def warframe_crawling(item, path, path_0):
 
     all_data_list = pd.DataFrame({'last_seen' : last_seen, 'user' : user_data, 'status_data' : status_data, 'platinum' : platinum_data, 'order_type' : order_type_data})
 
-    result = all_data_list[(all_data_list['status_data'] == 'ingame') & (all_data_list['order_type'] == 'sell')]
+    result = all_data_list[(all_data_list['status_data'] == 'ingame') & (all_data_list['order_type'] == 'sell') | (all_data_list['status_data'] == 'offline') & (all_data_list['order_type'] == 'sell')]
 
     result = result.sort_values(by = ['platinum'], axis = 0).head(15) 
     
@@ -87,7 +87,8 @@ def warframe_crawling(item, path, path_0):
             result.to_csv(get_path, mode = 'a', header = False)
             re_result = pd.read_csv(get_path, index_col = 0)
             all_result = re_result.drop_duplicates('user', keep = 'first')
-            all_result.to_csv(get_path, mode = 'w')
+            all_results = all_result[all_result.last_seen != "None"]
+            all_results.to_csv(get_path, mode = 'w')
             #print('데이터 업데이트를 완료했습니다.')
         else:
             result.to_csv(get_path, mode = 'w')
@@ -112,6 +113,7 @@ startTime = time.time()
 
 input_items = input_warframe.input_item()
 
+
 for i, v in enumerate(input_items):
     item = str(v)
     path = './item/' + item + '/' + item + '.csv'
@@ -121,6 +123,14 @@ for i, v in enumerate(input_items):
     save_png = data_result.write_plot(item)
     endTime = time.time() - startTime
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
+
+"""
+item = 'saryn_prime'
+path = './item/' + item + '/' + item + '.csv'
+path_0 = './item/' + item
     
+warframe_crawling(item, path, path_0)
+save_png = data_result.write_plot(item)
+"""
 print("업데이트가 모두 완료했습니다.")
 ######################################################
