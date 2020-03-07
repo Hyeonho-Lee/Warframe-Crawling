@@ -39,7 +39,7 @@ def write_plot(item):
     plt.show()
     plt.savefig(get_path_0)
     
-    print('그래프를 완성하였습니다.')
+    #print(str(get_item) + '그래프를 완성하였습니다.')
     
     return dayly_data
     

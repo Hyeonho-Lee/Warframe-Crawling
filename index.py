@@ -53,7 +53,7 @@ def warframe_crawling(item, path, path_0):
     warframe_data = json_data_1
 
     json_data = json.loads(warframe_data)
-    print('데이터를 불러왔습니다.')
+    #print('데이터를 불러왔습니다.')
 
     result_data = pd.DataFrame(json_data['payload']['orders'])
 
@@ -88,17 +88,19 @@ def warframe_crawling(item, path, path_0):
             re_result = pd.read_csv(get_path, index_col = 0)
             all_result = re_result.drop_duplicates('user', keep = 'first')
             all_result.to_csv(get_path, mode = 'w')
-            print('데이터 업데이트를 완료했습니다.')
+            #print('데이터 업데이트를 완료했습니다.')
         else:
             result.to_csv(get_path, mode = 'w')
-            print('새로운 데이터를 저장했습니다.') 
+            #print('새로운 데이터를 저장했습니다.') 
     
     if os.path.isdir(get_path_0):
         make_file(get_path)
     else:
-        print('폴더가 없음으로 새로 만들었습니다.')
+        #print('폴더가 없음으로 새로 만들었습니다.')
         os.makedirs(get_path_0)
         make_file(get_path)
+    
+    print(str(get_item) + ' 업데이트를 하였습니다.')
         
     driver.close()
     driver.quit()
@@ -106,14 +108,19 @@ def warframe_crawling(item, path, path_0):
 
 #https://dvpzeekke.tistory.com/1
 
+startTime = time.time()
+
 input_items = input_warframe.input_item()
 
-for i in input_items:
-    item = str(i)
+for i, v in enumerate(input_items):
+    item = str(v)
     path = './item/' + item + '/' + item + '.csv'
     path_0 = './item/' + item
     
     warframe_crawling(item, path, path_0)
     save_png = data_result.write_plot(item)
+    endTime = time.time() - startTime
+    print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
     
+print("업데이트가 모두 완료했습니다.")
 ######################################################
