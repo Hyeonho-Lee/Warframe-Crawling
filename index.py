@@ -77,7 +77,7 @@ def warframe_crawling(item, path, path_0):
 
     all_data_list = pd.DataFrame({'last_seen' : last_seen, 'user' : user_data, 'status_data' : status_data, 'platinum' : platinum_data, 'order_type' : order_type_data})
 
-    result = all_data_list[(all_data_list['status_data'] == 'ingame') & (all_data_list['order_type'] == 'sell') | (all_data_list['status_data'] == 'offline') & (all_data_list['order_type'] == 'sell')]
+    result = all_data_list[(all_data_list['status_data'] == 'ingame') & (all_data_list['order_type'] == 'sell') | (all_data_list['status_data'] == 'online') & (all_data_list['order_type'] == 'sell')]
 
     result = result.sort_values(by = ['platinum'], axis = 0).head(15) 
     
