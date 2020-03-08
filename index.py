@@ -15,21 +15,23 @@ from selenium import webdriver
 import input_warframe
 import data_result
 ######################################################
-def warframe_crawling(item, path, path_0):
-    
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless') 
-    chrome_options.add_argument('--disable-gpu') 
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--ignore-certificate-errors')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('--lang=ko_KR')
 
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=chrome_options)
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless') 
+chrome_options.add_argument('--disable-gpu') 
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--ignore-certificate-errors')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('--lang=ko_KR')
+
+driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=chrome_options)
     #'/usr/bin/chromedriver'
     #'/home/prohenho7138/Downloads/chromedriver'
-    driver.implicitly_wait(3)
+driver.implicitly_wait(1)
+
+def warframe_crawling(chrome, item, path, path_0):
     
+    driver = chrome
     get_item = item
     get_path = path
     get_path_0 = path_0
@@ -103,8 +105,13 @@ def warframe_crawling(item, path, path_0):
     
     print(str(get_item) + ' 업데이트를 하였습니다.')
         
+    driver.execute_script('window.open("about:blank", "_blank");')
     driver.close()
-    driver.quit()
+    
+    tabs = driver.window_handles
+    driver.switch_to_window(tabs[-1])
+    
+    return driver
 ######################################################
 
 #https://dvpzeekke.tistory.com/1
@@ -119,7 +126,7 @@ for i, v in enumerate(input_items):
     path = './item/' + item + '/' + item + '.csv'
     path_0 = './item/' + item
     
-    warframe_crawling(item, path, path_0)
+    drivers = warframe_crawling(driver, item, path, path_0)
     save_png = data_result.write_plot(item)
     endTime = time.time() - startTime
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
@@ -132,5 +139,7 @@ path_0 = './item/' + item
 warframe_crawling(item, path, path_0)
 save_png = data_result.write_plot(item)
 """
+
 print("업데이트가 모두 완료했습니다.")
+drivers.quit()
 ######################################################
