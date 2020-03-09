@@ -126,7 +126,7 @@ for i, v in enumerate(input_items):
     path = './item/' + item + '/' + item + '.csv'
     path_0 = './item/' + item
     
-    drivers = warframe_crawling(driver, item, path, path_0)
+    driver = warframe_crawling(driver, item, path, path_0)
     save_png = data_result.write_plot(item)
     endTime = time.time() - startTime
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
@@ -141,5 +141,5 @@ save_png = data_result.write_plot(item)
 """
 
 print("업데이트가 모두 완료했습니다.")
-drivers.quit()
+driver.quit()
 ######################################################
