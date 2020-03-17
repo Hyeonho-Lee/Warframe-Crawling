@@ -31,7 +31,7 @@ def write_plot(item):
     
     dayly_data['dayly_data_min'] = result_data.platinum.resample('1D').min()
     dayly_data['dayly_data_median'] = result_data.platinum.resample('1D').median()
-    dayly_data['dayly_data_max'] = result_data.platinum.resample('1D').max()
+    #dayly_data['dayly_data_max'] = result_data.platinum.resample('1D').max()
     dayly_data['dayly_data_mean'] = result_data.platinum.resample('1D').mean()
     
     save = dayly_data.plot(kind = 'line', title = 'Warframe Data', figsize = (8, 4), legend = True, fontsize = 12, marker = 'o')
