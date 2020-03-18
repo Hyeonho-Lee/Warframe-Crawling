@@ -109,7 +109,7 @@ def warframe_crawling(chrome, item, path, path_0):
     driver.close()
     
     tabs = driver.window_handles
-    driver.switch_to_window(tabs[-1])
+    driver.switch_to.window(tabs[-1])
     
     return driver
 ######################################################
