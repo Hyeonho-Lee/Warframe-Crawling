@@ -14,7 +14,7 @@ pd.options.display.float_format = '{:.0f}'.format
 #https://rfriend.tistory.com/494
 
 def write_plot(item):
-    get_item = item
+    get_item = str(item)
     get_path = './item/' + get_item + '/' + get_item + '.csv'
     get_path_0 = './item/' + get_item + '/' + get_item + '.png'
     
@@ -26,6 +26,8 @@ def write_plot(item):
     for col in result_data.columns:
         if col == 'date':
             del result_data[col]
+    
+    result_data = result_data[result_data.platinum <= 500]
     
     dayly_data = pd.DataFrame()
     
@@ -43,4 +45,4 @@ def write_plot(item):
     
     return dayly_data
     
-#write_plot('frost_prime')
+#write_plot('loki_prime')
