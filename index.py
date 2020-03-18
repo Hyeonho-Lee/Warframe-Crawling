@@ -81,7 +81,7 @@ def warframe_crawling(chrome, item, path, path_0):
 
     result = all_data_list[(all_data_list['status_data'] == 'ingame') & (all_data_list['order_type'] == 'sell') | (all_data_list['status_data'] == 'online') & (all_data_list['order_type'] == 'sell')]
 
-    result = result.sort_values(by = ['platinum'], axis = 0).head(15) 
+    #result = result.sort_values(by = ['platinum'], axis = 0).head(15) 
     
     def make_file(path):
         get_path = path
@@ -120,7 +120,6 @@ startTime = time.time()
 
 input_items = input_warframe.input_item()
 
-
 for i, v in enumerate(input_items):
     item = str(v)
     path = './item/' + item + '/' + item + '.csv'
@@ -130,13 +129,13 @@ for i, v in enumerate(input_items):
     save_png = data_result.write_plot(item)
     endTime = time.time() - startTime
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
-
+    
 """
-item = 'saryn_prime'
+item = 'ash_prime'
 path = './item/' + item + '/' + item + '.csv'
 path_0 = './item/' + item
     
-warframe_crawling(item, path, path_0)
+driver = warframe_crawling(driver, item, path, path_0)
 save_png = data_result.write_plot(item)
 """
 
