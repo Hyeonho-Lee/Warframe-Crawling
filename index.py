@@ -86,7 +86,7 @@ def warframe_crawling(chrome, item, path, path_0):
         if os.path.isfile(get_path):
             result.to_csv(get_path, mode = 'a', header = False)
             re_result = pd.read_csv(get_path, index_col = 0)
-            all_result = re_result.drop_duplicates('user', keep = 'first')
+            all_result = re_result.drop_duplicates('datetime', keep = 'first')
             all_results = all_result[all_result.last_seen != "None"]
             all_results.to_csv(get_path, mode = 'w')
             #print('데이터 업데이트를 완료했습니다.')
