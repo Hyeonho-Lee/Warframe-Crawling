@@ -3,10 +3,44 @@
 <html>
     <head>
         <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1">
         <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/index.css', v = 0.1) }}" />
         <title>RPC 워프레임</title>
     </head>
     <body>
-        <h1>{{text}}</h1>
+        <div>
+            <div class = "header">
+                <h1>헤더</h1>
+            </div>
+            
+            <div class = "menu">
+                <h2>매뉴</h2>
+            </div>
+            
+            <div class = "content_0">
+                <h3>왼쪽</h3>
+            </div>
+            <div class = "content_1">
+                <div class = "content_1_img">
+                    <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
+                    <p>
+                        이거는 개 떡상 아이템이라서 존나보면 기쁠꺼임!
+                    </p>
+                </div>
+                <div class = "content_1_img">
+                    <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
+                    <p>
+                        이거 보다가 맨탈 터질수도잇으니 조심하라구!
+                    </p>
+                </div>
+            </div>
+            <div class = "content_2">
+                <h3>오른쪽</h3>
+            </div>
+            
+            <div class = "footer">
+                <h1>푸터</h1>
+            </div>
+        </div>
     </body>
 </html>

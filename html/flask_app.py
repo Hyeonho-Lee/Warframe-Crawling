@@ -1,21 +1,14 @@
 import os
 import pandas as pd
 from flask import Flask, url_for, render_template, request, redirect, session
+import pandas_value
 
-#https://niceman.tistory.com/191
-#https://rpc-flask-app.run.goorm.io/
+#https://niceman.tistory.com/191 강의 사이트
+#https://rpc-flask-app.run.goorm.io/ 홈페이지 사이트
+#https://icons8.com/icons 아이콘 사이트
+#https://pixlr.com/e/ 포토샵 사이트
 
 #=======================================================================#
-
-def read_csv(path):
-    get_path = path
-    if os.path.isfile(get_path):
-        result = pd.read_csv(get_path, index_col = 0)
-        result = result[::-1]
-    else:
-        print('파일이 없습니다.')
-        
-    return result
 
 """
 if os.path.isdir(get_path_0):
@@ -37,15 +30,17 @@ def index():
 def warframe():
     return render_template('warframe.html')
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
 @app.route('/result', methods = ['POST'])
 def result():
     
     warframe_name = request.form['warframe']
     name = warframe_name.replace(' ', '_')
-    name_csv = name + '_set.csv'
-    path = '/workspace/crawling/data/csv/warframe/{name}_set/{name_csv}'.format(name = name, name_csv = name_csv)
-
-    result = read_csv(path)
+    
+    result = pandas_value.pandas_value(name)
     html_data = result.to_html(index = False, justify = 'center')
 
     return html_data

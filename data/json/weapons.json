@@ -1,0 +1,228 @@
+{
+    "weapons": [
+        {
+            "name": "baza_prime",
+            "type": "primary"
+        },
+        {
+            "name": "boar_prime",
+            "type": "primary"
+        },
+        {
+            "name": "boltor_prime",
+            "type": "primary"
+        },
+        {
+            "name": "braton_prime",
+            "type": "primary"
+        },
+        {
+            "name": "burston_prime",
+            "type": "primary"
+        },
+        {
+            "name": "cernos_prime",
+            "type": "primary"
+        },
+        {
+            "name": "latron_prime",
+            "type": "primary"
+        },
+        {
+            "name": "paris_prime",
+            "type": "primary"
+        },
+        {
+            "name": "rubico_prime",
+            "type": "primary"
+        },
+        {
+            "name": "soma_prime",
+            "type": "primary"
+        },
+        {
+            "name": "stradavar_prime",
+            "type": "primary"
+        },
+        {
+            "name": "sybaris_prime",
+            "type": "primary"
+        },
+        {
+            "name": "tiberon_prime",
+            "type": "primary"
+        },
+        {
+            "name": "tigris_prime",
+            "type": "primary"
+        },
+        {
+            "name": "vectis_prime",
+            "type": "primary"
+        },
+        {
+            "name": "valkyr_prime",
+            "type": "primary"
+        },
+        {
+            "name": "zhuge_prime",
+            "type": "primary"
+        },
+        {
+            "name": "akbolto_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "akbronco_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "akjagara_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "aklex_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "aksomati_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "akstiletto_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "akvasto_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "ballistica_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "bronco_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "euphona_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "hikou_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "lex_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "pyrana_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "sicarus_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "spira_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "vasto_prime",
+            "type": "secondary"
+        },
+        {
+            "name": "ankyros_prime",
+            "type": "melee"
+        },
+        {
+            "name": "bo_prime",
+            "type": "melee"
+        },
+        {
+            "name": "dakra_prime",
+            "type": "melee"
+        },
+        {
+            "name": "destreza_prime",
+            "type": "melee"
+        },
+        {
+            "name": "dual_kamas_prime",
+            "type": "melee"
+        },
+        {
+            "name": "fang_prime",
+            "type": "melee"
+        },
+        {
+            "name": "fragor_prime",
+            "type": "melee"
+        },
+        {
+            "name": "galatine_prime",
+            "type": "melee"
+        },
+        {
+            "name": "glaive_prime",
+            "type": "melee"
+        },
+        {
+            "name": "gram_prime",
+            "type": "melee"
+        },
+        {
+            "name": "kogake_prime",
+            "type": "melee"
+        },
+        {
+            "name": "kronen_prime",
+            "type": "melee"
+        },
+        {
+            "name": "nami_skyla_prime",
+            "type": "melee"
+        },
+        {
+            "name": "nikana_prime",
+            "type": "melee"
+        },
+        {
+            "name": "ninkondi_prime",
+            "type": "melee"
+        },
+        {
+            "name": "orthos_prime",
+            "type": "melee"
+        },
+        {
+            "name": "reaper_prime",
+            "type": "melee"
+        },
+        {
+            "name": "redeemer_prime",
+            "type": "melee"
+        },
+        {
+            "name": "scindo_prime",
+            "type": "melee"
+        },
+        {
+            "name": "silva_and_aegis_prime",
+            "type": "melee"
+        },
+        {
+            "name": "tekko_prime",
+            "type": "melee"
+        },
+        {
+            "name": "tipedo_prime",
+            "type": "melee"
+        },
+        {
+            "name": "venka_prime",
+            "type": "melee"
+        }
+    ]
+}

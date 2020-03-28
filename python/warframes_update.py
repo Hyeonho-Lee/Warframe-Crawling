@@ -42,6 +42,7 @@ def warframe_crawling(item, path, path_0):
     
     datetime = []
     avg_price = []
+    volume = []
 
     for i in result_data['datetime']:
         datecut = str(i)
@@ -49,8 +50,11 @@ def warframe_crawling(item, path, path_0):
 
     for i in result_data['avg_price']:
         avg_price.append(str(i))
+        
+    for i in result_data['volume']:
+        volume.append(str(i))
 
-    all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price})
+    all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume})
     #all_data_list = all_data_list[::-1]
     
     def make_file(path):
@@ -73,11 +77,12 @@ def warframe_crawling(item, path, path_0):
         make_file(get_path)
     
     print(str(get_item) + ' 업데이트를 하였습니다.')
+
 ######################################################
 
 startTime = time.time()
 
-input_items = input_warframe.input_item()
+input_items = input_warframe.input_item('warframes')
 
 for i, v in enumerate(input_items):
     item = str(v) + '_set'

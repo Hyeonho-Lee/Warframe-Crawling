@@ -11,13 +11,20 @@ from dateutil.parser import parse
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 
-def input_item():
-    with open('/workspace/crawling/data/json/warframes.json', "r") as json_file:
+def input_item(etc):
+    item = str(etc)
+    path = '/workspace/crawling/data/json/{etc}.json'.format(etc = item)
+    with open(path, "r") as json_file:
         json_data = json.load(json_file)
 
-    warframes_data = []
+    name_data = []
+    #type_data = []
 
-    for i in json_data['warframes']:
-        warframes_data.append(str(i["name"]))
+    for i in json_data[item]:
+        name_data.append(str(i["name"]))
+        #type_data.append(str(i["type"]))
     
-    return warframes_data
+    return name_data
+
+#result = input_item('weapons')
+#print(result)
