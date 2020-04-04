@@ -14,28 +14,61 @@
             </div>
             
             <div class = "menu">
-                <h2>매뉴</h2>
-            </div>
             
-            <div class = "content_0">
-                <h3>왼쪽</h3>
-            </div>
-            <div class = "content_1">
-                <div class = "content_1_img">
-                    <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
-                    <p>
-                        이거는 개 떡상 아이템이라서 존나보면 기쁠꺼임!
-                    </p>
+                <div class = "content_1">
+                    <div class = "content_1_img">
+                        <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
+                        <p>
+                            이거는 개 떡상 아이템이라서 존나보면 기쁠꺼임!
+                        </p>
+                    </div>
+                    <div class = "content_1_img">
+                        <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
+                        <p>
+                            이거 보다가 맨탈 터질수도잇으니 조심하라구!
+                        </p>
+                    </div>
                 </div>
-                <div class = "content_1_img">
-                    <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
-                    <p>
-                        이거 보다가 맨탈 터질수도잇으니 조심하라구!
-                    </p>
+                
+                <div class = "content_0" style="display: table;">
+                    <div style="height: 100%; width: 100%; display: table-cell; vertical-align: middle;">
+                        
+                        <table border="1" style="margin: auto;">
+                            <thead>
+                                <tr>
+                                    <th>순위</th>
+                                    <th>아이템</th>
+                                    <th>수치</th>
+                                    <th>변동</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for i in range(1,11) %}
+                                <tr>
+                                    <td>{{i}}</td>
+                                    <td>
+                                        <div style="">
+                                            <div style="border:3px solid gold; border-radius: 70px; -moz-border-radius: 70px; -khtml-border-radius: 70px; -webkit-border-radius: 70px; max-height: 50px; max-width: 50px; overflow: hidden; float: left;">
+                                                <img style="height: auto; max-width: 100%;" alt="로키 프라임" src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
+                                            </div>
+                                            <div style="margin: 15px 5px; float: left;"><a href = "/warframe/loki_prime">로키 프라임</a></div>
+                                        </div>
+                                    </td>
+                                    <td>0.5</td>
+                                    <td>▲</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        
+                    </div>
                 </div>
-            </div>
-            <div class = "content_2">
-                <h3>오른쪽</h3>
+                
+                <div class = "content_2">
+                    <h3>오른쪽</h3>
+                </div>
+
             </div>
             
             <div class = "footer">

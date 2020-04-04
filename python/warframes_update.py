@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup as bs
 
 ######################################################
 import input_warframe
+import pandas_value
 #import data_result
 ######################################################
 
@@ -57,24 +58,29 @@ def warframe_crawling(item, path, path_0):
     all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume})
     #all_data_list = all_data_list[::-1]
     
-    def make_file(path):
+    def make_file(item, path):
+        get_item = item
         get_path = path
         if os.path.isfile(get_path):
             all_data_list.to_csv(get_path, mode = 'a', header = False)
             re_result = pd.read_csv(get_path, index_col = 0)
             all_result = re_result.drop_duplicates('datetime', keep = 'first')
             all_result.to_csv(get_path, mode = 'w')
+            value = pandas_value.pandas_value(get_item, 'warframe')
+            value.to_csv(get_path, mode = 'w')
             #print('데이터 업데이트를 완료했습니다.')
         else:
             all_data_list.to_csv(get_path, mode = 'w')
+            value = pandas_value.pandas_value(get_item, 'warframe')
+            value.to_csv(get_path, mode = 'w')
             #print('새로운 데이터를 저장했습니다.') 
     
     if os.path.isdir(get_path_0):
-        make_file(get_path)
+        make_file(get_item, get_path)
     else:
         #print('폴더가 없음으로 새로 만들었습니다.')
         os.makedirs(get_path_0)
-        make_file(get_path)
+        make_file(get_item, get_path)
     
     print(str(get_item) + ' 업데이트를 하였습니다.')
 
