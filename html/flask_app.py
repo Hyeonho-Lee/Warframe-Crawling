@@ -1,4 +1,5 @@
 import os
+import json
 import pandas as pd
 import numpy as np
 from flask import Flask, url_for, render_template, request, redirect, session
@@ -29,6 +30,21 @@ def read_csv(name, types):
         result = pd.DataFrame()
         return result
         #print('파일이 없습니다.')
+        
+def input_item(etc):
+    item = str(etc)
+    path = '/workspace/crawling/data/json/{etc}.json'.format(etc = item)
+    with open(path, "r") as json_file:
+        json_data = json.load(json_file)
+
+    name_data = []
+    #type_data = []
+
+    for i in json_data[item]:
+        name_data.append(str(i["name"]))
+        #type_data.append(str(i["type"]))
+    
+    return name_data
 
 """
 if os.path.isdir(get_path_0):
@@ -59,26 +75,42 @@ def tests():
     return render_template('demo_0.html')
 ######################################################################
 #https://apt-info.github.io/%EA%B0%9C%EB%B0%9C/python-flask4-chart/
-@app.route('/result_warframe', methods = ['POST'])
-def result_warframe():
+@app.route('/result', methods = ['POST'])
+def result():
     
-    warframe_name = request.form['warframe']
-    name = warframe_name.replace(' ', '_')
+    item_names = request.form['item_name']
+    name = item_names
     
-    result = read_csv(name, 'warframe')
+    input_warframe = input_item('warframes')
+    input_weapon = input_item('weapons')
+    get_find = False
     
-    if(result.empty == True):
-        return redirect('/error/404')
-    else:
-        label = 'market'
-        xlabels = []
-        dataset = []
-        xlabels = result['datetime'].tolist()
-        xlabels.reverse()
-        dataset = result['avg_price'].tolist()
-        dataset.reverse()
-        print(warframe_name)
-        return render_template('result.html', **locals())
+    if get_find == False:
+        for find in input_warframe:
+            if name in find:
+                result = read_csv(name, 'warframe')
+                get_find = True
+                break
+    
+    if get_find == False:
+        for finds in input_weapon:
+            if item_names in finds:
+                result = read_csv(name, 'weapon')
+                get_find = True
+                break
+
+    if get_find == True:
+        if(result.empty == True):
+            return redirect('/error')
+        else:
+            label = 'market'
+            xlabels = []
+            dataset = []
+            xlabels = result['datetime'].tolist()
+            xlabels.reverse()
+            dataset = result['avg_price'].tolist()
+            dataset.reverse()
+            return render_template('result.html', **locals())
 
 @app.route('/result_weapon', methods = ['POST'])
 def result_weapon():
@@ -89,12 +121,12 @@ def result_weapon():
     result = read_csv(name, 'weapon')
     
     if(result.empty == True):
-        return redirect('/error/404')
+        return redirect('/error')
     else:
         html_data = result.to_html(index = False, justify = 'center')
         return html_data
 
-@app.route('/error/404')
+@app.route('/error')
 def error():
     return render_template('error.html')
 

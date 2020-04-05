@@ -5,58 +5,74 @@
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale = 1">
         <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/index.css', v = 0.1) }}" />
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
         <title>RPC 워프레임</title>
     </head>
     <body>
         <div>
             <div class = "header">
                 <h1>헤더</h1>
+                <div>
+                    <form action = "/result"  method = "POST" >
+                        <h1>원하는 프라임을 입력하시오</h1>
+                        <input type = "text" name = "item_name">
+                        <button type = "submit">데이터 확인</button>
+                    </form>
+                </div>
             </div>
             
             <div class = "menu">
             
                 <div class = "content_1">
                     <div class = "content_1_img">
-                        <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
-                        <p>
-                            이거는 개 떡상 아이템이라서 존나보면 기쁠꺼임!
-                        </p>
+                        <div class = "content_1_main0">
+                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
+                            <div class = "content_1_title">
+                                <a>오늘의 상승 아이템</a><br>
+                                <a>280(0.5)</a>
+                                <a href = "/warframe/loki_prime">로키 프라임</a>
+                            </div>
+                        </div>
                     </div>
                     <div class = "content_1_img">
-                        <img src = "{{ url_for('static', filename = 'image/icon/NOT_FIND.png', v = 0.1) }}">
-                        <p>
-                            이거 보다가 맨탈 터질수도잇으니 조심하라구!
-                        </p>
+                        <div class = "content_1_main1">
+                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
+                            <div class = "content_1_title">
+                                <a>오늘의 하락 아이템</a><br>
+                                <a>280(0.5)</a>
+                                <a href = "/warframe/loki_prime">로키 프라임</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class = "content_0" style="display: table;">
                     <div style="height: 100%; width: 100%; display: table-cell; vertical-align: middle;">
                         
-                        <table border="1" style="margin: auto;">
+                        <table border="0" style="width: 100%; border-spacing: 0px 5px;">
                             <thead>
                                 <tr>
-                                    <th>순위</th>
-                                    <th>아이템</th>
                                     <th>수치</th>
-                                    <th>변동</th>
+                                    <th>아이템</th>
+                                    <th></th>
+                                    <th>순위</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 {% for i in range(1,11) %}
-                                <tr>
-                                    <td>{{i}}</td>
+                                <tr class = "items">
+                                    <td class = "item_count"><a>280(0.5)</a></td>
                                     <td>
-                                        <div style="">
-                                            <div style="border:3px solid gold; border-radius: 70px; -moz-border-radius: 70px; -khtml-border-radius: 70px; -webkit-border-radius: 70px; max-height: 50px; max-width: 50px; overflow: hidden; float: left;">
-                                                <img style="height: auto; max-width: 100%;" alt="로키 프라임" src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
+                                        <div>
+                                            <div class = "item_name"><a href = "/warframe/loki_prime">로키 프라임</a></div>
+                                            <div class = "item_box">
+                                                <img alt="로키 프라임" src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
                                             </div>
-                                            <div style="margin: 15px 5px; float: left;"><a href = "/warframe/loki_prime">로키 프라임</a></div>
                                         </div>
                                     </td>
-                                    <td>0.5</td>
-                                    <td>▲</td>
+                                    <td class = "item_value">▲</td>
+                                    <td class = "item_text">{{i}}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
