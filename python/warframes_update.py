@@ -49,7 +49,7 @@ def warframe_crawling(item, path, path_0):
         datecut = str(i)
         datetime.append(datecut[0:10])
 
-    for i in result_data['avg_price']:
+    for i in result_data['moving_avg']:
         avg_price.append(str(i))
         
     for i in result_data['volume']:
@@ -63,7 +63,7 @@ def warframe_crawling(item, path, path_0):
         get_path = path
         if os.path.isfile(get_path):
             all_data_list.to_csv(get_path, mode = 'a', header = False)
-            re_result = pd.read_csv(get_path, index_col = 0)
+            re_result = pd.read_csv(get_path, index_col = 0, error_bad_lines = False)
             all_result = re_result.drop_duplicates('datetime', keep = 'first')
             all_result.to_csv(get_path, mode = 'w')
             value = pandas_value.pandas_value(get_item, 'warframe')
