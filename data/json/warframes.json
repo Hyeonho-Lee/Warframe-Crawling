@@ -1,82 +1,134 @@
 {
     "warframes": [
         {
-            "name": "loki_prime"
+            "name": "loki_prime",
+            "en_name": "Loki Prime",
+            "kr_name": "로키 프라임"
         },
         {
-            "name": "equinox_prime"
+            "name": "equinox_prime",
+            "en_name": "Equinox Prime",
+            "kr_name": "이쿼녹스 프라임"
         },
         {
-            "name": "rhino_prime"
+            "name": "rhino_prime",
+            "en_name": "Rhino Prime",
+            "kr_name": "라이노 프라임"
         },
         {
-            "name": "mesa_prime"
+            "name": "mesa_prime",
+            "en_name": "Mesa Prime",
+            "kr_name": "메사 프라임"
         },
         {
-            "name": "ember_prime"
+            "name": "ember_prime",
+            "en_name": "Ember Prime",
+            "kr_name": "엠버 프라임"
         },
         {
-            "name": "limbo_prime"
+            "name": "limbo_prime",
+            "en_name": "Limbo Prime",
+            "kr_name": "림보 프라임"
         },
         {
-            "name": "ivara_prime"
+            "name": "ivara_prime",
+            "en_name": "Ivara Prime",
+            "kr_name": "이바라 프라임"
         },
         {
-            "name": "chroma_prime"
+            "name": "chroma_prime",
+            "en_name": "Chroma Prime",
+            "kr_name": "크로마 프라임"
         },
         {
-            "name": "nyx_prime"
+            "name": "nyx_prime",
+            "en_name": "Nyx Prime",
+            "kr_name": "닉스 프라임"
         },
         {
-            "name": "frost_prime"
+            "name": "frost_prime",
+            "en_name": "Frost Prime",
+            "kr_name": "프로스트 프라임"
         },
         {
-            "name": "trinity_prime"
+            "name": "trinity_prime",
+            "en_name": "Trinity Prime",
+            "kr_name": "트리니티 프라임"
         },
         {
-            "name": "hydroid_prime"
+            "name": "hydroid_prime",
+            "en_name": "Hydroid Prime",
+            "kr_name": "하이드로이드 프라임"
         },
         {
-            "name": "nova_prime"
+            "name": "nova_prime",
+            "en_name": "Nova Prime",
+            "kr_name": "노바 프라임"
         },
         {
-            "name": "saryn_prime"
+            "name": "saryn_prime",
+            "en_name": "Saryn Prime",
+            "kr_name": "새린 프라임"
         },
         {
-            "name": "mirage_prime"
+            "name": "mirage_prime",
+            "en_name": "Mirage Prime",
+            "kr_name": "미라지 프라임"
         },
         {
-            "name": "valkyr_prime"
+            "name": "valkyr_prime",
+            "en_name": "Valkyr Prime",
+            "kr_name": "발키르 프라임"
         },
         {
-            "name": "mag_prime"
+            "name": "mag_prime",
+            "en_name": "Mag Prime",
+            "kr_name": "매그 프라임"
         },
         {
-            "name": "ash_prime"
+            "name": "ash_prime",
+            "en_name": "Ash Prime",
+            "kr_name": "애쉬 프라임"
         },
         {
-            "name": "zephyr_prime"
+            "name": "zephyr_prime",
+            "en_name": "Zephyr Prime",
+            "kr_name": "제피르 프라임"
         },
         {
-            "name": "wukong_prime"
+            "name": "wukong_prime",
+            "en_name": "Wukong Prime",
+            "kr_name": "오공 프라임"
         },
         {
-            "name": "vauban_prime"
+            "name": "vauban_prime",
+            "en_name": "Vauban Prime",
+            "kr_name": "바우반 프라임"
         },
         {
-            "name": "banshee_prime"
+            "name": "banshee_prime",
+            "en_name": "Banshee Prime",
+            "kr_name": "밴쉬 프라임"
         },
         {
-            "name": "oberon_prime"
+            "name": "oberon_prime",
+            "en_name": "Oberon Prime",
+            "kr_name": "오베론 프라임"
         },
         {
-            "name": "nekros_prime"
+            "name": "nekros_prime",
+            "en_name": "Nekros Prime",
+            "kr_name": "네크로스 프라임"
         },
         {
-            "name": "volt_prime"
+            "name": "volt_prime",
+            "en_name": "Volt Prime",
+            "kr_name": "볼트 프라임"
         },
         {
-            "name": "atlas_prime"
+            "name": "atlas_prime",
+            "en_name": "Atlas Prime",
+            "kr_name": "아틀라스 프라임"
         }
     ]
 }

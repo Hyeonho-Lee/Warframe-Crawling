@@ -5,15 +5,16 @@
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale = 1">
         <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/index.css', v = 0.1) }}" />
-        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;" rel="stylesheet">
         <title>RPC 워프레임</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     </head>
     <body>
         <div>
             <div class = "header">
                 <h1>헤더</h1>
                 <div>
-                    <form action = "/result"  method = "POST" >
+                    <form action = "/result"  method = "POST">
                         <h1>원하는 프라임을 입력하시오</h1>
                         <input type = "text" name = "item_name">
                         <button type = "submit">데이터 확인</button>
@@ -25,22 +26,22 @@
             
                 <div class = "content_1">
                     <div class = "content_1_img">
-                        <div class = "content_1_main0">
-                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
+                        <div class = "content_1_main0" onClick="location.href='/result/{{ a_top_name[0] }}'">
+                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Nova_Prime/Nova_Prime.png', v = 0.1) }}">
                             <div class = "content_1_title">
-                                <a>오늘의 상승 아이템</a><br>
-                                <a>280(0.5)</a>
-                                <a href = "/warframe/loki_prime">로키 프라임</a>
+                                <a>추천 상승 아이템</a><br>
+                                <a>{{ a_top_price[0] }}({{ a_top_before[0] }})</a>
+                                <a>{{ a_top_name[0] }}</a>
                             </div>
                         </div>
                     </div>
                     <div class = "content_1_img">
-                        <div class = "content_1_main1">
-                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
+                        <div class = "content_1_main1" onClick="location.href='/result/{{ a_bottom_name[0] }}'">
+                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Nekros_Prime/Nekros_Prime.png', v = 0.1) }}">
                             <div class = "content_1_title">
-                                <a>오늘의 하락 아이템</a><br>
-                                <a>280(0.5)</a>
-                                <a href = "/warframe/loki_prime">로키 프라임</a>
+                                <a>위험 하락 아이템</a><br>
+                                <a>{{ a_bottom_price[0] }}({{ a_bottom_before[0] }})</a>
+                                <a>{{ a_bottom_name[0] }}</a>
                             </div>
                         </div>
                     </div>
@@ -61,13 +62,13 @@
 
                             <tbody>
                                 {% for i in range(1,11) %}
-                                <tr class = "items">
-                                    <td class = "item_count"><a>280(0.5)</a></td>
+                                <tr class = "items" onClick="location.href='/result/{{ t_top_name[i - 1] }}'">
+                                    <td class = "item_count"><a>{{ t_top_price[i - 1] }}({{ t_top_before[i - 1] }})</a></td>
                                     <td>
                                         <div>
-                                            <div class = "item_name"><a href = "/warframe/loki_prime">로키 프라임</a></div>
+                                            <div class = "item_name"><a>{{ t_top_name[i - 1] }}</a></div>
                                             <div class = "item_box">
-                                                <img alt="로키 프라임" src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
+                                                <img alt="{{ t_top_name[i - 1] }}" src="{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}">
                                             </div>
                                         </div>
                                     </td>
@@ -82,7 +83,57 @@
                 </div>
                 
                 <div class = "content_2">
-                    <h3>오른쪽</h3>
+                    <div style="width:100%;">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                    <script>
+                        new Chart(document.getElementById("canvas"), {
+                            type: 'line',
+                            data: {
+                                labels: {{ xlabels | tojson }},
+                                datasets: [{
+                                    label: '',
+                                    data: {{ dataset | tojson }},
+                                    backgroundColor: 'rgb(255, 99, 132)',
+                                    borderColor: 'rgb(255, 99, 132)',
+                                    fill: false,
+                                    lineTension: 0.3
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                title: {
+                                    display: true,
+                                    text: '{{ item_names }} 그래프'
+                                },
+                                tooltips: {
+                                    mode: 'index',
+                                    intersect: false,
+                                },
+                                hover: {
+                                    mode: 'nearest',
+                                    intersect: true
+                                },
+                                scales: {
+                                    xAxes: [{
+                                        display: true,
+                                        scaleLabel: {
+                                            display: true,
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        display: true,
+                                        ticks: {
+                                        },
+                                        scaleLabel: {
+                                            display: true,
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+
+                    </script>
                 </div>
 
             </div>

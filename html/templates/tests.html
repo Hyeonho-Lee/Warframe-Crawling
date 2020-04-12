@@ -6,37 +6,6 @@
         <title>RPC 워프레임</title>
     </head>
     <body>
-        
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>순위</th>
-                    <th>아이템</th>
-                    <th>수치</th>
-                    <th>변동</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-                {% for i in range(1,11) %}
-                <tr>
-                    <td>{{i}}</td>
-                    <td>
-                        <div style="">
-                            <div style="border:3px solid gold; border-radius: 70px; -moz-border-radius: 70px; -khtml-border-radius: 70px; -webkit-border-radius: 70px; max-height: 50px; max-width: 50px; overflow: hidden; float: left;">
-                                <img style="height: auto; max-width: 100%;" alt="로키 프라임" src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                            <div style="margin: 15px 5px; float: left;">
-                                <a href = "/warframe/loki_prime">로키 프라임</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td>0.5</td>
-                    <td>▲</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        
+        {{ name }}
     </body>
 </html>

@@ -1,4 +1,5 @@
 import os
+import json
 import pandas as pd
 import numpy as np
 from datetime import date, timedelta
@@ -94,19 +95,19 @@ result = result_today.sort_values(by='lank', axis = 0, ascending = False)
 result = result.reset_index()
 all_top = result.head(10)
 result = result_today.sort_values(by='lank', axis = 0)
-all_bottom = result.tail(10)
+all_bottom = result.head(10)
 
 result = result_today.sort_values(by='day_before', axis = 0, ascending = False)
 today_top = result.head(10)
 result = result_today.sort_values(by='day_before', axis = 0)
 today_bottom = result.head(10)
-print(today_bottom)
 
 reset('all_top')
-all_top.to_csv(path_all_top, mode = 'w')
 reset('all_bottom')
-all_top.to_csv(path_all_bottom, mode = 'w')
 reset('today_top')
-all_top.to_csv(path_today_top, mode = 'w')
 reset('today_bottom')
-all_top.to_csv(path_today_bottom, mode = 'w')
+
+all_top.to_csv(path_all_top, mode = 'w')
+all_bottom.to_csv(path_all_bottom, mode = 'w')
+today_top.to_csv(path_today_top, mode = 'w')
+today_bottom.to_csv(path_today_bottom, mode = 'w')

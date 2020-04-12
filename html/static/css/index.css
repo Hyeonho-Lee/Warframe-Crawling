@@ -83,6 +83,10 @@
     position: absolute;
 }
 
+.content_1_main0:hover {
+    background-color: lightyellow;
+}
+
 .content_1_main1 {
     top: 50%;
     left: 50%;
@@ -100,6 +104,10 @@
     max-width: initial;
     margin-left: -50%;
     position: absolute;
+}
+
+.content_1_main1:hover {
+    background-color: lightyellow;
 }
 
 .content_1_title {
@@ -152,8 +160,11 @@
     background-color: #dbdcd9;
 }
 
+.items:hover {
+    background-color: lightyellow;
+}
+
 .item_count {
-    background-color: #dbdcd9;
     width: 100px;
     min-width: 10%;
     height: 0;
