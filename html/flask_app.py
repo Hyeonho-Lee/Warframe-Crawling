@@ -9,8 +9,6 @@ from flask import Flask, url_for, render_template, request, redirect, session
 #https://rpc-flask-app.run.goorm.io/ 홈페이지 사이트
 #https://icons8.com/icons 아이콘 사이트
 #https://pixlr.com/e/ 포토샵 사이트
-#https://www.highcharts.com/forum/viewtopic.php?t=36318
-#https://infinitt.tistory.com/38
 #flask highcharts example
 
 
@@ -196,7 +194,7 @@ def index():
     t_bottom_name = today_bottom['name'].tolist()
     t_bottom_price = today_bottom['avg_price'].tolist()
     t_bottom_before = today_bottom['day_before'].tolist()
-    for i in a_bottom_name:
+    for i in t_bottom_name:
         result = find_path(i, 'path')
         result_0 = find_path(i, 'path_0')
         result_1 = find_path(i, 'path_1')

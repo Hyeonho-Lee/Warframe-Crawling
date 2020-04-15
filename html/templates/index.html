@@ -50,10 +50,37 @@
                 <div class = "content_0" style="display: table;">
                     <div style="height: 100%; width: 100%; display: table-cell; vertical-align: middle;">
                         
-                        <table border="0" style="width: 100%; border-spacing: 0px 5px;">
+                        <button onclick='top_change()'>
+                            증가중
+                        </button>
+                        <button onclick='bottom_change()'>
+                            하락중
+                        </button>
+                        <script>
+                            function top_change(){
+                                var table_value = document.getElementById('table');
+                                {% for i in range(1,11) %}
+                                table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_top_price[i - 1] }}({{ t_top_before[i - 1] }})</a>";
+                                table_value.rows[{{i}}].cells[2].innerHTML = "<a >▲</a>";
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a>{{ t_top_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_top_name[i - 1] }}'src='{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                {% endfor %}
+                            }
+
+                            function bottom_change(){
+                                var table_value = document.getElementById('table');
+                                {% for i in range(1,11) %}
+                                table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_bottom_price[i - 1] }}({{ t_bottom_before[i - 1] }})</a>";
+                                table_value.rows[{{i}}].cells[2].innerHTML = "<a >▼</a>";
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a>{{ t_bottom_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_bottom_name[i - 1] }}'src='{{ url_for('static', filename = t_bottom_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                {% endfor %}
+                            }
+                        </script>
+                        
+                        
+                        <table class = "table" id = "table" border = "0">
                             <thead>
                                 <tr>
-                                    <th>수치</th>
+                                    <th id>수치</th>
                                     <th>아이템</th>
                                     <th></th>
                                     <th>순위</th>
@@ -72,8 +99,8 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class = "item_value">▲</td>
-                                    <td class = "item_text">{{i}}</td>
+                                    <td class = "item_value"><a>▲</a></td>
+                                    <td class = "item_text"><a>{{i}}</a></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>

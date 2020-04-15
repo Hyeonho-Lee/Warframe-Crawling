@@ -40,6 +40,13 @@
     border: 1px solid #000000;
 }
 
+.table {
+    width: 100%;
+    padding: 5px;
+    border-spacing: 0px 5px;
+    background-color: #ff7373;
+}
+
 .content_1 {
     background-color: #ffffff;
     
@@ -75,6 +82,7 @@
     float: left;
     position: relative;
     background-color: #dbdcd9;
+    transition: all ease 1s;
 }
 
 .content_1_main0 img {
@@ -85,6 +93,7 @@
 
 .content_1_main0:hover {
     background-color: lightyellow;
+    cursor: pointer;
 }
 
 .content_1_main1 {
@@ -98,6 +107,7 @@
     float: left;
     position: relative;
     background-color: #dbdcd9;
+    transition: all ease 0.25s;
 }
 
 .content_1_main1 img {
@@ -108,6 +118,7 @@
 
 .content_1_main1:hover {
     background-color: lightyellow;
+    cursor: pointer;
 }
 
 .content_1_title {
@@ -130,7 +141,7 @@
 
 
 .content_2 {
-    background-color: #e5e5e5;
+    background-color: #ffffff;
     
     padding: 10px;
     margin: 5px auto;
@@ -158,10 +169,13 @@
 
 .items {
     background-color: #dbdcd9;
+    transition: all ease 0.25s;
 }
 
 .items:hover {
     background-color: lightyellow;
+    cursor: pointer;;
+    transform: scale( 1.025 );
 }
 
 .item_count {
@@ -186,24 +200,23 @@
 }
 
 .item_name {
-    width: 300px;
+    margin: 0 5px;
+    height: 50px;
+    width: 250px;
     float: left;
-    position: relative;
 }
 
 .item_name a{
-    transform: translate(-90%, 35%);
     font-family: "Nanum Gothic", sans-serif;
     font-size: 25px;
-    color: #404040;
-    text-decoration: none;
-    position: absolute;
+    color: #323232;
+    float: left;
 }
 
 .item_box {
     margin: 0 5px;
     
-    width: 200px;
+    width: 100px;
     max-height: 50px;
     max-width: auto;
     
@@ -212,10 +225,11 @@
 }
 
 .item_box img{
-    margin-top: -18%;
+    margin-top: 1%;
     width: auto;
-    max-width: 450px;
-    height: 300px;
+    height: auto;
+    max-width: 80px;
+    max-height: 80px;
 }
 
 .item_value {
@@ -239,7 +253,15 @@
     .item_box {
         margin: 0 0px;
 
-        width: 135px;
+        width: 100px;
+        max-height: 50px;
+        max-width: auto;
+    }
+    
+    .item_name {
+        margin: 0 0px;
+
+        width: 55px;
         max-height: 50px;
         max-width: auto;
     }
@@ -249,12 +271,11 @@
     }
 
     .item_count a{
-        transform: translate(-50%, 170%);
+        transform: translate(-50%, 175%);
         font-size: 10px;
     }
     
     .item_name a{
-        transform: translate(-90%, 35%);
-        font-size: 25px;
+        font-size: 15px;
     }
 }
