@@ -4,12 +4,87 @@
     padding: 0;
 }
 
+ul, ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     background-color: #e5e5e5;
+    height: 100px;
+    width: 100%;
     
+    float: left;
     padding: 15px;
     margin: 5px auto;
     
+    text-align: center;
+    border: 1px solid #000000;
+    position:relative;
+}
+
+.header_menu_nav{
+    display: none;
+}
+
+.header_menu:hover .header_menu_nav {
+    display: block;
+}
+
+.header_logo {
+    background-color: #ffffff;
+    float: left;
+    
+    width: 20%;
+    height: 100%;
+    
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+.header_search {
+    background-color: #ffffff;
+    float: left;
+    
+    width: 40%;
+    height: 100%;
+    
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+.header_menu {
+    background-color: #ffffff;
+    float: left;
+    
+    width: 20%;
+    height: 100%;
+    
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+.header_menu_nav li{
+    display: inline;
+    background-color: #ffffff;
+    float: left;
+    
+    width: 100%;
+    height: 100px;
+    
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+.header_info {
+    background-color: #ffffff;
+    float: left;
+    
+    width: 20%;
+    height: 100%;
+    
+    display: block;
     text-align: center;
     border: 1px solid #000000;
 }
@@ -26,6 +101,55 @@
     border: 1px solid #000000;
 }
 
+.text_box {
+    margin: 5px;
+    height: 50px;
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.text_box input {
+    width: 200px;
+    height: 48px;
+    top: 5%;
+    left: 10%;
+    background: #ffffff;
+    font-size: 15px;
+    color: #2a2a2a;
+    padding-left: 10px;
+    padding-right: 45px;
+    border: 1px solid #000000;
+    position: absolute;
+    z-index: 2;
+}
+
+.text_boxs {
+    width: 100%;
+    height: 55px;
+    top: 0%;
+    left: 50%;
+    transform: skew(45deg);
+    background: #ffffff;
+    border: 1px solid #000000;
+    position: absolute;
+    z-index: 1;
+}
+
+.text_box span{
+    top: 30%;
+    left: 90%;
+    color: #2a2a2a;
+    position: absolute;
+    z-index: 3;
+}
+
+.text_box input:hover, .text_box input:hover:focus, .text_box input:hover:active{
+    outline: none;
+    background: #ffffff;
+}
+
 .content_0 {
     background-color: #ffffff;
     
@@ -40,11 +164,18 @@
     border: 1px solid #000000;
 }
 
-.table {
+.table_up {
     width: 100%;
     padding: 5px;
     border-spacing: 0px 5px;
     background-color: #ff7373;
+}
+
+.table_down {
+    width: 100%;
+    padding: 5px;
+    border-spacing: 0px 5px;
+    background-color: #73abff;
 }
 
 .content_1 {
@@ -75,7 +206,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid red;
+    border: 3px solid #ff7373;
     height: 300px;
     width: 300px;
     overflow: hidden;
@@ -100,7 +231,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid blue;
+    border: 3px solid #73abff;
     height: 300px;
     width: 300px;
     overflow: hidden;
@@ -174,7 +305,6 @@
 
 .items:hover {
     background-color: lightyellow;
-    cursor: pointer;;
     transform: scale( 1.025 );
 }
 
@@ -245,9 +375,51 @@
     color: black;
 }
 
-@media screen and (max-width: 1570px) {
+.buttons {
+    height: 50px;
+    width: 100%;
+}
+
+.button_up {
+    border: 0;
+    outline: 0;
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #ff7373;
+    cursor: pointer;
+}
+
+.button_down {
+    border: 0;
+    outline: 0;
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #73abff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
     .content_0, .content_1, .content_2 {
         width: 100%;
+    }
+    
+    .header {
+        height: 100%;
+    }
+    
+    .header .header_menu:hover {
+        height: auto;
+    }
+    
+    .header_info {
+        display: none;
+    }
+    
+    .header_logo, .header_search, .header_menu, .header_info {
+        width: 100%;
+        height: 40px;
     }
     
     .item_box {

@@ -4,23 +4,54 @@
     <head>
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale = 1">
-        <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/index.css', v = 0.1) }}" />
-        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;" rel="stylesheet">
         <title>RPC 워프레임</title>
+        <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/index.css', v = 0.1) }}" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;" rel="stylesheet">
     </head>
     <body>
+        <script>
+            window.onload = function () {
+                top_change();
+            }
+        </script>
         <div>
-            <div class = "header">
-                <h1>헤더</h1>
-                <div>
-                    <form action = "/result"  method = "POST">
-                        <h1>원하는 프라임을 입력하시오</h1>
-                        <input type = "text" name = "item_name">
-                        <button type = "submit">데이터 확인</button>
-                    </form>
-                </div>
-            </div>
+            <ul class="header">
+                <li class="header_logo">
+                    <a>Warframe TS</a>
+                </li>
+                <li class="header_search">
+                    <!--<script>
+                        function input_search(){
+                            var msg = document.getElementById("item_name").value;
+                            if (msg == ""){
+                                console.log("값 없음")
+                            }else {
+                                var links = 'result/' + String(msg);
+                                location.href = links;
+                            }
+                        }
+                    </script>
+                    <div class="text_box">
+                        <div class="text_boxs"></div>
+                        <input type="text" id="item_name" onkeypress="if(event.keyCode==13) {input_search(); return false;}" placeholder="Search">
+                        <span class="icon" onclick="input_search()"><i class="fa fa-search"></i></span>
+                    </div>-->
+                </li>
+                <li class="header_menu">
+                    여긴 매뉴!
+                    <ul class="header_menu_nav">
+                        <li>TOP/BOTTOM</li>
+                        <li>거래 현황</li>
+                        <li>시세 분석</li>
+                        <li>백테스트</li>
+                    </ul>
+                </li>
+                <li class="header_info">
+                    사용자!
+                </li>
+            </ul>
             
             <div class = "menu">
             
@@ -49,30 +80,41 @@
                 
                 <div class = "content_0" style="display: table;">
                     <div style="height: 100%; width: 100%; display: table-cell; vertical-align: middle;">
-                        
-                        <button onclick='top_change()'>
-                            증가중
-                        </button>
-                        <button onclick='bottom_change()'>
-                            하락중
-                        </button>
+                        <div class="buttons">
+                            <button class="button_up" onclick="top_change()">
+                                증가중
+                            </button>
+                            <button class="button_down" onclick="bottom_change()">
+                                하락중
+                            </button>
+                        </div>
                         <script>
                             function top_change(){
                                 var table_value = document.getElementById('table');
+                                document.getElementById('table').className = "table_up";
                                 {% for i in range(1,11) %}
                                 table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_top_price[i - 1] }}({{ t_top_before[i - 1] }})</a>";
                                 table_value.rows[{{i}}].cells[2].innerHTML = "<a >▲</a>";
-                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a>{{ t_top_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_top_name[i - 1] }}'src='{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                var result = table_value.rows[{{i}}].cells[1].innerText;
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_top_name[i - 1] }}'>{{ t_top_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_top_name[i - 1] }}'src='{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}'></div></div>";
                                 {% endfor %}
                             }
 
                             function bottom_change(){
                                 var table_value = document.getElementById('table');
+                                document.getElementById('table').className = "table_down";
                                 {% for i in range(1,11) %}
                                 table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_bottom_price[i - 1] }}({{ t_bottom_before[i - 1] }})</a>";
-                                table_value.rows[{{i}}].cells[2].innerHTML = "<a >▼</a>";
-                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a>{{ t_bottom_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_bottom_name[i - 1] }}'src='{{ url_for('static', filename = t_bottom_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                table_value.rows[{{i}}].cells[2].innerHTML = "<a style='color:blue;'>▼</a>";
+                                var result = table_value.rows[{{i}}].cells[1].innerText;
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_bottom_name[i - 1] }}'>{{ t_bottom_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_bottom_name[i - 1] }}'src='{{ url_for('static', filename = t_bottom_path_1[i - 1], v = 0.1) }}'></div></div>";
                                 {% endfor %}
+                            }
+                            
+                            function test(){
+                                var table_value = document.getElementById('table');
+                                var result = table_value.rows[1].cells[1].innerText;
+                                console.log(result);
                             }
                         </script>
                         
@@ -89,7 +131,7 @@
 
                             <tbody>
                                 {% for i in range(1,11) %}
-                                <tr class = "items" onClick="location.href='/result/{{ t_top_name[i - 1] }}'">
+                                <tr class = "items">
                                     <td class = "item_count"><a>{{ t_top_price[i - 1] }}({{ t_top_before[i - 1] }})</a></td>
                                     <td>
                                         <div>
