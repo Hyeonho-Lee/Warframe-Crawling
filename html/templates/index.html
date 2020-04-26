@@ -19,10 +19,10 @@
         <div>
             <ul class="header">
                 <li class="header_logo">
-                    <a>Warframe TS</a>
+                    <a>Warframe<br>Trade Stats</a>
                 </li>
                 <li class="header_search">
-                    <!--<script>
+                    <script>
                         function input_search(){
                             var msg = document.getElementById("item_name").value;
                             if (msg == ""){
@@ -35,21 +35,34 @@
                     </script>
                     <div class="text_box">
                         <div class="text_boxs"></div>
-                        <input type="text" id="item_name" onkeypress="if(event.keyCode==13) {input_search(); return false;}" placeholder="Search">
+                        <input type="text" id="item_name" onkeypress="if(event.keyCode==13) {input_search(); return false;}" placeholder="검색">
                         <span class="icon" onclick="input_search()"><i class="fa fa-search"></i></span>
-                    </div>-->
+                    </div>
                 </li>
                 <li class="header_menu">
-                    여긴 매뉴!
+                    <div class="text_boxss"></div>
+                    <a class="text_menu">메뉴</a>
                     <ul class="header_menu_nav">
-                        <li>TOP/BOTTOM</li>
-                        <li>거래 현황</li>
-                        <li>시세 분석</li>
-                        <li>백테스트</li>
+                        <li>
+                            <div class="text_boxss_1"></div>
+                            <a class="text_menu_1">TOP/BOTTOM</a>
+                        </li>
+                        <li>
+                            <div class="text_boxss_2"></div>
+                            <a class="text_menu_2">거래 현황</a>
+                        </li>
+                        <li>
+                            <div class="text_boxss_3"></div>
+                            <a class="text_menu_3">시세 분석</a>
+                        </li>
+                        <li>
+                            <div class="text_boxss_4"></div>
+                            <a class="text_menu_4">백테스트</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="header_info">
-                    사용자!
+                    <a>로그인</a>
                 </li>
             </ul>
             
@@ -58,21 +71,21 @@
                 <div class = "content_1">
                     <div class = "content_1_img">
                         <div class = "content_1_main0" onClick="location.href='/result/{{ a_top_name[0] }}'">
-                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Nova_Prime/Nova_Prime.png', v = 0.1) }}">
+                            <img alt="{{ a_top_name[0] }}" src="{{ url_for('static', filename = a_top_path_1[0], v = 0.1) }}">
                             <div class = "content_1_title">
                                 <a>추천 상승 아이템</a><br>
                                 <a>{{ a_top_price[0] }}({{ a_top_before[0] }})</a>
-                                <a>{{ a_top_name[0] }}</a>
+                                <a>{{ a_top_kr_name[0] }}</a>
                             </div>
                         </div>
                     </div>
                     <div class = "content_1_img">
                         <div class = "content_1_main1" onClick="location.href='/result/{{ a_bottom_name[0] }}'">
-                            <img src = "{{ url_for('static', filename = '/image/item_image/warframe/Nekros_Prime/Nekros_Prime.png', v = 0.1) }}">
+                            <img alt="{{ a_bottom_name[0] }}" src="{{ url_for('static', filename = a_bottom_path_1[0], v = 0.1) }}">
                             <div class = "content_1_title">
                                 <a>위험 하락 아이템</a><br>
                                 <a>{{ a_bottom_price[0] }}({{ a_bottom_before[0] }})</a>
-                                <a>{{ a_bottom_name[0] }}</a>
+                                <a>{{ a_bottom_kr_name[0] }}</a>
                             </div>
                         </div>
                     </div>
@@ -96,7 +109,7 @@
                                 table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_top_price[i - 1] }}({{ t_top_before[i - 1] }})</a>";
                                 table_value.rows[{{i}}].cells[2].innerHTML = "<a >▲</a>";
                                 var result = table_value.rows[{{i}}].cells[1].innerText;
-                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_top_name[i - 1] }}'>{{ t_top_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_top_name[i - 1] }}'src='{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_top_name[i - 1] }}'>{{ t_top_kr_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_top_name[i - 1] }}'src='{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}'></div></div>";
                                 {% endfor %}
                             }
 
@@ -107,7 +120,7 @@
                                 table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_bottom_price[i - 1] }}({{ t_bottom_before[i - 1] }})</a>";
                                 table_value.rows[{{i}}].cells[2].innerHTML = "<a style='color:blue;'>▼</a>";
                                 var result = table_value.rows[{{i}}].cells[1].innerText;
-                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_bottom_name[i - 1] }}'>{{ t_bottom_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_bottom_name[i - 1] }}'src='{{ url_for('static', filename = t_bottom_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_bottom_name[i - 1] }}'>{{ t_bottom_kr_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_bottom_name[i - 1] }}'src='{{ url_for('static', filename = t_bottom_path_1[i - 1], v = 0.1) }}'></div></div>";
                                 {% endfor %}
                             }
                             
@@ -135,7 +148,7 @@
                                     <td class = "item_count"><a>{{ t_top_price[i - 1] }}({{ t_top_before[i - 1] }})</a></td>
                                     <td>
                                         <div>
-                                            <div class = "item_name"><a>{{ t_top_name[i - 1] }}</a></div>
+                                            <div class = "item_name"><a>{{ t_top_kr_name[i - 1] }}</a></div>
                                             <div class = "item_box">
                                                 <img alt="{{ t_top_name[i - 1] }}" src="{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}">
                                             </div>

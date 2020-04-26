@@ -35,7 +35,7 @@ def warframe_crawling(item, path, path_0):
         json_data_1 = json.dumps(json_data, indent = 4)
         file.write(json_data_1)
 
-    warframe_data = json_data_1    
+    warframe_data = json_data_1
     
     json_data = json.loads(warframe_data)
 

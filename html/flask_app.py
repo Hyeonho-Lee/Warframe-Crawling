@@ -14,6 +14,15 @@ from flask import Flask, url_for, render_template, request, redirect, session
 
 #=======================================================================#
 
+def read_csv_file(path):
+    get_path = path
+    if os.path.isfile(get_path):
+        result = pd.read_csv(get_path, index_col = 0)
+        result = result.reset_index()
+        return result
+    else:
+        print('파일이 없습니다.')
+
 def read_csv(name, types):
     names = name + '_set'
     name_csv = names + '.csv'
@@ -33,21 +42,6 @@ def read_csv(name, types):
     else:
         result = pd.DataFrame()
         return result
-        
-def input_item(etc):
-    item = str(etc)
-    path = '/workspace/crawling/data/json/{etc}.json'.format(etc = item)
-    with open(path, "r") as json_file:
-        json_data = json.load(json_file)
-
-    name_data = []
-    #type_data = []
-
-    for i in json_data[item]:
-        name_data.append(str(i["name"]))
-        #type_data.append(str(i["type"]))
-    
-    return name_data
 
 def input_item(etc):
     item = str(etc)
@@ -59,7 +53,7 @@ def input_item(etc):
 
     for i in json_data[item]:
         name_data.append(str(i["name"]))
-    
+
     return name_data
 
 def get_all_item():
@@ -95,6 +89,50 @@ def get_all_item():
         all_path_1.append(path_1)
 
     return all_item, all_path, all_path_0, all_path_1
+
+def change_to_kr(csv_name):
+
+    item_name = []
+    item_en_name = []
+    item_kr_name = []
+
+    with open('/workspace/crawling/data/json/warframes.json', 'r') as file:
+        json_data = json.load(file)
+    result_data = json_data['warframes']
+    with open('/workspace/crawling/data/json/weapons.json', 'r') as file_1:
+        json_data_1 = json.load(file_1)
+    result_data_1 = json_data_1['weapons']
+
+    for i in range(0, len(result_data)):
+        result = result_data[i]['name']
+        en_result = result_data[i]['en_name']
+        kr_result = result_data[i]['kr_name']
+        item_name.append(str(result))
+        item_en_name.append(str(en_result))
+        item_kr_name.append(str(kr_result))
+
+    for i in range(0, len(result_data_1)):
+        result = result_data_1[i]['name']
+        en_result = result_data_1[i]['en_name']
+        kr_result = result_data_1[i]['kr_name']
+        item_name.append(str(result))
+        item_en_name.append(str(en_result))
+        item_kr_name.append(str(kr_result))
+
+    path = '/workspace/crawling/data/csv/result/{name}.csv'.format(name = csv_name)
+    resource = read_csv_file(path)
+
+    result_all = []
+
+    for i in range(0, len(resource)):
+        result = resource['name'][i]
+        result_1 = result.replace('_set', '')
+        if result_1 in item_name:
+            count = item_name.index(result_1)
+            re_text = item_kr_name[count]
+            result_all.append(re_text)
+
+    return result_all
 
 """
 if os.path.isdir(get_path_0):
@@ -135,12 +173,14 @@ def index():
                     return path_1
 
     a_top_name = []
+    a_top_kr_name = []
     a_top_price = []
     a_top_before = []
     a_top_path = []
     a_top_path_0 = []
     a_top_path_1 = []
     a_top_name = all_top['name'].tolist()
+    a_top_kr_name = change_to_kr('all_top')
     a_top_price = all_top['avg_price'].tolist()
     a_top_before = all_top['day_before'].tolist()
     for i in a_top_name:
@@ -152,12 +192,14 @@ def index():
         a_top_path_1.append(str(result_1))
 
     a_bottom_name = []
+    a_bottom_kr_name = []
     a_bottom_price = []
     a_bottom_before = []
     a_bottom_path = []
     a_bottom_path_0 = []
     a_bottom_path_1 = []
     a_bottom_name = all_bottom['name'].tolist()
+    a_bottom_kr_name = change_to_kr('all_bottom')
     a_bottom_price = all_bottom['avg_price'].tolist()
     a_bottom_before = all_bottom['day_before'].tolist()
     for i in a_bottom_name:
@@ -169,12 +211,14 @@ def index():
         a_bottom_path_1.append(str(result_1))
 
     t_top_name = []
+    t_top_kr_name = []
     t_top_price = []
     t_top_before = []
     t_top_path = []
     t_top_path_0 = []
     t_top_path_1 = []
     t_top_name = today_top['name'].tolist()
+    t_top_kr_name = change_to_kr('today_top')
     t_top_price = today_top['avg_price'].tolist()
     t_top_before = today_top['day_before'].tolist()
     for i in t_top_name:
@@ -186,12 +230,14 @@ def index():
         t_top_path_1.append(str(result_1))
 
     t_bottom_name = []
+    t_bottom_kr_name = []
     t_bottom_price = []
     t_bottom_before = []
     t_bottom_path = []
     t_bottom_path_0 = []
     t_bottom_path_1 = []
     t_bottom_name = today_bottom['name'].tolist()
+    t_bottom_kr_name = change_to_kr('today_bottom')
     t_bottom_price = today_bottom['avg_price'].tolist()
     t_bottom_before = today_bottom['day_before'].tolist()
     for i in t_bottom_name:
