@@ -17,7 +17,7 @@ def read_csv(path):
     else:
         print('파일이 없습니다.')
 
-def change_to_kr(csv_name):
+def change_to_kr(csv_name, etc, text):
     item_name = []
     item_en_name = []
     item_kr_name = []
@@ -49,15 +49,26 @@ def change_to_kr(csv_name):
     resource = read_csv(path)
 
     result_all = []
+    result_value = ''
+    types = etc
+    
+    if types == 'in':
+        for i in range(0, len(resource)):
+            result = resource['name'][i]
+            result_1 = result.replace('_set', '')
+            if result_1 in item_name:
+                count = item_name.index(result_1)
+                re_text = item_kr_name[count]
+                result_all.append(re_text)
+        return result_all
+    elif types == 'out':
+        input_text = text
+        if input_text in item_kr_name:
+            count = item_kr_name.index(input_text)
+            re_text = item_name[count]
+            result_value = re_text + '_set'
+        else:
+            result_value = input_text
+        return result_value
 
-    for i in range(0, len(resource)):
-        result = resource['name'][i]
-        result_1 = result.replace('_set', '')
-        if result_1 in item_name:
-            count = item_name.index(result_1)
-            re_text = item_kr_name[count]
-            result_all.append(re_text)
-
-    return result_all
-
-print(change_to_kr('all_top'))
+print(change_to_kr('all_top', 'out', '노바 프라임s'))

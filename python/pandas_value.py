@@ -23,14 +23,21 @@ def pandas_value(name, types):
     result['day_before'] = np.nan
     result['yn_before'] = np.nan
     result['lank'] = np.nan
+    result['day_percent'] = np.nan
 
     result.loc[0, ['day_before']] = 0.0
     result.loc[0, ['yn_before']] = '-'
     result.loc[0, ['lank']] = 0
+    result.loc[0, ['day_percent']] = 0.0
 
     for i in range(1, len(result)):
         value = result['avg_price'][i] - result['avg_price'][i-1]
         result.loc[i, ['day_before']] = round(value, 1)
+        
+        values = round(value, 1)
+        before = result['avg_price'][i-1]
+        percents = float(values) / float(before) * 100
+        result.loc[i, ['day_percent']] = round(percents, 1)
 
         yn_value = str(value)[0:1]
         if(yn_value == '-'):

@@ -1,0 +1,11 @@
+,datetime,avg_price,volume,day_before,yn_before,lank,day_percent,name
+6,2020-05-02,58.6,147,0.2,▲,-46.0,0.3,ivara_prime_set
+19,2020-05-02,33.5,140,-0.9,▼,-35.0,-2.6,wukong_prime_set
+25,2020-05-02,32.0,135,0.3,▲,-21.0,0.9,atlas_prime_set
+3,2020-05-02,37.8,132,-1.0,▼,-24.0,-2.6,mesa_prime_set
+1,2020-05-02,33.5,113,-0.5,▼,-19.0,-1.5,equinox_prime_set
+7,2020-05-02,31.5,101,-0.7,▼,-21.0,-2.2,chroma_prime_set
+23,2020-05-02,80.2,94,0.0,-,-38.0,0.0,nekros_prime_set
+2,2020-05-02,159.2,90,0.2,▲,14.0,0.1,rhino_prime_set
+14,2020-05-02,72.0,80,0.6,▲,35.0,0.8,mirage_prime_set
+24,2020-05-02,192.5,80,0.0,-,28.0,0.0,volt_prime_set

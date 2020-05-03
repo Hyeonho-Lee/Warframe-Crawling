@@ -307,7 +307,7 @@ ul, ol, li {
     z-index: 3;
 }
 
-.text_box input:hover, .text_box input:hover:focus, .text_box input:hover:active{
+.text_box input:hover, .text_box input:hover:focus, .text_box input:active{
     outline: none;
     background: #ffffff;
 }
@@ -348,6 +348,7 @@ ul, ol, li {
     
     float: left;
     height: 750px;
+    min-width: 350px;
     width: 20%;
     
     text-align: center;
@@ -441,10 +442,30 @@ ul, ol, li {
     
     float: left;
     height: 750px;
-    width: 45%;
+    width: 43%;
+    min-width: 300px;
     
     text-align: center;
     border: 1px solid #000000;
+    position: relative;
+}
+
+.center .dataTables_wrapper {
+    width: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.canvass {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0% auto;
 }
 
 .footer {
@@ -466,14 +487,12 @@ ul, ol, li {
 }
 
 .items:hover {
-    background-color: lightyellow;
+    background-color: lightyellow !important;
     transform: scale( 1.025 );
 }
 
 .item_count {
     width: 100px;
-    min-width: 10%;
-    height: 0;
     
     border-right: 50px solid transparent;
     border-bottom: 50px solid #2a2a2a;
@@ -568,6 +587,12 @@ ul, ol, li {
     cursor: pointer;
 }
 
+.item2_name a {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 14px;
+    color: #2a2a2a;
+}
+
 @media screen and (max-width: 1620px) {
     
     .item_box {
@@ -582,9 +607,26 @@ ul, ol, li {
         font-size: 20px;
     }
 }
+@media screen and (max-width: 1640px) {
+    .item_count {
+        width: 80px;
+    }
+    
+    .content_0, .content_1 {
+        width: 50%;
+    }
+    
+    .content_2 {
+        width: 100%;
+    }
+    
+    .canvass {
+        height: 50%;
+        margin: 1% auto;
+    }
+}
 
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1050px) {
     
     ul, ol, li {
         margin: 5px;
@@ -592,6 +634,12 @@ ul, ol, li {
     
     .content_0, .content_1, .content_2 {
         width: 100%;
+    }
+    
+    .item2_name a {
+        font-family: "Nanum Gothic", sans-serif;
+        font-size: 8px;
+        color: #2a2a2a;
     }
     
     .header {
@@ -656,7 +704,7 @@ ul, ol, li {
         margin: 0 0px;
 
         width: 200px;
-        max-height: 50px;
+        max-height: 0px;
         max-width: auto;
     }
     
@@ -671,7 +719,7 @@ ul, ol, li {
     
     .item_name a{
         left: 5%;
-        transform: translate(0%, -50%);
+        transform: translate(0%, 60%);
         font-size: 20px;
     }
 }

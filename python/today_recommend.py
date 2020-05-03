@@ -77,6 +77,7 @@ path_all_top = '/workspace/crawling/data/csv/result/all_top.csv'
 path_all_bottom = '/workspace/crawling/data/csv/result/all_bottom.csv'
 path_today_top = '/workspace/crawling/data/csv/result/today_top.csv'
 path_today_bottom = '/workspace/crawling/data/csv/result/today_bottom.csv'
+path_today_volume = '/workspace/crawling/data/csv/result/today_volume.csv'
 
 reset('result')
 
@@ -97,17 +98,22 @@ all_top = result.head(10)
 result = result_today.sort_values(by='lank', axis = 0)
 all_bottom = result.head(10)
 
-result = result_today.sort_values(by='day_before', axis = 0, ascending = False)
+result = result_today.sort_values(by='day_percent', axis = 0, ascending = False)
 today_top = result.head(10)
-result = result_today.sort_values(by='day_before', axis = 0)
+result = result_today.sort_values(by='day_percent', axis = 0)
 today_bottom = result.head(10)
+
+result = result_today.sort_values(by='volume', axis = 0, ascending = False)
+today_volume = result.head(10)
 
 reset('all_top')
 reset('all_bottom')
 reset('today_top')
 reset('today_bottom')
+reset('today_volume')
 
 all_top.to_csv(path_all_top, mode = 'w')
 all_bottom.to_csv(path_all_bottom, mode = 'w')
 today_top.to_csv(path_today_top, mode = 'w')
 today_bottom.to_csv(path_today_bottom, mode = 'w')
+today_volume.to_csv(path_today_volume, mode = 'w')
