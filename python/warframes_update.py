@@ -89,6 +89,8 @@ def warframe_crawling(item, path, path_0):
 startTime = time.time()
 
 input_items = input_warframe.input_item('warframes')
+pool = Pool(processes = 4)
+
 
 for i, v in enumerate(input_items):
     item = str(v) + '_set'

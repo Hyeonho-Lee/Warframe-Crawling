@@ -1,0 +1,718 @@
+{
+    "warframe_mods": [
+        {
+            "name": "adaptation",
+            "type": "warframe_mod",
+            "en_name": "Adaptation",
+            "kr_name": "어댑테이션"
+        },
+        {
+            "name": "adept_surge",
+            "type": "warframe_mod",
+            "en_name": "Adept Surge",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "adrenaline_boost",
+            "type": "warframe_mod",
+            "en_name": "Adrenaline Boost",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Aero Vantage",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Agility Drift",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Air Thrusters",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Anti-Flak Plating",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Anticipation",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Antitoxin",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Armored Acrobatics",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Armored Agility",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Armored Evade",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Armored Recovery",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Augur Accord",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Augur Message",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Augur Reach",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Augur Secrets",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Aviator",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Battering Maneuver",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Blind Rage",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Calculated Spring",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Coaction Drift",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Constitution",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "뭐지",
+            "type": "warframe_mod",
+            "en_name": "Continuity",
+            "kr_name": "뭐지"
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Cunning Drift",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Diamond Skin",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Endurance Drift",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Enemy Sense",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Energy Conversion",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Equilibrium",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Fast Deflection",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Final Act",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Firewalker",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Flame Repellent",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Fleeting Expertise",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Flow",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Follow Through",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Fortitude",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Gladiator Aegis",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Gladiator Finesse",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Gladiator Resolve",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Handspring",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Hastened Steps",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Health Conversion",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Heavy Impact",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Heightened Reflexes",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Hunter Adrenaline",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Ice Spring",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Insulation",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Intensify",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Lightning Dash",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Lightning Rod",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Maglev",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Master Thief",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Mecha Pulse",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Mobilize",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Motus Signal",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Narrow Minded",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Natural Talent",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "No Current Leap",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Overcharge Detectors",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Overcharged",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": " Overextended",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Pain Threshold",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Patagium",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Peculiar Bloom",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": " Peculiar Growth",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Piercing Step",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Power Drift",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Primed Continuity",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Primed Flow",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Primed Sure Footed",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Primed Vigor",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Proton Pulse",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Provoked",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Quick Charge",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Quick Thinking",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Rage",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Rapid Resilience",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Redirection",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Reflection",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Reflex Guard",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Rending Turn",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Retribution",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Rime Vault",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Rising Skill",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Rolling Guard",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Rush",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Searing Leap",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Shock Absorbers",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Speed Drift",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Stealth Drift",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Steel Fiber",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Strain Consume",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Streamline",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Streamlined Form",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Stretch",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Sure Footed",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Surplus Diverters",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Synth Reflex",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Tactical Retreat",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Tek Collateral",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Tempered Bound",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Thief's Wit",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Toxic Flight",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Transient Fortitude",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Umbral Fiber",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Umbral Intensify",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Umbral Vitality",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Undying Will",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Venomous Rise",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Vigilante Pursuit",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Vigilante Vigor",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Vigor",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Vigorous Swap",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Vital Systems Bypass",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Vitality",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Voltaic Lance",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "warframe_mod",
+            "en_name": "Warm Coat",
+            "kr_name": ""
+        }
+    ]
+}

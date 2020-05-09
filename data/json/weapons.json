@@ -329,6 +329,12 @@
             "type": "melee",
             "en_name": "Venka Prime",
             "kr_name": "벤카 프라임"
+        },
+        {
+            "name": "tipedo_prime",
+            "type": "melee",
+            "en_name": "Tipedo Prime",
+            "kr_name": "티페도 프라임"
         }
     ]
 }
