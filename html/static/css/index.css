@@ -78,7 +78,8 @@ ul, ol, li {
 }
 
 .header_search {
-    background-color: #ffffff;
+    margin: 0;
+    background-color: #2a2a2a;
     float: left;
     
     width: 40%;
@@ -261,29 +262,43 @@ ul, ol, li {
     border: 1px solid #000000;
 }
 
-.text_box {
-    background-color: #2a2a2a;
-    height: 100%;
-    width: 100%;
-    vertical-align: middle;
-    white-space: nowrap;
+.auto_search {
     position: relative;
 }
 
-.text_box input {
+.auto_search input {
     border: none;
     outline: none;
     width: 80%;
     height: 45px;
-    top: 4%;
-    left: 0%;
+    top: 0;
+    left: 0;
     background: #ffffff;
     font-size: 15px;
     color: #2a2a2a;
     padding-left: 10px;
     padding-right: 10px;
+    transform: translate(4%, 4%);
     position: absolute;
-    z-index: 2;
+    z-index: 1;
+}
+
+.auto_search ul {
+    width: 100%;
+    margin: 60px 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+.auto_search span i{
+    top: 0%;
+    left: 87%;
+    transform: translate(50%, 100%);
+    color: #2a2a2a;
+    position: absolute;
+    z-index: 3;
 }
 
 .text_boxs {
@@ -296,15 +311,6 @@ ul, ol, li {
     left: -6%;
     position: absolute;
     z-index: 1;
-}
-
-.text_box span{
-    top: 50%;
-    left: 87%;
-    transform: translate(50%, -50%);
-    color: #2a2a2a;
-    position: absolute;
-    z-index: 3;
 }
 
 .text_box input:hover, .text_box input:hover:focus, .text_box input:active{
@@ -822,6 +828,11 @@ ul, ol, li {
         max-width: auto;
     }
     
+    .auto_search input {
+        width: 50%;
+        transform: translate(20%, 4%);
+    }
+    
     .item_name {
         margin: 0 0px;
 
@@ -877,7 +888,7 @@ ul, ol, li {
     }
     
     .text_boxs {
-        left: 5%;
+        left: 7%;
         width: 86%;
     }
     
@@ -896,6 +907,11 @@ ul, ol, li {
     
     .footer_email a {
         font-size: 10px;
+    }
+    
+    .auto_search input {
+        width: 50%;
+        transform: translate(32%, 4%);
     }
 }
 

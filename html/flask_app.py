@@ -10,6 +10,7 @@ from flask import Flask, url_for, render_template, request, redirect, session
 #https://icons8.com/icons 아이콘 사이트
 #https://pixlr.com/e/ 포토샵 사이트
 #https://zamezzz.tistory.com/309
+#https://offbyone.tistory.com/260
 
 #=======================================================================#
 
@@ -29,6 +30,10 @@ def read_csv(name, types):
     if types == 'result':
         name_csv = name + '.csv'
         path = '/workspace/crawling/data/csv/{types}/{name_csv}'.format(types = types, name_csv = name_csv)
+    elif types == 'weapon_etc':
+        name_csv = name + '.csv'
+        path = '/workspace/crawling/data/csv/weapon/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
+        print(path)
     else:
         path = '/workspace/crawling/data/csv/{types}/{name}/{name_csv}'.format(types = types, name = names, name_csv = name_csv)
     get_path = path
@@ -55,13 +60,28 @@ def input_item(etc):
 
     return name_data
 
+def input_item_kr(etc):
+    item = str(etc)
+    path = '/workspace/crawling/data/json/{etc}.json'.format(etc = item)
+    with open(path, "r") as json_file:
+        json_data = json.load(json_file)
+
+    name_data = []
+
+    for i in json_data[item]:
+        name_data.append(str(i["kr_name"]))
+
+    return name_data
+
 def get_all_item():
     all_item = []
+    all_item_kr = []
     all_path = []
     all_path_0 = []
     all_path_1 = []
 
     input_items_0 = input_item('warframes')
+    input_items_0_kr = input_item_kr('warframes')
 
     for i, v in enumerate(input_items_0):
         item = str(v) + '_set'
@@ -74,7 +94,12 @@ def get_all_item():
         all_path_0.append(path_0)
         all_path_1.append(path_1)
 
+    for i, v in enumerate(input_items_0_kr):
+        item = str(v)
+        all_item_kr.append(item)
+
     input_items_1 = input_item('weapons')
+    input_items_1_kr = input_item_kr('weapons')
 
     for i, v in enumerate(input_items_1):
         item = str(v) + '_set'
@@ -86,8 +111,30 @@ def get_all_item():
         all_path.append(path)
         all_path_0.append(path_0)
         all_path_1.append(path_1)
+    
+    for i, v in enumerate(input_items_1_kr):
+        item = str(v)
+        all_item_kr.append(item)
+        
+    input_items_2 = input_item('weapons_etc')
+    input_items_2_kr = input_item_kr('weapons_etc')
 
-    return all_item, all_path, all_path_0, all_path_1
+    for i, v in enumerate(input_items_2):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/weapon/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/weapon/' + item
+        img = str(v.title())
+        path_1 = 'image/item_image/weapon/' + img + '/' + img + '.png'
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
+        all_path_1.append(path_1)
+    
+    for i, v in enumerate(input_items_2_kr):
+        item = str(v)
+        all_item_kr.append(item)
+
+    return all_item, all_item_kr, all_path, all_path_0, all_path_1
 
 def change_to_kr(csv_name, etc, text):
     item_name = []
@@ -100,6 +147,9 @@ def change_to_kr(csv_name, etc, text):
     with open('/workspace/crawling/data/json/weapons.json', 'r') as file_1:
         json_data_1 = json.load(file_1)
     result_data_1 = json_data_1['weapons']
+    with open('/workspace/crawling/data/json/weapons_etc.json', 'r') as file_2:
+        json_data_2 = json.load(file_2)
+    result_data_2 = json_data_2['weapons_etc']
 
     for i in range(0, len(result_data)):
         result = result_data[i]['name']
@@ -113,6 +163,14 @@ def change_to_kr(csv_name, etc, text):
         result = result_data_1[i]['name']
         en_result = result_data_1[i]['en_name']
         kr_result = result_data_1[i]['kr_name']
+        item_name.append(str(result))
+        item_en_name.append(str(en_result))
+        item_kr_name.append(str(kr_result))
+    
+    for i in range(0, len(result_data_2)):
+        result = result_data_2[i]['name']
+        en_result = result_data_2[i]['en_name']
+        kr_result = result_data_2[i]['kr_name']
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
@@ -170,7 +228,7 @@ def index():
     today_volume = read_csv('today_volume', 'result')
     today_all = read_csv('result', 'result')
 
-    all_item, all_path, all_path_0, all_path_1 = get_all_item()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
     def find_path(name, types):
         if types == 'path':
             for i, v in enumerate(all_item):
@@ -322,10 +380,12 @@ def result(get_name):
 
     input_warframe = input_item('warframes')
     input_weapon = input_item('weapons')
+    input_weapon_etc = input_item('weapons_etc')
 
     get_find = False
     is_warframe = False
     is_weapon = False
+    is_weapon_etc = False
 
     if get_find == False:
         for find in input_warframe:
@@ -342,7 +402,16 @@ def result(get_name):
                 get_find = True
                 is_weapon = True
                 break
-    if(is_warframe == False and is_weapon == False):
+    
+    if get_find == False:
+        for finds in input_weapon_etc:
+            if name in finds:
+                result = read_csv(name, 'weapon_etc')
+                get_find = True
+                is_weapon_etc = True
+                break
+
+    if(is_warframe == False and is_weapon == False and is_weapon_etc == False):
         return redirect('/error')
 
     if get_find == True:

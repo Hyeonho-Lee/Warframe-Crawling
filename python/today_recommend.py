@@ -41,6 +41,16 @@ def get_all():
         all_item.append(item)
         all_path.append(path)
         all_path_0.append(path_0)
+        
+    input_items_2 = input_warframe.input_item('weapons_etc')
+
+    for i, v in enumerate(input_items_2):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/weapon/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/weapon/' + item
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
 
     return all_item, all_path, all_path_0
 
