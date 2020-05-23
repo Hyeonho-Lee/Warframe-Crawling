@@ -111,11 +111,11 @@ def get_all_item():
         all_path.append(path)
         all_path_0.append(path_0)
         all_path_1.append(path_1)
-    
+
     for i, v in enumerate(input_items_1_kr):
         item = str(v)
         all_item_kr.append(item)
-        
+
     input_items_2 = input_item('weapons_etc')
     input_items_2_kr = input_item_kr('weapons_etc')
 
@@ -129,7 +129,7 @@ def get_all_item():
         all_path.append(path)
         all_path_0.append(path_0)
         all_path_1.append(path_1)
-    
+
     for i, v in enumerate(input_items_2_kr):
         item = str(v)
         all_item_kr.append(item)
@@ -166,7 +166,7 @@ def change_to_kr(csv_name, etc, text):
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
-    
+
     for i in range(0, len(result_data_2)):
         result = result_data_2[i]['name']
         en_result = result_data_2[i]['en_name']
@@ -181,7 +181,7 @@ def change_to_kr(csv_name, etc, text):
     result_all = []
     result_value = ''
     types = etc
-    
+
     if types == 'in':
         for i in range(0, len(resource)):
             result = resource['name'][i]
@@ -219,7 +219,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    
+
     today_datetime = get_today_date()
     all_top = read_csv('all_top', 'result')
     all_bottom = read_csv('all_bottom', 'result')
@@ -329,7 +329,7 @@ def index():
         t_bottom_path.append(str(result))
         t_bottom_path_0.append(str(result_0))
         t_bottom_path_1.append(str(result_1))
-    
+
     t_all_name = []
     t_all_kr_name = []
     t_all_price = []
@@ -357,7 +357,7 @@ def index():
         t_all_path.append(str(result))
         t_all_path_0.append(str(result_0))
         t_all_path_1.append(str(result_1))
-    
+
     label = '가장 많은 거래량'
     xlabels = []
     dataset = []
@@ -374,13 +374,48 @@ def tests():
 ######################################################################
 @app.route('/result/<get_name>')
 def result(get_name):
-    result_name = '%s' % get_name
-    name = change_to_kr('all_top', 'out', result_name)
-    name = name.replace('_set', '')
+    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    def find_path(name, types):
+        if types == 'path':
+            for i, v in enumerate(all_item):
+                if str(v) == name:
+                    path = all_path[i]
+                    return path
+        elif types == 'path_0':
+            for i, v in enumerate(all_item):
+                if str(v) == name:
+                    path_0 = all_path_0[i]
+                    return path_0
+        elif types == 'path_1':
+            for i, v in enumerate(all_item):
+                if str(v) == name:
+                    path_1 = all_path_1[i]
+                    return path_1
 
     input_warframe = input_item('warframes')
     input_weapon = input_item('weapons')
     input_weapon_etc = input_item('weapons_etc')
+
+    result_name = '%s' % get_name
+    for i, v in enumerate(all_item_kr):
+        if str(v) == result_name:
+            result_name = all_item[i]
+    name = result_name.replace('_set', '')
+
+    name_set = name.replace(' ', '_')
+    name_sets = name_set + '_set'
+
+    for i, v in enumerate(all_item):
+        if str(v) == result_name:
+            kr_name = all_item_kr[i]
+
+    for i in input_weapon_etc:
+        if str(name) in i:
+            name_sets = name
+
+    search_path = find_path(name_sets, 'path')
+    search_path_0 = find_path(name_sets, 'path_0')
+    search_path_1 = find_path(name_sets, 'path_1')
 
     get_find = False
     is_warframe = False
@@ -394,7 +429,7 @@ def result(get_name):
                 get_find = True
                 is_warframe = True
                 break
-    
+
     if get_find == False:
         for finds in input_weapon:
             if name in finds:
@@ -402,7 +437,7 @@ def result(get_name):
                 get_find = True
                 is_weapon = True
                 break
-    
+
     if get_find == False:
         for finds in input_weapon_etc:
             if name in finds:
@@ -416,6 +451,9 @@ def result(get_name):
 
     if get_find == True:
         if(result.empty != True):
+
+            today_datetime = get_today_date()
+
             label = 'market'
             xlabels = []
             dataset = []
@@ -423,6 +461,15 @@ def result(get_name):
             xlabels.reverse()
             dataset = result['avg_price'].tolist()
             dataset.reverse()
+
+            all_datetime = result['datetime'].tolist()
+            all_price = result['avg_price'].tolist()
+            all_volume = result['volume'].tolist()
+            all_day_before = result['day_before'].tolist()
+            all_yn_before = result['yn_before'].tolist()
+            all_day_percent = result['day_percent'].tolist()
+            all_count = len(all_datetime)
+
             return render_template('result.html', **locals())
         else:
             return redirect('/error')
