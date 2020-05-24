@@ -24,13 +24,15 @@
                 input.addEventListener('click', function(){
                     var all_items = {{ all_item_kr | tojson }};
                     new AutoComplete(document.querySelector('#item_name'), all_items);
-                })
+                });
             }
         </script>
         <div>
             <ul class="header">
                 <li class="header_logo">
-                    <a>Warframe<br>Trade Stats</a>
+                    <a href="https://rpc-flask-app.run.goorm.io/">
+                        <img alt="WTS" src="{{ url_for('static', filename = './image/icon/logo.png', v = 0.1) }}">
+                    </a>
                 </li>
                 <li class="header_search">
                     <script>
@@ -42,7 +44,23 @@
                                 var links = 'result/' + String(msg);
                                 location.href = links;
                             }
-                        }
+                        };
+                        
+                        function just_five() {
+                            var ul_get = document.getElementsByClassName('li_count');
+                            var ul_get_count = ul_get.length;
+                            console.log(ul_get_count);
+                            /*ul_get[0].style.display = "block";
+                            ul_get[1].style.display = "block";
+                            ul_get[2].style.display = "block";
+                            ul_get[3].style.display = "block";
+                            ul_get[4].style.display = "block";
+                            for(var i=5; i<ul_get.length; i++) {
+                                ul_get[i].style.display = "none";
+                            };*/
+                        };
+                        
+                        
                     </script>
                     <div class="auto_search">
                         <div class="text_boxs"></div>
@@ -56,19 +74,19 @@
                     <ul class="header_menu_nav">
                         <li>
                             <div class="text_boxss_1"></div>
-                            <a class="text_menu_1">TOP/BOTTOM</a>
+                            <a class="text_menu_1">공지사항</a>
                         </li>
                         <li>
                             <div class="text_boxss_2"></div>
-                            <a class="text_menu_2">거래 현황</a>
+                            <a class="text_menu_2">거래 현황(준비중)</a>
                         </li>
                         <li>
                             <div class="text_boxss_3"></div>
-                            <a class="text_menu_3">시세 분석</a>
+                            <a class="text_menu_3">시세 분석(준비중)</a>
                         </li>
                         <li>
                             <div class="text_boxss_4"></div>
-                            <a class="text_menu_4">백테스트</a>
+                            <a class="text_menu_4">백테스트(준비중)</a>
                         </li>
                     </ul>
                 </li>
