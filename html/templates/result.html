@@ -85,9 +85,12 @@
         <div class="menu">
             
             <div class="content_1">
-                <div class="value_0">
-                    <div class="market_button">
-                        <a href="https://warframe.market/items/{{ name_sets }}" target="_blank">마켓 거래하기</a>
+                <div class="labels">
+                    <a>정보</a>
+                </div>
+                <div class="value_2">
+                    <div class="name_button">
+                        <a>{{ kr_name }}</a>
                     </div>
                 </div>
                 <div class="value_1">
@@ -95,9 +98,9 @@
                         <img src="{{ url_for('static', filename = search_path_1, v = 0.1) }}">
                     </div>
                 </div>
-                <div class="value_2">
-                    <div class="name_button">
-                        <a>{{ kr_name }}</a>
+                <div class="value_0">
+                    <div class="market_button">
+                        <a href="https://warframe.market/items/{{ name_sets }}" target="_blank">마켓 거래하기</a>
                     </div>
                 </div>
                 <div class="value_3">
@@ -136,9 +139,13 @@
             </div>
                 
             <div class = "content_0" style="display: table;">
-                <div style="width: 100%; display: table-cell; vertical-align: middle;">
+                <div class="labelss">
+                    <a>그래프</a>
+                </div>
+                <div class="labelss_float">
+                <div class="labelss_floats">
                     <div style="width:99%;">
-                        <canvas id="canvas" style="height: 75vh; width:100%;"></canvas>
+                        <canvas id="canvas" style="height: 68vh; width:100%;"></canvas>
                     </div>
                     <script>
                         new Chart(document.getElementById("canvas"), {
@@ -158,7 +165,7 @@
                                 responsive: false,
                                 title: {
                                     display: true,
-                                    text: '{{ name }} 그래프'
+                                    text: ''
                                 },
                                 tooltips: {
                                     mode: 'index',
@@ -189,9 +196,13 @@
 
                     </script>
                 </div>
+                </div>
             </div>
                 
             <div class="content_2">
+                <div class="labels">
+                    <a>테이블</a>
+                </div>
                 <div class="center">
                     <div class="center">
                         <table id="table_2" class="display cell-border" border="0">

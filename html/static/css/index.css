@@ -14,6 +14,63 @@ ul, ol, li {
     padding: 0;
 }
 
+.label {
+    width: 100%;
+    height: 30px;
+    margin: -10px 0;
+    background-color: #323232;
+    display: table;
+}
+
+.label a {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.labels {
+    width: 100%;
+    height: 30px;
+    margin: -10px 0;
+    background-color: #323232;
+    display: table;
+    float: left;
+}
+
+.labels a {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.labelss {
+    width: 100%;
+    height: 30px;
+    margin: -10px 0;
+    background-color: #323232;
+    display: table;
+    float: left;
+}
+
+.labelss a {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.labelss_float {
+    margin: 40px 0;
+}
+
 .header {
     background-color: #2a2a2a;
     height: 60px;
@@ -385,6 +442,7 @@ ul, ol, li {
     
     padding: 10px;
     margin: 5px auto;
+    padding: 0;
     
     float: left;
     height: 750px;
@@ -413,6 +471,7 @@ ul, ol, li {
     
     padding: 10px;
     margin: 5px auto;
+    padding: 0;
     
     float: left;
     height: 750px;
@@ -523,6 +582,7 @@ ul, ol, li {
     
     padding: 10px;
     margin: 5px auto;
+    padding: 0;
     
     float: left;
     height: 750px;

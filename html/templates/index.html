@@ -84,6 +84,9 @@
             <div class = "menu">
             
                 <div class = "content_1">
+                    <div class="label">
+                        <a>추천</a>
+                    </div>
                     <div class = "content_1_img">
                         <div class = "content_1_main0" onClick="location.href='/result/{{ a_top_name[0] }}'">
                             <img alt="{{ a_top_name[0] }}" src="{{ url_for('static', filename = a_top_path_1[0], v = 0.1) }}">
@@ -107,7 +110,11 @@
                 </div>
                 
                 <div class = "content_0" style="display: table;">
-                    <div style="height: 100%; width: 100%; display: table-cell; vertical-align: middle;">
+                    <div class="label">
+                        <a>오늘의 수치 TOP 10</a>
+                    </div>
+                    <div class="labelss_float">
+                    <div style="labelss_floats">
                         <div class="buttons">
                             <button class="button_up" onclick="top_change()">
                                 증가중
@@ -177,15 +184,18 @@
                         </table>
                         
                     </div>
+                    </div>
                 </div>
                 
                 <div class="content_2">
+                    <div class="label">
+                        <a>테이블</a>
+                    </div>
                     <div class="center">
                         <table id="table_2" class="display cell-border" border="0">
                                 <thead>
                                     <tr>
                                         <th>아이템</th>
-                                        <th>타입</th>
                                         <th>가격</th>
                                         <th></th>
                                         <th>전일대비</th>
@@ -198,7 +208,6 @@
                                     {% for i in range(1, t_all_name_count + 1 ) %}
                                     <tr class = "items" onclick="">
                                         <td class="item2_name"><a href='result/{{ t_all_kr_name[i - 1] }}'>{{ t_all_kr_name[i - 1] }}</a></td>
-                                        <td class="item2_name"><a>주무기</a></td>
                                         <td class="item2_name"><a>{{ t_all_price[i - 1] }}</a></td>
                                         <td class="item2_name"><a>{{ t_all_befores[i - 1] }}</a></td>
                                         <td class="item2_name"><a>{{ t_all_before[i - 1] }}</a></td>
