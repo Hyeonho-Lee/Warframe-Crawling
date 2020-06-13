@@ -851,13 +851,6 @@ ul, ol, li {
     height: 100%;
 }
 
-.footer_count_2 {
-    margin: 15px 0px;
-    float: left;
-    width: 50%;
-    height: 100%;
-}
-
 @media screen and (max-width: 1620px) {
     
     .item_box {
