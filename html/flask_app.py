@@ -206,6 +206,7 @@ def get_today_date():
     date = result['datetime']
     datetime = str(date[0])
     return datetime
+
 """
 if os.path.isdir(get_path_0):
     make_file(get_path)
