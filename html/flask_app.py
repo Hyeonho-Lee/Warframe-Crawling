@@ -414,6 +414,7 @@ def tests():
 ######################################################################
 @app.route('/result/<get_name>')
 def result(get_name):
+    visit_count = get_visit()
     all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
     def find_path(name, types):
         if types == 'path':
@@ -516,6 +517,7 @@ def result(get_name):
 
 @app.route('/error')
 def error():
+    visit_count = get_visit()
     all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
     return render_template('error.html', **locals())
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd /workspace/crawling
 echo "자동 백업을 시작합니다"
 git status
 git add -A
