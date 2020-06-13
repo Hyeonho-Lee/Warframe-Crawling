@@ -1,5 +1,6 @@
 import os
 import json
+import datetime
 import pandas as pd
 import numpy as np
 from flask import Flask, url_for, render_template, request, redirect, session
@@ -7,6 +8,7 @@ from flask import Flask, url_for, render_template, request, redirect, session
 #https://www.chartjs.org/
 #https://datatables.net/
 #https://rpc-flask-app.run.goorm.io/ 홈페이지 사이트
+#https://rpc-test-app.run.goorm.io/ 테스트 사이트
 #https://icons8.com/icons 아이콘 사이트
 #https://pixlr.com/e/ 포토샵 사이트
 #https://zamezzz.tistory.com/309
@@ -207,6 +209,38 @@ def get_today_date():
     datetime = str(date[0])
     return datetime
 
+def get_visit():
+    today = datetime.datetime.now()
+    year = str(today.year)
+    month = str(today.month)
+    day = str(today.day)
+
+    if len(month) == 1:
+        month = '0' + month
+
+    visit_count = session.get('visit_count') != 1
+    
+    with open('/workspace/crawling/data/json/visitant.json', "r") as json_visit:
+        visit_data = json.load(json_visit)
+    
+    if visit_count:
+        session['visit_count'] = 1
+
+        query_1 = dict()
+        year_month = dict()
+        year_month["year_month"] = year + month
+        year_month["day"] = day
+        result = session.get('visit_count')
+        year_month["count"] = visit_data["date"]["count"] + 1
+        query_1["date"] = year_month
+
+        with open('/workspace/crawling/data/json/visitant.json', 'w', encoding='utf-8') as update_visit:
+            json.dump(query_1, update_visit, indent = 4)
+    
+    with open('/workspace/crawling/data/json/visitant.json', "r") as json_visits:
+        visits_data = json.load(json_visits)
+    result = visits_data["date"]["count"]
+    return result
 """
 if os.path.isdir(get_path_0):
     make_file(get_path)
@@ -216,10 +250,15 @@ else:
     make_file(get_path)
 """
 #=======================================================================#
+
 app = Flask(__name__)
+random = os.urandom(24)
+app.secret_key = random
 
 @app.route('/')
 def index():
+
+    visit_count = get_visit()
 
     today_datetime = get_today_date()
     all_top = read_csv('all_top', 'result')
@@ -483,4 +522,4 @@ def error():
 #=======================================================================#
 if __name__ == '__main__':
     app.static_folder = 'static'
-    app.run(host = '0.0.0.0', port = '8080', debug = True)
+    app.run(host = '0.0.0.0', port = '8080')
