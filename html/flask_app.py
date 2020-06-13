@@ -521,6 +521,13 @@ def error():
     all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
     return render_template('error.html', **locals())
 
+######################################################################
+@app.route('/notice')
+def notice():
+    visit_count = get_visit()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    return render_template('notice.html', **locals())
+
 #=======================================================================#
 if __name__ == '__main__':
     app.static_folder = 'static'
