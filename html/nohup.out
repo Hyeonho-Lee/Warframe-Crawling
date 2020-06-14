@@ -5488,3 +5488,117 @@ json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes:
  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 172.17.0.1 - - [14/Jun/2020 07:00:41] "[37mGET / HTTP/1.1[0m" 200 -
 172.17.0.1 - - [14/Jun/2020 07:00:51] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:01:50] "[33mGET /notice/로키%20프라임 HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:01:52] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:01:53] "[33mGET /notice/로키%20프라임 HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:01:58] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:01:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:02:00] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:01] "[37mGET /static/image/item_image/warframe/Loki_Prime/Loki_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:11] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:13] "[37mGET /result/wukong_prime_set HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:16] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:25] "[37mGET /result/애쉬%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:26] "[37mGET /static/image/item_image/warframe/Ash_Prime/Ash_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:27] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:29] "[37mGET /result/wukong_prime_set HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:32] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:35] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:38] "[37mGET /result/애쉬%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:41] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/js/jquery-3.5.1.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/js/jquery-ui.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/icon/logo.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/warframe/Ivara_Prime/Ivara_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Sancti_Tigris/Sancti_Tigris.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Redeemer_Prime/Redeemer_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/warframe/Wukong_Prime/Wukong_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Machete_Wraith/Machete_Wraith.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Kronen_Prime/Kronen_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Prisma_Veritux/Prisma_Veritux.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Burston_Prime/Burston_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Pathocyst/Pathocyst.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Prisma_Tetra/Prisma_Tetra.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Orthos_Prime/Orthos_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:49] "[37mGET /static/image/item_image/weapon/Tiberon_Prime/Tiberon_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:53] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/js/jquery-ui.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/js/jquery-3.5.1.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/icon/logo.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Redeemer_Prime/Redeemer_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Kronen_Prime/Kronen_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/warframe/Wukong_Prime/Wukong_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/warframe/Ivara_Prime/Ivara_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Sancti_Tigris/Sancti_Tigris.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Machete_Wraith/Machete_Wraith.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Prisma_Veritux/Prisma_Veritux.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Tiberon_Prime/Tiberon_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Orthos_Prime/Orthos_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Pathocyst/Pathocyst.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Prisma_Tetra/Prisma_Tetra.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:02:57] "[37mGET /static/image/item_image/weapon/Burston_Prime/Burston_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:03:00] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:40] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:45] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:45] "[37mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:45] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:45] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:45] "[37mGET /static/js/jquery-ui.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:45] "[37mGET /static/js/jquery-3.5.1.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:46] "[37mGET /static/image/item_image/warframe/Ivara_Prime/Ivara_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:46] "[37mGET /static/image/item_image/weapon/Kronen_Prime/Kronen_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:47] "[37mGET /static/image/item_image/weapon/Kronen_Prime/Kronen_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:47] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:48] "[37mGET /static/image/item_image/weapon/Kronen_Prime/Kronen_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:11:48] "[37mGET /static/image/item_image/warframe/Ivara_Prime/Ivara_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:14:58] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:15:01] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:15:13] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:15:18] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:15:22] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:15:24] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:15:26] "[33mGET /notice/로키%20프라임 HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:15:30] "[33mGET /notice/로키%20프라임 HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:16:31] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:16:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:16:35] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:16:41] "[33mGET /notice/로키%20프라임 HTTP/1.1[0m" 404 -
+ * Serving Flask app "flask_app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+172.17.0.1 - - [14/Jun/2020 07:17:52] "[33mGET /notice/로키%20프라임 HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:17:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:17:53] "[33mGET /notice/로키%20프라임 HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:17:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:17:56] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:17:57] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:00] "[33mGET /result로키%20프라임 HTTP/1.1[0m" 404 -
+ * Serving Flask app "flask_app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /static/css/result.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /static/css/notice.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /static/image/icon/logo.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:29] "[37mGET /static/image/notice/rpc.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [14/Jun/2020 07:18:34] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:36] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [14/Jun/2020 07:18:37] "[37mGET / HTTP/1.1[0m" 200 -
