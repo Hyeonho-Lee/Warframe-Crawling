@@ -522,7 +522,7 @@ def error():
     return render_template('error.html', **locals())
 
 ######################################################################
-@app.route('/notice')
+@app.route('/notice/')
 def notice():
     visit_count = get_visit()
     all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
