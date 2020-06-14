@@ -4,14 +4,17 @@
     <head>
         <meta charset = "UTF-8">
         <meta name="viewport" content="user-scalable=0, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width" />
+        <meta http-equiv="Cache-Control" content="no-cache">
         <title>Warframe Trade Status</title>
         <!---------------------------------------------------------------------->
         <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/result.css', v = 0.1) }}" />
         <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/index.css', v = 0.1) }}" />
         <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/table.css', v = 0.1) }}" />
+        <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/notice.css', v = 0.1) }}" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;" rel="stylesheet">
         <!---------------------------------------------------------------------->
+        <script src="{{ url_for('static', filename = 'js/AutoComplete.min.js') }}" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169264096-1"></script>
@@ -23,7 +26,15 @@
         </script>
     </head>
     <body>
-        <script src="{{ url_for('static', filename = 'js/AutoComplete.min.js') }}" type="text/javascript"></script>
+        <script>
+            window.onload = function () {
+                var input = document.getElementById("item_name");
+                input.addEventListener('click', function(){
+                    var all_items = {{ all_item_kr | tojson }};
+                    new AutoComplete(document.querySelector('#item_name'), all_items);
+                });
+            };
+        </script>
         <div>
             <ul class="header">
                 <li class="header_logo">
@@ -55,7 +66,7 @@
                     <ul class="header_menu_nav">
                         <li>
                             <div class="text_boxss_1"></div>
-                            <a class="text_menu_1">공지사항</a>
+                            <a class="text_menu_1" href="notice/">공지사항</a>
                         </li>
                         <li>
                             <div class="text_boxss_2"></div>
@@ -77,9 +88,34 @@
             </ul>
         </div>
         
-        <div class = "menu">
-            <div style="background-color: #ffffff; float: left; width: 100%; height: 750px;">
-                오류!
+        <div class="menu">
+            <div style="background-color: #ffffff; float: left; width: 100%; min-height: 750px; height: auto;">
+                <div class="notice_0">
+                    <a>공지사항</a>
+                </div>
+                {% for i in range(0, len_data) %}
+                <hr>
+                <div class="notice_1">
+                    <div class="notice_image">
+                        <img alt="R.PC" src="{{ url_for('static', filename = image[i], v = 0.1) }}">
+                    </div>
+                    <div class="notice_write">
+                        <a>{{ write[i] }}</a>
+                    </div>
+                    <div class="notice_date">
+                        <a>{{ date[i] }}</a>
+                    </div>
+                    <div class="notice_subject">
+                        <a>{{ subject[i] }}</a>
+                    </div>
+                    <div class="notice_contents">
+                        {% autoescape false %}
+                        <a>{{ contents[i] | replace("#", "<br/>") }}</a>
+                        {% endautoescape %}
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
             </div>
         </div>
             
