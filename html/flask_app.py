@@ -526,6 +526,38 @@ def error():
 def notice():
     visit_count = get_visit()
     all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    
+    path = '/workspace/crawling/data/json/notice_data.json'
+    with open(path, "r", encoding="UTF-8") as json_file:
+        json_data = json.load(json_file, strict = False)
+        json_datas = json.dumps(json_data, ensure_ascii=False)
+
+    index = []
+    image = []
+    write = []
+    subject = []
+    contents = []
+    contents_image = []
+    date = []
+    len_data = len(json_data["notice"])
+    
+    for i in json_data["notice"]:
+        index.append(i["index"])
+        image.append(i["image"])
+        write.append(i["write"])
+        subject.append(i["subject"])
+        contents.append(i["contents"])
+        contents_image.append(i["contents_image"])
+        date.append(i["date"])
+    
+    index.reverse()
+    image.reverse()
+    write.reverse()
+    subject.reverse()
+    contents.reverse()
+    contents_image.reverse()
+    date.reverse()
+    
     return render_template('notice.html', **locals())
 
 #=======================================================================#
