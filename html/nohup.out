@@ -1,0 +1,32 @@
+172.17.0.1 - - [20/Jun/2020 04:01:45] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:01:53] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:04:08] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+ * Serving Flask app "flask_app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /static/css/notice.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /static/css/result.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /static/image/icon/logo.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[37mGET /static/image/notice/rpc.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [20/Jun/2020 04:22:46] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:48] "[37mGET /notice/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:53] "[37mGET /result/로키%20프라임 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:22:53] "[37mGET /static/image/item_image/warframe/Loki_Prime/Loki_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:23:01] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:23:03] "[37mGET /result/prisma_dual_cleavers HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[37mGET /result/prisma_dual_cleavers HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[37mGET /static/css/result.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[37mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[37mGET /static/image/icon/logo.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[37mGET /static/image/item_image/weapon/Prisma_Dual_Cleavers/Prisma_Dual_Cleavers.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [20/Jun/2020 04:24:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
