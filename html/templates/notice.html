@@ -42,6 +42,42 @@
                         <img alt="WTS" src="{{ url_for('static', filename = './image/icon/logo.png', v = 0.1) }}">
                     </a>
                 </li>
+                <li class="header_menubar">
+                    <script>
+                        function pop_menu(){
+                            var button = document.getElementById("x_button");
+                            var close = document.getElementById("menubar");
+                            button.style.display = "table";
+                            close.style.display = "block";
+                        };
+                        
+                        function close_menu(){
+                            var button = document.getElementById("x_button");
+                            var close = document.getElementById("menubar");
+                            button.style.display = "none";
+                            close.style.display = "none";
+                        };   
+                    </script>
+                    <span class="icon_1" onclick="pop_menu()"><i class="fa fa-bars fa-2x"></i></span>
+                    <span class="icon_2" onclick="close_menu()" id="x_button"><i class="fa fa-times fa-2x"></i></span>
+                    <ul class="mobile_menus" id="menubar">
+                        <div class="text_menus_0">
+                            <a>메뉴</a>
+                        </div>
+                        <li>
+                            <a class="text_menus_1" href="http://rpc-flask-app.run.goorm.io/notice">공지사항</a>
+                        </li>
+                        <li>
+                            <a class="text_menus_2">거래 현황(준비중)</a>
+                        </li>
+                        <li>
+                            <a class="text_menus_3">시세 분석(준비중)</a>
+                        </li>
+                        <li>
+                            <a class="text_menus_4">백테스트(준비중)</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="header_search">
                     <script>
                         function input_search(){

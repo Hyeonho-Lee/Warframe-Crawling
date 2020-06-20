@@ -408,11 +408,11 @@ def index():
     return render_template('index.html', **locals())
 
 ######################################################################
-@app.route('/tests')
+@app.route('/tests/')
 def tests():
     return render_template('demo_0.html')
 ######################################################################
-@app.route('/result/<get_name>')
+@app.route('/result/<get_name>/')
 def result(get_name):
     visit_count = get_visit()
     all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
@@ -561,6 +561,15 @@ def notice():
     return render_template('notice.html', **locals())
 
 #=======================================================================#
+
+@app.route('/temp/')
+def temp():
+    visit_count = get_visit()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    
+    return render_template('temp.html', **locals())
+
+#=======================================================================#
 if __name__ == '__main__':
     app.static_folder = 'static'
-    app.run(host = '0.0.0.0', port = '8080')
+    app.run(host = '0.0.0.0', port = '8080', debug=True)
