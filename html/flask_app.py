@@ -36,6 +36,14 @@ def read_csv(name, types):
         name_csv = name + '.csv'
         path = '/workspace/crawling/data/csv/weapon/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
         print(path)
+    elif types == 'aura_mods':
+        name_csv = name + '.csv'
+        path = '/workspace/crawling/data/csv/mod/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
+        print(path)
+    elif types == 'warframe_mods':
+        name_csv = name + '.csv'
+        path = '/workspace/crawling/data/csv/mod/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
+        print(path)
     else:
         path = '/workspace/crawling/data/csv/{types}/{name}/{name_csv}'.format(types = types, name = names, name_csv = name_csv)
     get_path = path
@@ -135,6 +143,42 @@ def get_all_item():
     for i, v in enumerate(input_items_2_kr):
         item = str(v)
         all_item_kr.append(item)
+    
+    input_items_3 = input_item('aura_mods')
+    input_items_3_kr = input_item_kr('aura_mods')
+
+    for i, v in enumerate(input_items_3):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/mod/' + item
+        img = str(v.title())
+        path_1 = 'image/item_image/mod/' + img + '/' + img + '.png'
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
+        all_path_1.append(path_1)
+
+    for i, v in enumerate(input_items_3_kr):
+        item = str(v)
+        all_item_kr.append(item)
+    
+    input_items_4 = input_item('warframe_mods')
+    input_items_4_kr = input_item_kr('warframe_mods')
+
+    for i, v in enumerate(input_items_4):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/mod/' + item
+        img = str(v.title())
+        path_1 = 'image/item_image/mod/' + img + '/' + img + '.png'
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
+        all_path_1.append(path_1)
+
+    for i, v in enumerate(input_items_4_kr):
+        item = str(v)
+        all_item_kr.append(item)
 
     return all_item, all_item_kr, all_path, all_path_0, all_path_1
 
@@ -152,6 +196,12 @@ def change_to_kr(csv_name, etc, text):
     with open('/workspace/crawling/data/json/weapons_etc.json', 'r') as file_2:
         json_data_2 = json.load(file_2)
     result_data_2 = json_data_2['weapons_etc']
+    with open('/workspace/crawling/data/json/aura_mods.json', 'r') as file_3:
+        json_data_3 = json.load(file_3)
+    result_data_3 = json_data_3['aura_mods']
+    with open('/workspace/crawling/data/json/warframe_mods.json', 'r') as file_4:
+        json_data_4 = json.load(file_4)
+    result_data_4 = json_data_4['warframe_mods']
 
     for i in range(0, len(result_data)):
         result = result_data[i]['name']
@@ -173,6 +223,22 @@ def change_to_kr(csv_name, etc, text):
         result = result_data_2[i]['name']
         en_result = result_data_2[i]['en_name']
         kr_result = result_data_2[i]['kr_name']
+        item_name.append(str(result))
+        item_en_name.append(str(en_result))
+        item_kr_name.append(str(kr_result))
+    
+    for i in range(0, len(result_data_3)):
+        result = result_data_3[i]['name']
+        en_result = result_data_3[i]['en_name']
+        kr_result = result_data_3[i]['kr_name']
+        item_name.append(str(result))
+        item_en_name.append(str(en_result))
+        item_kr_name.append(str(kr_result))
+    
+    for i in range(0, len(result_data_4)):
+        result = result_data_4[i]['name']
+        en_result = result_data_4[i]['en_name']
+        kr_result = result_data_4[i]['kr_name']
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
@@ -436,6 +502,8 @@ def result(get_name):
     input_warframe = input_item('warframes')
     input_weapon = input_item('weapons')
     input_weapon_etc = input_item('weapons_etc')
+    input_aura_mods = input_item('aura_mods')
+    input_warframe_mods = input_item('warframe_mods')
 
     result_name = '%s' % get_name
     for i, v in enumerate(all_item_kr):
@@ -454,6 +522,14 @@ def result(get_name):
         if str(name) in i:
             name_sets = name
 
+    for i in input_aura_mods:
+        if str(name) in i:
+            name_sets = name
+    
+    for i in input_warframe_mods:
+        if str(name) in i:
+            name_sets = name
+
     search_path = find_path(name_sets, 'path')
     search_path_0 = find_path(name_sets, 'path_0')
     search_path_1 = find_path(name_sets, 'path_1')
@@ -462,10 +538,12 @@ def result(get_name):
     is_warframe = False
     is_weapon = False
     is_weapon_etc = False
+    is_aura_mods = False
+    is_warframe_mods = False
 
     if get_find == False:
-        for find in input_warframe:
-            if name in find:
+        for finds in input_warframe:
+            if name in finds:
                 result = read_csv(name, 'warframe')
                 get_find = True
                 is_warframe = True
@@ -487,7 +565,23 @@ def result(get_name):
                 is_weapon_etc = True
                 break
 
-    if(is_warframe == False and is_weapon == False and is_weapon_etc == False):
+    if get_find == False:
+        for finds in input_aura_mods:
+            if name in finds:
+                result = read_csv(name, 'aura_mods')
+                get_find = True
+                is_aura_mods = True
+                break
+    
+    if get_find == False:
+        for finds in input_warframe_mods:
+            if name in finds:
+                result = read_csv(name, 'warframe_mods')
+                get_find = True
+                is_aura_mods = True
+                break
+
+    if(is_warframe == False and is_weapon == False and is_weapon_etc == False and is_aura_mods == False and is_warframe_mods == False):
         return redirect('/error')
 
     if get_find == True:

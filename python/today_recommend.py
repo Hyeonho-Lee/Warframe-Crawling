@@ -51,6 +51,26 @@ def get_all():
         all_item.append(item)
         all_path.append(path)
         all_path_0.append(path_0)
+        
+    input_items_3 = input_warframe.input_item('aura_mods')
+
+    for i, v in enumerate(input_items_3):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/mod/' + item
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
+
+    input_items_4 = input_warframe.input_item('warframe_mods')
+
+    for i, v in enumerate(input_items_4):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/mod/' + item
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
 
     return all_item, all_path, all_path_0
 
@@ -99,8 +119,13 @@ for i, v in enumerate(item):
     make_file(path_1)
 
 result_today = read_csv(path_1)
+
 del result_today['level_0']
 del result_today['index']
+remove_data = result_today[result_today['avg_price'] <= 30].index
+result_today = result_today.drop(remove_data)
+remove_datas = result_today[result_today['volume'] < 10].index
+result_today = result_today.drop(remove_datas)
 
 result = result_today.sort_values(by='lank', axis = 0, ascending = False)
 result = result.reset_index()
