@@ -35,11 +35,14 @@ def warframe_crawling(item, path, path_0):
         json_data_1 = json.dumps(json_data, indent = 4)
         file.write(json_data_1)
 
-    warframe_data = json_data_1    
+    warframe_data = json_data_1
     
     json_data = json.loads(warframe_data)
 
     result_data = pd.DataFrame(json_data['payload']['statistics_closed']['90days'])
+    
+    result_data = result_data[(result_data['mod_rank'] == 0)]
+    #print(result_data)
     
     datetime = []
     avg_price = []
@@ -89,6 +92,18 @@ def warframe_crawling(item, path, path_0):
 startTime = time.time()
 
 input_items = input_warframe.input_item('aura_mods')
+
+for i, v in enumerate(input_items):
+    item = str(v)
+    path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+    path_0 = '/workspace/crawling/data/csv/mod/' + item
+    
+    save_data = warframe_crawling(item, path, path_0)
+    #save_png = data_result.write_plot(item)
+    endTime = time.time() - startTime
+    print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
+
+input_items = input_warframe.input_item('warframe_mods')
 
 for i, v in enumerate(input_items):
     item = str(v)

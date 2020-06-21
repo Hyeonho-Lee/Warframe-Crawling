@@ -62,6 +62,20 @@ for i, v in enumerate(input_items):
     endTime = time.time() - startTime
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
 
+input_items = input_warframe.input_item('warframe_mods')
+
+for i, v in enumerate(input_items):
+    item = v.replace('_prime', '/')
+    item = item.title()
+    item = item.replace('/', '_Prime')
+    
+    path = '/workspace/crawling/html/static/image/item_image/mod/' + item + '/' + item + '.png'
+    path_0 = '/workspace/crawling/html/static/image/item_image/mod/' + item
+    
+    save_data = image_crawling(item, path, path_0, 'mod')
+    endTime = time.time() - startTime
+    print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
+
 print("업데이트가 모두 완료했습니다.")
 
 ######################################################
