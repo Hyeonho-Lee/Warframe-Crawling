@@ -314,8 +314,8 @@ ul, ol, li {
 }
 
 .mobile_menus {
-    width: 375px;
-    height: 1000px;
+    width: 300px;
+    height: 455px;
     background: #ff7373;
     top: -20%;
     left: -25%;
@@ -334,7 +334,7 @@ ul, ol, li {
 }
 
 .text_menus_0 {
-    width: 375px;
+    width: 300px;
     height: 55px;
     background: #2a2a2a;
     display: table;

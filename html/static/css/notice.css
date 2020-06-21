@@ -93,3 +93,18 @@ hr {
     float: left;
     margin: 12px 6px;
 }
+
+@media screen and (max-width: 750px) {
+    .notice_date {
+        width: 85%;
+    }
+    
+    .notice_write {
+        width: 85%;
+    }
+    
+    .notice_image img {
+        max-width: 35px;
+        max-height: 35px;
+    }
+}
