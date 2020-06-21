@@ -1,0 +1,280 @@
+{
+    "weapon_mods": [
+        {
+            "name": "",
+            "type": "primary_mod",
+            "en_name": "Aero Periphery",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "primary_mod",
+            "en_name": "Hunter Munitions",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "primary_mod",
+            "en_name": "Hunter Track",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "primary_mod",
+            "en_name": "Vigilante Armaments",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "primary_mod",
+            "en_name": "Vigilante Fervor",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "primary_mod",
+            "en_name": "Vigilante Offense",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "primary_mod",
+            "en_name": "Vigilante Supplies",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "",
+            "type": "rifle_mod",
+            "en_name": "",
+            "kr_name": ""
+        },
+    ]
+}
