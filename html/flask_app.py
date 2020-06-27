@@ -253,7 +253,8 @@ def change_to_kr(csv_name, etc, text):
     if types == 'in':
         for i in range(0, len(resource)):
             result = resource['name'][i]
-            result_1 = result.replace('_set', '')
+            results = str(result)
+            result_1 = results.replace('_set', '')
             if result_1 in item_name:
                 count = item_name.index(result_1)
                 re_text = item_kr_name[count]
