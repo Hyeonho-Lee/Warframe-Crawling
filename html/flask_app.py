@@ -83,15 +83,31 @@ def input_item_kr(etc):
 
     return name_data
 
+def input_item_type(etc):
+    item = str(etc)
+    path = '/workspace/crawling/data/json/{etc}.json'.format(etc = item)
+    with open(path, "r") as json_file:
+        json_data = json.load(json_file)
+
+    name_data = []
+
+    for i in json_data[item]:
+        name_data.append(str(i["type"]))
+
+    return name_data
+
 def get_all_item():
     all_item = []
     all_item_kr = []
     all_path = []
     all_path_0 = []
     all_path_1 = []
+    all_type = []
+    all_type_kr = []
 
     input_items_0 = input_item('warframes')
     input_items_0_kr = input_item_kr('warframes')
+    input_types_0 = input_item_type('warframes')
 
     for i, v in enumerate(input_items_0):
         item = str(v) + '_set'
@@ -108,8 +124,13 @@ def get_all_item():
         item = str(v)
         all_item_kr.append(item)
 
+    for i, v in enumerate(input_types_0):
+        item = str(v)
+        all_type.append(item)
+
     input_items_1 = input_item('weapons')
     input_items_1_kr = input_item_kr('weapons')
+    input_types_1 = input_item_type('weapons')
 
     for i, v in enumerate(input_items_1):
         item = str(v) + '_set'
@@ -126,8 +147,13 @@ def get_all_item():
         item = str(v)
         all_item_kr.append(item)
 
+    for i, v in enumerate(input_types_1):
+        item = str(v)
+        all_type.append(item)
+
     input_items_2 = input_item('weapons_etc')
     input_items_2_kr = input_item_kr('weapons_etc')
+    input_types_2 = input_item_type('weapons_etc')
 
     for i, v in enumerate(input_items_2):
         item = str(v)
@@ -143,9 +169,14 @@ def get_all_item():
     for i, v in enumerate(input_items_2_kr):
         item = str(v)
         all_item_kr.append(item)
-    
+
+    for i, v in enumerate(input_types_2):
+        item = str(v)
+        all_type.append(item)
+
     input_items_3 = input_item('aura_mods')
     input_items_3_kr = input_item_kr('aura_mods')
+    input_types_3 = input_item_type('aura_mods')
 
     for i, v in enumerate(input_items_3):
         item = str(v)
@@ -161,9 +192,14 @@ def get_all_item():
     for i, v in enumerate(input_items_3_kr):
         item = str(v)
         all_item_kr.append(item)
-    
+
+    for i, v in enumerate(input_types_3):
+        item = str(v)
+        all_type.append(item)
+
     input_items_4 = input_item('warframe_mods')
     input_items_4_kr = input_item_kr('warframe_mods')
+    input_types_4 = input_item_type('warframe_mods')
 
     for i, v in enumerate(input_items_4):
         item = str(v)
@@ -180,7 +216,29 @@ def get_all_item():
         item = str(v)
         all_item_kr.append(item)
 
-    return all_item, all_item_kr, all_path, all_path_0, all_path_1
+    for i, v in enumerate(input_types_4):
+        item = str(v)
+        all_type.append(item)
+
+    for i, v in enumerate(all_item_kr):
+        if all_type[i] == "primary":
+            all_type_kr.append("주무기")
+        elif all_type[i] == "secondary":
+            all_type_kr.append("보조무기")
+        elif all_type[i] == "melee":
+            all_type_kr.append("근접무기")
+        elif all_type[i] == "archwing":
+            all_type_kr.append("아크윙")
+        elif all_type[i] == "warframe":
+            all_type_kr.append("워프레임")
+        elif all_type[i] == "aura_mod":
+            all_type_kr.append("워프레임 모드")
+        elif all_type[i] == "warframe_mod":
+            all_type_kr.append("워프레임 모드")
+        else:
+            all_type_kr.append("기타")
+
+    return all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr
 
 def change_to_kr(csv_name, etc, text):
     item_name = []
@@ -335,7 +393,7 @@ def index():
     today_volume = read_csv('today_volume', 'result')
     today_all = read_csv('result', 'result')
 
-    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
     def find_path(name, types):
         if types == 'path':
             for i, v in enumerate(all_item):
@@ -482,7 +540,7 @@ def tests():
 @app.route('/result/<get_name>/')
 def result(get_name):
     visit_count = get_visit()
-    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
     def find_path(name, types):
         if types == 'path':
             for i, v in enumerate(all_item):
@@ -613,14 +671,14 @@ def result(get_name):
 @app.route('/error')
 def error():
     visit_count = get_visit()
-    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
     return render_template('error.html', **locals())
 
 ######################################################################
 @app.route('/notice/')
 def notice():
     visit_count = get_visit()
-    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
     
     path = '/workspace/crawling/data/json/notice_data.json'
     with open(path, "r", encoding="UTF-8") as json_file:
@@ -660,11 +718,133 @@ def notice():
 @app.route('/temp/')
 def temp():
     visit_count = get_visit()
-    all_item, all_item_kr, all_path, all_path_0, all_path_1 = get_all_item()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
     
     return render_template('temp.html', **locals())
 
 #=======================================================================#
+@app.route('/category/')
+def category():
+
+    visit_count = get_visit()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
+
+    type_primary_item = []
+    type_primary_item_kr = []
+    type_primary_path = []
+    type_primary_path_0 = []
+    type_primary_path_1 = []
+    type_primary_type = []
+    type_primary_type_kr = []
+    type_primary_len = 0
+
+    type_secondary_item = []
+    type_secondary_item_kr = []
+    type_secondary_path = []
+    type_secondary_path_0 = []
+    type_secondary_path_1 = []
+    type_secondary_type = []
+    type_secondary_type_kr = []
+    type_secondary_len = 0
+
+    type_melee_item = []
+    type_melee_item_kr = []
+    type_melee_path = []
+    type_melee_path_0 = []
+    type_melee_path_1 = []
+    type_melee_type = []
+    type_melee_type_kr = []
+    type_melee_len = 0
+
+    type_warframe_item = []
+    type_warframe_item_kr = []
+    type_warframe_path = []
+    type_warframe_path_0 = []
+    type_warframe_path_1 = []
+    type_warframe_type = []
+    type_warframe_type_kr = []
+    type_warframe_len = 0
+
+    type_warframe_mod_item = []
+    type_warframe_mod_item_kr = []
+    type_warframe_mod_path = []
+    type_warframe_mod_path_0 = []
+    type_warframe_mod_path_1 = []
+    type_warframe_mod_type = []
+    type_warframe_mod_type_kr = []
+    type_warframe_mod_len = 0
+
+    type_etc_item = []
+    type_etc_item_kr = []
+    type_etc_path = []
+    type_etc_path_0 = []
+    type_etc_path_1 = []
+    type_etc_type = []
+    type_etc_type_kr = []
+    type_etc_len = 0
+
+    for i, v in enumerate(all_item_kr):
+        if all_type_kr[i] == "주무기":
+            type_primary_item.append(all_item[i])
+            type_primary_item_kr.append(all_item_kr[i])
+            type_primary_path.append(all_path[i])
+            type_primary_path_0.append(all_path_0[i])
+            type_primary_path_1.append(all_path_1[i])
+            type_primary_type.append(all_type[i])
+            type_primary_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "보조무기":
+            type_secondary_item.append(all_item[i])
+            type_secondary_item_kr.append(all_item_kr[i])
+            type_secondary_path.append(all_path[i])
+            type_secondary_path_0.append(all_path_0[i])
+            type_secondary_path_1.append(all_path_1[i])
+            type_secondary_type.append(all_type[i])
+            type_secondary_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "근접무기":
+            type_melee_item.append(all_item[i])
+            type_melee_item_kr.append(all_item_kr[i])
+            type_melee_path.append(all_path[i])
+            type_melee_path_0.append(all_path_0[i])
+            type_melee_path_1.append(all_path_1[i])
+            type_melee_type.append(all_type[i])
+            type_melee_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "워프레임":
+            type_warframe_item.append(all_item[i])
+            type_warframe_item_kr.append(all_item_kr[i])
+            type_warframe_path.append(all_path[i])
+            type_warframe_path_0.append(all_path_0[i])
+            type_warframe_path_1.append(all_path_1[i])
+            type_warframe_type.append(all_type[i])
+            type_warframe_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "워프레임 모드":
+            type_warframe_mod_item.append(all_item[i])
+            type_warframe_mod_item_kr.append(all_item_kr[i])
+            type_warframe_mod_path.append(all_path[i])
+            type_warframe_mod_path_0.append(all_path_0[i])
+            type_warframe_mod_path_1.append(all_path_1[i])
+            type_warframe_mod_type.append(all_type[i])
+            type_warframe_mod_type_kr.append(all_type_kr[i])
+        else:
+            type_etc_item.append(all_item[i])
+            type_etc_item_kr.append(all_item_kr[i])
+            type_etc_path.append(all_path[i])
+            type_etc_path_0.append(all_path_0[i])
+            type_etc_path_1.append(all_path_1[i])
+            type_etc_type.append(all_type[i])
+            type_etc_type_kr.append(all_type_kr[i])
+
+    type_primary_len = len(type_primary_item)
+    type_secondary_len = len(type_secondary_item)
+    type_melee_len = len(type_melee_item)
+    type_warframe_len = len(type_warframe_item)
+    type_warframe_mod_len = len(type_warframe_mod_item)
+    type_etc_len = len(type_etc_item)
+
+    print(type_primary_len, type_secondary_len, type_melee_len, type_warframe_len, type_warframe_mod_len, type_etc_len)
+
+    return render_template('category.html', **locals())
+
+#=======================================================================#
 if __name__ == '__main__':
     app.static_folder = 'static'
-    app.run(host = '0.0.0.0', port = '5000', debug=False)
+    app.run(host = '0.0.0.0', port = '5000', debug=True)

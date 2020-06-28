@@ -322,6 +322,9 @@ ul, ol, li {
     position: absolute;
     z-index: 2;
     display: none;
+    animation-name: movemenu_0;
+    animation-duration: 0.5s;
+    animation-direction: normal;
 }
 
 .mobile_menus li{
@@ -1256,5 +1259,23 @@ ul, ol, li {
     100%{
         top: 463%;
         left: 85%;
+    }
+}
+
+@keyframes movemenu_0 {
+    0% {
+        left: -625%;
+    }
+    100%{
+        left: -30%;
+    }
+}
+
+@keyframes movemenu_1 {
+    0% {
+        left: -30%;
+    }
+    100%{
+        left: -625%;
     }
 }

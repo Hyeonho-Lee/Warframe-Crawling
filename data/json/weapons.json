@@ -410,7 +410,7 @@
         },
         {
             "name": "imperator_vandal",
-            "type": "archwing",
+            "type": "primary",
             "en_name": "Imperator Vandal",
             "kr_name": "임페라토르 반달"
         }

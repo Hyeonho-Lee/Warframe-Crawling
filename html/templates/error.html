@@ -50,15 +50,23 @@
                             var button = document.getElementById("x_button");
                             var close = document.getElementById("menubar");
                             button.style.display = "table";
+                            close.style.animationName = "movemenu_0";
                             close.style.display = "block";
+                        };
+                        
+                        function delay() {
+                            var close = document.getElementById("menubar");
+                            close.style.display = "none";
+                            close.style.display = "none";
                         };
                         
                         function close_menu(){
                             var button = document.getElementById("x_button");
                             var close = document.getElementById("menubar");
                             button.style.display = "none";
-                            close.style.display = "none";
-                        };   
+                            close.style.animationName = "movemenu_1";
+                            setTimeout("delay()", 500);
+                        };
                     </script>
                     <span class="icon_1" onclick="pop_menu()"><i class="fa fa-bars fa-2x"></i></span>
                     <span class="icon_2" onclick="close_menu()" id="x_button"><i class="fa fa-times fa-2x"></i></span>
@@ -70,7 +78,7 @@
                             <a class="text_menus_1" href="http://rpc-flask-app.run.goorm.io/notice">공지사항</a>
                         </li>
                         <li>
-                            <a class="text_menus_2">거래 현황(준비중)</a>
+                            <a class="text_menus_2" href="http://rpc-flask-app.run.goorm.io/category">카테고리</a>
                         </li>
                         <li>
                             <a class="text_menus_3">시세 분석(준비중)</a>
@@ -108,7 +116,7 @@
                         </li>
                         <li>
                             <div class="text_boxss_2"></div>
-                            <a class="text_menu_2">거래 현황(준비중)</a>
+                            <a class="text_menu_2" href="http://rpc-flask-app.run.goorm.io/category">카테고리</a>
                         </li>
                         <li>
                             <div class="text_boxss_3"></div>
