@@ -152,6 +152,8 @@
                             item_0.style.display = "table";
                             var item_1 = document.getElementById("mode");
                             item_1.style.display = "none";
+                            var item_2 = document.getElementById("etc");
+                            item_2.style.display = "none";
                         }
                     };
 
@@ -165,6 +167,23 @@
                             item_0.style.display = "none";
                             var item_1 = document.getElementById("mode");
                             item_1.style.display = "table";
+                            var item_2 = document.getElementById("etc");
+                            item_2.style.display = "none";
+                        }
+                    };
+                    
+                    function find_up_3(){
+                        var button = document.getElementById("c_0");
+                        if(button.style.display == "block") {
+                            button.style.display = "none";
+                        }else {
+                            button.style.display = "block";
+                            var item_0 = document.getElementById("weapon");
+                            item_0.style.display = "none";
+                            var item_1 = document.getElementById("mode");
+                            item_1.style.display = "none";
+                            var item_2 = document.getElementById("etc");
+                            item_2.style.display = "table";
                         }
                     };
                     
@@ -215,6 +234,10 @@
                             var value = "근접무기 모드";
                             document.getElementById("category_value").innerHTML = value;
                             document.getElementById("change_category").innerHTML = "준비중";
+                        }else if(button == 11) {
+                            var value = "아케인";
+                            document.getElementById("category_value").innerHTML = value;
+                            document.getElementById("change_category").innerHTML = "{% for i in range(1, type_arcane_len) %}<div class='item_0' onclick='href_site(this);' value='{{ type_arcane_item[i] }}'><p><img alt='{{ type_arcane_item_kr[i] }}' src='{{ url_for('static', filename = type_arcane_path_1[i], v = 0.1) }}'></p><a>{{ type_arcane_item_kr[i] }}</a></div>{% endfor %}";
                         }else {
                             var value = "기타";
                             document.getElementById("category_value").innerHTML = value;
@@ -238,6 +261,9 @@
                         </li>
                         <li class="category_top" onclick="find_up_2()">
                             <a>모드</a>
+                        </li>
+                        <li class="category_top" onclick="find_up_3()">
+                            <a>기타</a>
                         </li>
                     </ul>
                 </div>
@@ -268,6 +294,11 @@
                         </li>
                         <li onclick="search_value(this)" value="10">
                             <a>근접무기 모드</a>
+                        </li>
+                    </ul>
+                    <ul class="etc" id="etc">
+                        <li onclick="search_value(this)" value="11">
+                            <a>아케인</a>
                         </li>
                     </ul>
                 </div>

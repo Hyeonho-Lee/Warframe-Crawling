@@ -10,6 +10,8 @@ echo "기타 무기 업데이트 중입니다....."
 /usr/local/bin/python3 /workspace/crawling/python/weapons_etc_update.py
 echo "모드 업데이트 중입니다....."
 /usr/local/bin/python3 /workspace/crawling/python/mods_update.py
+echo "아케인 업데이트 중입니다....."
+/usr/local/bin/python3 /workspace/crawling/python/etc_update.py
 echo "결산 중입니다....."
 /usr/local/bin/python3 /workspace/crawling/python/today_recommend.py
 date "+%Y/%m/%d/%H:%M" -d +9hours

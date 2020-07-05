@@ -114,7 +114,19 @@ for i, v in enumerate(input_items):
     #save_png = data_result.write_plot(item)
     endTime = time.time() - startTime
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
+"""
+input_items = input_warframe.input_item('weapon_mods')
 
+for i, v in enumerate(input_items):
+    item = str(v)
+    path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+    path_0 = '/workspace/crawling/data/csv/mod/' + item
+    
+    save_data = warframe_crawling(item, path, path_0)
+    #save_png = data_result.write_plot(item)
+    endTime = time.time() - startTime
+    print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
+"""
 print("업데이트가 모두 완료했습니다.")
 
 ######################################################

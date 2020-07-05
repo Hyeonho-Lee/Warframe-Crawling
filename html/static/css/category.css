@@ -57,7 +57,7 @@
 .category_top {
     padding: 0px;
     margin: 1px;
-    width: 24.8%;
+    width: 19.8%;
     min-width: 150px;
     background: #dbdcd9;
     float: left;
@@ -152,6 +152,38 @@
     margin: 0px;
 }
 
+.etc {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.etc li {
+    width: 19.8%;
+    height: 25px;
+    float: left;
+    display: table;
+    background-color: #dbdcd9;
+    margin: 12px 1px;
+}
+
+.etc li:hover {
+    background-color: lightyellow;
+    cursor: pointer;
+    transform: scale( 1.025 );
+    border: 1px solid #323232;
+}
+
+.etc li a {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 20px;
+    color: #323232;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0px;
+}
+
 .category_3 {
     margin: 0px;
     width: 100%;
@@ -219,7 +251,7 @@
 @media screen and (max-width: 1050px) {
     
     .category_1 {
-        height: 230px;
+        height: 280px;
     }
     
     .category_top {
@@ -238,6 +270,12 @@
     }
     
     .mode li {
+        width: 99%;
+        height: 25px;
+        margin: 1px 0px;
+    }
+    
+    .etc li {
         width: 99%;
         height: 25px;
         margin: 1px 0px;

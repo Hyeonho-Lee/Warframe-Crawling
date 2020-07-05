@@ -44,6 +44,10 @@ def read_csv(name, types):
         name_csv = name + '.csv'
         path = '/workspace/crawling/data/csv/mod/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
         print(path)
+    elif types == 'items_etc':
+        name_csv = name + '.csv'
+        path = '/workspace/crawling/data/csv/etc/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
+        print(path)
     else:
         path = '/workspace/crawling/data/csv/{types}/{name}/{name_csv}'.format(types = types, name = names, name_csv = name_csv)
     get_path = path
@@ -219,6 +223,29 @@ def get_all_item():
     for i, v in enumerate(input_types_4):
         item = str(v)
         all_type.append(item)
+    
+    input_items_5 = input_item('items_etc')
+    input_items_5_kr = input_item_kr('items_etc')
+    input_types_5 = input_item_type('items_etc')
+
+    for i, v in enumerate(input_items_5):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/etc/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/etc/' + item
+        img = str(v.title())
+        path_1 = 'image/item_image/etc/' + img + '/' + img + '.png'
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
+        all_path_1.append(path_1)
+
+    for i, v in enumerate(input_items_5_kr):
+        item = str(v)
+        all_item_kr.append(item)
+
+    for i, v in enumerate(input_types_5):
+        item = str(v)
+        all_type.append(item)
 
     for i, v in enumerate(all_item_kr):
         if all_type[i] == "primary":
@@ -235,6 +262,16 @@ def get_all_item():
             all_type_kr.append("워프레임 모드")
         elif all_type[i] == "warframe_mod":
             all_type_kr.append("워프레임 모드")
+        elif all_type[i] == "arcane":
+            all_type_kr.append("아케인")
+        elif all_type[i] == "magus":
+            all_type_kr.append("아케인")
+        elif all_type[i] == "virtuos":
+            all_type_kr.append("아케인")
+        elif all_type[i] == "pax":
+            all_type_kr.append("아케인")
+        elif all_type[i] == "exodia":
+            all_type_kr.append("아케인")
         else:
             all_type_kr.append("기타")
 
@@ -260,6 +297,9 @@ def change_to_kr(csv_name, etc, text):
     with open('/workspace/crawling/data/json/warframe_mods.json', 'r') as file_4:
         json_data_4 = json.load(file_4)
     result_data_4 = json_data_4['warframe_mods']
+    with open('/workspace/crawling/data/json/items_etc.json', 'r') as file_5:
+        json_data_5 = json.load(file_5)
+    result_data_5 = json_data_5['items_etc']
 
     for i in range(0, len(result_data)):
         result = result_data[i]['name']
@@ -297,6 +337,14 @@ def change_to_kr(csv_name, etc, text):
         result = result_data_4[i]['name']
         en_result = result_data_4[i]['en_name']
         kr_result = result_data_4[i]['kr_name']
+        item_name.append(str(result))
+        item_en_name.append(str(en_result))
+        item_kr_name.append(str(kr_result))
+    
+    for i in range(0, len(result_data_5)):
+        result = result_data_5[i]['name']
+        en_result = result_data_5[i]['en_name']
+        kr_result = result_data_5[i]['kr_name']
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
@@ -563,6 +611,7 @@ def result(get_name):
     input_weapon_etc = input_item('weapons_etc')
     input_aura_mods = input_item('aura_mods')
     input_warframe_mods = input_item('warframe_mods')
+    input_items_etc = input_item('items_etc')
 
     result_name = '%s' % get_name
     for i, v in enumerate(all_item_kr):
@@ -584,8 +633,12 @@ def result(get_name):
     for i in input_aura_mods:
         if str(name) in i:
             name_sets = name
-    
+
     for i in input_warframe_mods:
+        if str(name) in i:
+            name_sets = name
+
+    for i in input_items_etc:
         if str(name) in i:
             name_sets = name
 
@@ -599,6 +652,7 @@ def result(get_name):
     is_weapon_etc = False
     is_aura_mods = False
     is_warframe_mods = False
+    is_items_etc = False
 
     if get_find == False:
         for finds in input_warframe:
@@ -631,7 +685,7 @@ def result(get_name):
                 get_find = True
                 is_aura_mods = True
                 break
-    
+
     if get_find == False:
         for finds in input_warframe_mods:
             if name in finds:
@@ -640,7 +694,15 @@ def result(get_name):
                 is_aura_mods = True
                 break
 
-    if(is_warframe == False and is_weapon == False and is_weapon_etc == False and is_aura_mods == False and is_warframe_mods == False):
+    if get_find == False:
+        for finds in input_items_etc:
+            if name in finds:
+                result = read_csv(name, 'items_etc')
+                get_find = True
+                is_items_etc = True
+                break
+
+    if(is_warframe == False and is_weapon == False and is_weapon_etc == False and is_aura_mods == False and is_warframe_mods == False and is_items_etc == False):
         return redirect('/error')
 
     if get_find == True:
@@ -774,6 +836,15 @@ def category():
     type_warframe_mod_type_kr = []
     type_warframe_mod_len = 0
 
+    type_arcane_item = []
+    type_arcane_item_kr = []
+    type_arcane_path = []
+    type_arcane_path_0 = []
+    type_arcane_path_1 = []
+    type_arcane_type = []
+    type_arcane_type_kr = []
+    type_arcane_len = 0
+
     type_etc_item = []
     type_etc_item_kr = []
     type_etc_path = []
@@ -824,6 +895,14 @@ def category():
             type_warframe_mod_path_1.append(all_path_1[i])
             type_warframe_mod_type.append(all_type[i])
             type_warframe_mod_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "아케인":
+            type_arcane_item.append(all_item[i])
+            type_arcane_item_kr.append(all_item_kr[i])
+            type_arcane_path.append(all_path[i])
+            type_arcane_path_0.append(all_path_0[i])
+            type_arcane_path_1.append(all_path_1[i])
+            type_arcane_type.append(all_type[i])
+            type_arcane_type_kr.append(all_type_kr[i])
         else:
             type_etc_item.append(all_item[i])
             type_etc_item_kr.append(all_item_kr[i])
@@ -838,9 +917,10 @@ def category():
     type_melee_len = len(type_melee_item)
     type_warframe_len = len(type_warframe_item)
     type_warframe_mod_len = len(type_warframe_mod_item)
+    type_arcane_len = len(type_arcane_item)
     type_etc_len = len(type_etc_item)
 
-    print(type_primary_len, type_secondary_len, type_melee_len, type_warframe_len, type_warframe_mod_len, type_etc_len)
+    print(type_primary_len, type_secondary_len, type_melee_len, type_warframe_len, type_warframe_mod_len, type_etc_len, type_arcane_len)
 
     return render_template('category.html', **locals())
 
