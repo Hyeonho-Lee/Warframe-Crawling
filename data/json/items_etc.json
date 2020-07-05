@@ -1,0 +1,214 @@
+{
+    "itemss_etc": [
+        {
+            "name": "arcane_consequence",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": "아케인 널리파이어"
+        },
+        {
+            "name": "arcane_ice",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_momentum",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_nullifier",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_tempo",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_warmth",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_deflection",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_healing",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_resistance",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_victory",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_acceleration",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_agility",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_awakening",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_eruption",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_guardian",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_phantasm",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_strike",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_aegis",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_precision",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_pulse",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_ultimatum",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_trickery",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_velocity",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_arachne",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_avenger",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_fury",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_rage",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_barrier",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_energize",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_grace",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_blade_charger",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_bodyguard",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_pistoleer",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_primary_charger",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        },
+        {
+            "name": "arcane_tanker",
+            "type": "arcane",
+            "en_name": "",
+            "kr_name": ""
+        }
+    ]
+}
