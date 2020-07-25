@@ -155,6 +155,12 @@
             "type": "warframe",
             "en_name": "Atlas Prime",
             "kr_name": "아틀라스 프라임"
+        },
+        {
+            "name": "inaros_prime",
+            "type": "warframe",
+            "en_name": "Inaros Prime",
+            "kr_name": "이나로스 프라임"
         }
     ]
 }

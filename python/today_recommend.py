@@ -71,7 +71,7 @@ def get_all():
         all_item.append(item)
         all_path.append(path)
         all_path_0.append(path_0)
-        
+
     input_items_5 = input_warframe.input_item('items_etc')
 
     for i, v in enumerate(input_items_5):
@@ -81,6 +81,17 @@ def get_all():
         all_item.append(item)
         all_path.append(path)
         all_path_0.append(path_0)
+    
+    input_items_6 = input_warframe.input_item('weapon_mods')
+
+    for i, v in enumerate(input_items_6):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/mod/' + item
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
+
 
     return all_item, all_path, all_path_0
 

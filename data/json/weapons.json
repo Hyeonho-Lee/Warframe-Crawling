@@ -413,6 +413,18 @@
             "type": "primary",
             "en_name": "Imperator Vandal",
             "kr_name": "임페라토르 반달"
+        },
+        {
+            "name": "panthera_prime",
+            "type": "primary",
+            "en_name": "Panthera Prime",
+            "kr_name": "팬서라 프라임"
+        },
+        {
+            "name": "karyst_prime",
+            "type": "melee",
+            "en_name": "Karyst Prime",
+            "kr_name": "캐리스트 프라임"
         }
     ]
 }

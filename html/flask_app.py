@@ -13,6 +13,8 @@ from flask import Flask, url_for, render_template, request, redirect, session
 #https://pixlr.com/e/ 포토샵 사이트
 #https://zamezzz.tistory.com/309
 #https://offbyone.tistory.com/260
+#https://keraskorea.github.io/posts/2018-10-25-Keras%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EC%A3%BC%EC%8B%9D%20%EA%B0%80%EA%B2%A9%20%EC%98%88%EC%B8%A1/
+#https://github.com/llSourcell/How-to-Predict-Stock-Prices-Easily-Demo/blob/master/lstm.py
 
 #=======================================================================#
 
@@ -47,6 +49,10 @@ def read_csv(name, types):
     elif types == 'items_etc':
         name_csv = name + '.csv'
         path = '/workspace/crawling/data/csv/etc/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
+        print(path)
+    elif types == 'weapon_mods':
+        name_csv = name + '.csv'
+        path = '/workspace/crawling/data/csv/mod/{names}/{name_csv}'.format(names = name, name_csv = name_csv)
         print(path)
     else:
         path = '/workspace/crawling/data/csv/{types}/{name}/{name_csv}'.format(types = types, name = names, name_csv = name_csv)
@@ -223,7 +229,7 @@ def get_all_item():
     for i, v in enumerate(input_types_4):
         item = str(v)
         all_type.append(item)
-    
+
     input_items_5 = input_item('items_etc')
     input_items_5_kr = input_item_kr('items_etc')
     input_types_5 = input_item_type('items_etc')
@@ -244,6 +250,29 @@ def get_all_item():
         all_item_kr.append(item)
 
     for i, v in enumerate(input_types_5):
+        item = str(v)
+        all_type.append(item)
+
+    input_items_6 = input_item('weapon_mods')
+    input_items_6_kr = input_item_kr('weapon_mods')
+    input_types_6 = input_item_type('weapon_mods')
+
+    for i, v in enumerate(input_items_6):
+        item = str(v)
+        path = '/workspace/crawling/data/csv/mod/' + item + '/' + item + '.csv'
+        path_0 = '/workspace/crawling/data/csv/mod/' + item
+        img = str(v.title())
+        path_1 = 'image/item_image/mod/' + img + '/' + img + '.png'
+        all_item.append(item)
+        all_path.append(path)
+        all_path_0.append(path_0)
+        all_path_1.append(path_1)
+
+    for i, v in enumerate(input_items_6_kr):
+        item = str(v)
+        all_item_kr.append(item)
+
+    for i, v in enumerate(input_types_6):
         item = str(v)
         all_type.append(item)
 
@@ -272,6 +301,22 @@ def get_all_item():
             all_type_kr.append("아케인")
         elif all_type[i] == "exodia":
             all_type_kr.append("아케인")
+        elif all_type[i] == "primary_mod":
+            all_type_kr.append("주무기 모드")
+        elif all_type[i] == "rifle_mod":
+            all_type_kr.append("주무기 모드")
+        elif all_type[i] == "shotgun_mod":
+            all_type_kr.append("주무기 모드")
+        elif all_type[i] == "sniper_mod":
+            all_type_kr.append("주무기 모드")
+        elif all_type[i] == "bow_mod":
+            all_type_kr.append("주무기 모드")
+        elif all_type[i] == "pistol_mod":
+            all_type_kr.append("보조무기 모드")
+        elif all_type[i] == "melee_mod":
+            all_type_kr.append("근접무기 모드")
+        elif all_type[i] == "stance_mod":
+            all_type_kr.append("근접무기 모드")
         else:
             all_type_kr.append("기타")
 
@@ -300,6 +345,9 @@ def change_to_kr(csv_name, etc, text):
     with open('/workspace/crawling/data/json/items_etc.json', 'r') as file_5:
         json_data_5 = json.load(file_5)
     result_data_5 = json_data_5['items_etc']
+    with open('/workspace/crawling/data/json/weapon_mods.json', 'r') as file_6:
+        json_data_6 = json.load(file_6)
+    result_data_6 = json_data_6['weapon_mods']
 
     for i in range(0, len(result_data)):
         result = result_data[i]['name']
@@ -324,7 +372,7 @@ def change_to_kr(csv_name, etc, text):
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
-    
+
     for i in range(0, len(result_data_3)):
         result = result_data_3[i]['name']
         en_result = result_data_3[i]['en_name']
@@ -332,7 +380,7 @@ def change_to_kr(csv_name, etc, text):
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
-    
+
     for i in range(0, len(result_data_4)):
         result = result_data_4[i]['name']
         en_result = result_data_4[i]['en_name']
@@ -340,11 +388,19 @@ def change_to_kr(csv_name, etc, text):
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
-    
+
     for i in range(0, len(result_data_5)):
         result = result_data_5[i]['name']
         en_result = result_data_5[i]['en_name']
         kr_result = result_data_5[i]['kr_name']
+        item_name.append(str(result))
+        item_en_name.append(str(en_result))
+        item_kr_name.append(str(kr_result))
+
+    for i in range(0, len(result_data_6)):
+        result = result_data_6[i]['name']
+        en_result = result_data_6[i]['en_name']
+        kr_result = result_data_6[i]['kr_name']
         item_name.append(str(result))
         item_en_name.append(str(en_result))
         item_kr_name.append(str(kr_result))
@@ -612,6 +668,7 @@ def result(get_name):
     input_aura_mods = input_item('aura_mods')
     input_warframe_mods = input_item('warframe_mods')
     input_items_etc = input_item('items_etc')
+    input_weapon_mods = input_item('weapon_mods')
 
     result_name = '%s' % get_name
     for i, v in enumerate(all_item_kr):
@@ -642,6 +699,10 @@ def result(get_name):
         if str(name) in i:
             name_sets = name
 
+    for i in input_weapon_mods:
+        if str(name) in i:
+            name_sets = name
+
     search_path = find_path(name_sets, 'path')
     search_path_0 = find_path(name_sets, 'path_0')
     search_path_1 = find_path(name_sets, 'path_1')
@@ -653,6 +714,7 @@ def result(get_name):
     is_aura_mods = False
     is_warframe_mods = False
     is_items_etc = False
+    is_weapon_mods = False
 
     if get_find == False:
         for finds in input_warframe:
@@ -701,8 +763,16 @@ def result(get_name):
                 get_find = True
                 is_items_etc = True
                 break
+        
+    if get_find == False:
+        for finds in input_weapon_mods:
+            if name in finds:
+                result = read_csv(name, 'weapon_mods')
+                get_find = True
+                is_items_etc = True
+                break
 
-    if(is_warframe == False and is_weapon == False and is_weapon_etc == False and is_aura_mods == False and is_warframe_mods == False and is_items_etc == False):
+    if(is_warframe == False and is_weapon == False and is_weapon_etc == False and is_aura_mods == False and is_warframe_mods == False and is_items_etc == False and is_weapon_mods):
         return redirect('/error')
 
     if get_find == True:
@@ -854,6 +924,33 @@ def category():
     type_etc_type_kr = []
     type_etc_len = 0
 
+    type_primary_mod_item = []
+    type_primary_mod_item_kr = []
+    type_primary_mod_path = []
+    type_primary_mod_path_0 = []
+    type_primary_mod_path_1 = []
+    type_primary_mod_type = []
+    type_primary_mod_type_kr = []
+    type_primary_mod_len = 0
+
+    type_secondary_mod_item = []
+    type_secondary_mod_item_kr = []
+    type_secondary_mod_path = []
+    type_secondary_mod_path_0 = []
+    type_secondary_mod_path_1 = []
+    type_secondary_mod_type = []
+    type_secondary_mod_type_kr = []
+    type_secondary_mod_len = 0
+
+    type_melee_mod_item = []
+    type_melee_mod_item_kr = []
+    type_melee_mod_path = []
+    type_melee_mod_path_0 = []
+    type_melee_mod_path_1 = []
+    type_melee_mod_type = []
+    type_melee_mod_type_kr = []
+    type_melee_mod_len = 0
+
     for i, v in enumerate(all_item_kr):
         if all_type_kr[i] == "주무기":
             type_primary_item.append(all_item[i])
@@ -903,6 +1000,30 @@ def category():
             type_arcane_path_1.append(all_path_1[i])
             type_arcane_type.append(all_type[i])
             type_arcane_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "주무기 모드":
+            type_primary_mod_item.append(all_item[i])
+            type_primary_mod_item_kr.append(all_item_kr[i])
+            type_primary_mod_path.append(all_path[i])
+            type_primary_mod_path_0.append(all_path_0[i])
+            type_primary_mod_path_1.append(all_path_1[i])
+            type_primary_mod_type.append(all_type[i])
+            type_primary_mod_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "보조무기 모드":
+            type_secondary_mod_item.append(all_item[i])
+            type_secondary_mod_item_kr.append(all_item_kr[i])
+            type_secondary_mod_path.append(all_path[i])
+            type_secondary_mod_path_0.append(all_path_0[i])
+            type_secondary_mod_path_1.append(all_path_1[i])
+            type_secondary_mod_type.append(all_type[i])
+            type_secondary_mod_type_kr.append(all_type_kr[i])
+        elif all_type_kr[i] == "근접무기 모드":
+            type_melee_mod_item.append(all_item[i])
+            type_melee_mod_item_kr.append(all_item_kr[i])
+            type_melee_mod_path.append(all_path[i])
+            type_melee_mod_path_0.append(all_path_0[i])
+            type_melee_mod_path_1.append(all_path_1[i])
+            type_melee_mod_type.append(all_type[i])
+            type_melee_mod_type_kr.append(all_type_kr[i])
         else:
             type_etc_item.append(all_item[i])
             type_etc_item_kr.append(all_item_kr[i])
@@ -919,8 +1040,11 @@ def category():
     type_warframe_mod_len = len(type_warframe_mod_item)
     type_arcane_len = len(type_arcane_item)
     type_etc_len = len(type_etc_item)
+    type_primary_mod_len = len(type_primary_mod_item)
+    type_secondary_mod_len = len(type_secondary_mod_item)
+    type_melee_mod_len = len(type_melee_mod_item)
 
-    print(type_primary_len, type_secondary_len, type_melee_len, type_warframe_len, type_warframe_mod_len, type_etc_len, type_arcane_len)
+    print(type_primary_len, type_secondary_len, type_melee_len, type_warframe_len, type_warframe_mod_len, type_etc_len, type_arcane_len, type_primary_mod_len, type_secondary_mod_len, type_melee_mod_len)
 
     return render_template('category.html', **locals())
 

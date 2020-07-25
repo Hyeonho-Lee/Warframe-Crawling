@@ -48,7 +48,7 @@ def image_crawling(item, path, path_0, etc):
 
 startTime = time.time()
 
-input_items = input_warframe.input_item('weapons_etc')
+input_items = input_warframe.input_item('weapons')
 
 for i, v in enumerate(input_items):
     item = v.replace('_prime', '/')

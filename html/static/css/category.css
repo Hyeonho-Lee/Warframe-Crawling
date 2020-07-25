@@ -288,6 +288,17 @@
 
 @media screen and (max-width: 720px) {
     .item_0 {
-        margin: 30px 20%;
+        margin: 15px 4%;
+        width: 170px;
+        height: 180px;
+    }
+    
+    .item_0 a{
+        margin: 20px 0px;
+        font-size: 15px;
+    }
+    
+    .item_0 p img {
+        min-height: 130px;
     }
 }

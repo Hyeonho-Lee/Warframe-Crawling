@@ -225,15 +225,15 @@
                         }else if(button == 8) {
                             var value = "주무기 모드";
                             document.getElementById("category_value").innerHTML = value;
-                            document.getElementById("change_category").innerHTML = "준비중";
+                            document.getElementById("change_category").innerHTML = "{% for i in range(1, type_primary_mod_len) %}<div class='item_0' onclick='href_site(this);' value='{{ type_primary_mod_item[i] }}'><p><img alt='{{ type_primary_mod_item_kr[i] }}' src='{{ url_for('static', filename = type_primary_mod_path_1[i], v = 0.1) }}'></p><a>{{ type_primary_mod_item_kr[i] }}</a></div>{% endfor %}";
                         }else if(button == 9) {
                             var value = "보조무기 모드";
                             document.getElementById("category_value").innerHTML = value;
-                            document.getElementById("change_category").innerHTML = "준비중";
+                            document.getElementById("change_category").innerHTML = "{% for i in range(1, type_secondary_mod_len) %}<div class='item_0' onclick='href_site(this);' value='{{ type_secondary_mod_item[i] }}'><p><img alt='{{ type_secondary_mod_item_kr[i] }}' src='{{ url_for('static', filename = type_secondary_mod_path_1[i], v = 0.1) }}'></p><a>{{ type_secondary_mod_item_kr[i] }}</a></div>{% endfor %}";
                         }else if(button == 10) {
                             var value = "근접무기 모드";
                             document.getElementById("category_value").innerHTML = value;
-                            document.getElementById("change_category").innerHTML = "준비중";
+                            document.getElementById("change_category").innerHTML = "{% for i in range(1, type_melee_mod_len) %}<div class='item_0' onclick='href_site(this);' value='{{ type_melee_mod_item[i] }}'><p><img alt='{{ type_melee_mod_item_kr[i] }}' src='{{ url_for('static', filename = type_melee_mod_path_1[i], v = 0.1) }}'></p><a>{{ type_melee_mod_item_kr[i] }}</a></div>{% endfor %}";
                         }else if(button == 11) {
                             var value = "아케인";
                             document.getElementById("category_value").innerHTML = value;
