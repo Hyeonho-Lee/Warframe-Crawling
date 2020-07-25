@@ -271,18 +271,6 @@
             "kr_name": "마구스 리버트"
         },
         {
-            "name": "magus_firewall",
-            "type": "magus",
-            "en_name": "",
-            "kr_name": "마구스 파이어월"
-        },
-        {
-            "name": "magus_drive",
-            "type": "magus",
-            "en_name": "",
-            "kr_name": "마구스 드라이브"
-        },
-        {
             "name": "magus_lockdown",
             "type": "magus",
             "en_name": "",
