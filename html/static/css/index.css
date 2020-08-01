@@ -645,8 +645,13 @@ ul, ol, li {
 
 .content_1_main0 img {
     max-width: initial;
-    margin-left: -53%;
+    margin-top: 5%;
+    margin-left: -35%;
     position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .content_1_main0:hover {
@@ -671,8 +676,13 @@ ul, ol, li {
 
 .content_1_main1 img {
     max-width: initial;
-    margin-left: -53%;
+    margin-top: 5%;
+    margin-left: -50%;
     position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .content_1_main1:hover {
