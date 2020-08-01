@@ -46,13 +46,13 @@
             "name": "arcane_healing",
             "type": "arcane",
             "en_name": "",
-            "kr_name": ""
+            "kr_name": "아케인 힐링"
         },
         {
             "name": "arcane_resistance",
             "type": "arcane",
             "en_name": "",
-            "kr_name": "아케인 힐링"
+            "kr_name": "아케인 레지스턴스"
         },
         {
             "name": "arcane_victory",

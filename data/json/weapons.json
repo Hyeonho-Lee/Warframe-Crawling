@@ -199,12 +199,6 @@
             "kr_name": "앤카이로스 프라임"
         },
         {
-            "name": "bo_prime",
-            "type": "melee",
-            "en_name": "Bo Prime",
-            "kr_name": "보 프라임"
-        },
-        {
             "name": "dakra_prime",
             "type": "melee",
             "en_name": "Dakra Prime",

@@ -868,6 +868,9 @@ def category():
     type_primary_path_1 = []
     type_primary_type = []
     type_primary_type_kr = []
+    type_primary_price = []
+    type_primary_percent = []
+    type_primary_volume = []
     type_primary_len = 0
 
     type_secondary_item = []
@@ -877,6 +880,9 @@ def category():
     type_secondary_path_1 = []
     type_secondary_type = []
     type_secondary_type_kr = []
+    type_secondary_price = []
+    type_secondary_percent = []
+    type_secondary_volume = []
     type_secondary_len = 0
 
     type_melee_item = []
@@ -886,6 +892,9 @@ def category():
     type_melee_path_1 = []
     type_melee_type = []
     type_melee_type_kr = []
+    type_melee_price = []
+    type_melee_percent = []
+    type_melee_volume = []
     type_melee_len = 0
 
     type_warframe_item = []
@@ -895,6 +904,9 @@ def category():
     type_warframe_path_1 = []
     type_warframe_type = []
     type_warframe_type_kr = []
+    type_warframe_price = []
+    type_warframe_percent = []
+    type_warframe_volume = []
     type_warframe_len = 0
 
     type_warframe_mod_item = []
@@ -904,6 +916,9 @@ def category():
     type_warframe_mod_path_1 = []
     type_warframe_mod_type = []
     type_warframe_mod_type_kr = []
+    type_warframe_mod_price = []
+    type_warframe_mod_percent = []
+    type_warframe_mod_volume = []
     type_warframe_mod_len = 0
 
     type_arcane_item = []
@@ -913,6 +928,9 @@ def category():
     type_arcane_path_1 = []
     type_arcane_type = []
     type_arcane_type_kr = []
+    type_arcane_price = []
+    type_arcane_percent = []
+    type_arcane_volume = []
     type_arcane_len = 0
 
     type_etc_item = []
@@ -922,6 +940,9 @@ def category():
     type_etc_path_1 = []
     type_etc_type = []
     type_etc_type_kr = []
+    type_etc_price = []
+    type_etc_percent = []
+    type_etc_volume = []
     type_etc_len = 0
 
     type_primary_mod_item = []
@@ -931,6 +952,9 @@ def category():
     type_primary_mod_path_1 = []
     type_primary_mod_type = []
     type_primary_mod_type_kr = []
+    type_primary_mod_price = []
+    type_primary_mod_percent = []
+    type_primary_mod_volume = []
     type_primary_mod_len = 0
 
     type_secondary_mod_item = []
@@ -940,6 +964,9 @@ def category():
     type_secondary_mod_path_1 = []
     type_secondary_mod_type = []
     type_secondary_mod_type_kr = []
+    type_secondary_mod_price = []
+    type_secondary_mod_percent = []
+    type_secondary_mod_volume = []
     type_secondary_mod_len = 0
 
     type_melee_mod_item = []
@@ -949,6 +976,9 @@ def category():
     type_melee_mod_path_1 = []
     type_melee_mod_type = []
     type_melee_mod_type_kr = []
+    type_melee_mod_price = []
+    type_melee_mod_percent = []
+    type_melee_mod_volume = []
     type_melee_mod_len = 0
 
     for i, v in enumerate(all_item_kr):
@@ -1044,7 +1074,75 @@ def category():
     type_secondary_mod_len = len(type_secondary_mod_item)
     type_melee_mod_len = len(type_melee_mod_item)
 
-    print(type_primary_len, type_secondary_len, type_melee_len, type_warframe_len, type_warframe_mod_len, type_etc_len, type_arcane_len, type_primary_mod_len, type_secondary_mod_len, type_melee_mod_len)
+    price_data = read_csv('result', 'result')
+    price_name = price_data["name"].tolist()
+    price_avg = price_data["avg_price"].tolist()
+    price_percent = price_data["day_percent"].tolist()
+    price_volume = price_data["volume"].tolist()
+
+    today_item = []
+    today_price = []
+    today_percent = []
+    today_volume = []
+
+    for i, v in enumerate(all_item):
+        if v in price_name:
+            today_item.append(str(v))
+        else:
+            today_item.append(str("none"))
+
+    for i, v in enumerate(today_item):
+        if v in price_name:
+            index = price_name.index(v)
+            today_price.append(price_avg[index])
+            today_percent.append(price_percent[index])
+            today_volume.append(price_volume[index])
+        elif v == "none":
+            today_price.append(0)
+            today_percent.append(0)
+            today_volume.append(0)
+
+    for i, v in enumerate(all_item):
+        if v in type_primary_item:
+            type_primary_price.append(today_price[i])
+            type_primary_percent.append(today_price[i])
+            type_primary_volume.append(today_price[i])
+        if v in type_secondary_item:
+            type_secondary_price.append(today_price[i])
+            type_secondary_percent.append(today_price[i])
+            type_secondary_volume.append(today_price[i])
+        if v in type_melee_item:
+            type_melee_price.append(today_price[i])
+            type_melee_percent.append(today_price[i])
+            type_melee_volume.append(today_price[i])
+        if v in type_warframe_item:
+            type_warframe_price.append(today_price[i])
+            type_warframe_percent.append(today_price[i])
+            type_warframe_volume.append(today_price[i])
+        if v in type_warframe_mod_item:
+            type_warframe_mod_price.append(today_price[i])
+            type_warframe_mod_percent.append(today_price[i])
+            type_warframe_mod_volume.append(today_price[i])
+        if v in type_arcane_item:
+            type_arcane_price.append(today_price[i])
+            type_arcane_percent.append(today_price[i])
+            type_arcane_volume.append(today_price[i])
+        if v in type_etc_item:
+            type_etc_price.append(today_price[i])
+            type_etc_percent.append(today_price[i])
+            type_etc_volume.append(today_price[i])
+        if v in type_primary_mod_item:
+            type_primary_mod_price.append(today_price[i])
+            type_primary_mod_percent.append(today_price[i])
+            type_primary_mod_volume.append(today_price[i])
+        if v in type_secondary_mod_item:
+            type_secondary_mod_price.append(today_price[i])
+            type_secondary_mod_percent.append(today_price[i])
+            type_secondary_mod_volume.append(today_price[i])
+        if v in type_melee_mod_item:
+            type_melee_mod_price.append(today_price[i])
+            type_melee_mod_percent.append(today_price[i])
+            type_melee_mod_volume.append(today_price[i])
 
     return render_template('category.html', **locals())
 
