@@ -3,6 +3,7 @@ import json
 import datetime
 import pandas as pd
 import numpy as np
+import random
 from flask import Flask, url_for, render_template, request, redirect, session
 
 #https://www.chartjs.org/
@@ -470,6 +471,7 @@ def get_visit():
         visits_data = json.load(json_visits)
     result = visits_data["date"]["count"]
     return result
+
 """
 if os.path.isdir(get_path_0):
     make_file(get_path)
@@ -980,88 +982,91 @@ def category():
     type_melee_mod_percent = []
     type_melee_mod_volume = []
     type_melee_mod_len = 0
-
-    for i, v in enumerate(all_item_kr):
-        if all_type_kr[i] == "주무기":
-            type_primary_item.append(all_item[i])
-            type_primary_item_kr.append(all_item_kr[i])
-            type_primary_path.append(all_path[i])
-            type_primary_path_0.append(all_path_0[i])
-            type_primary_path_1.append(all_path_1[i])
-            type_primary_type.append(all_type[i])
-            type_primary_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "보조무기":
-            type_secondary_item.append(all_item[i])
-            type_secondary_item_kr.append(all_item_kr[i])
-            type_secondary_path.append(all_path[i])
-            type_secondary_path_0.append(all_path_0[i])
-            type_secondary_path_1.append(all_path_1[i])
-            type_secondary_type.append(all_type[i])
-            type_secondary_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "근접무기":
-            type_melee_item.append(all_item[i])
-            type_melee_item_kr.append(all_item_kr[i])
-            type_melee_path.append(all_path[i])
-            type_melee_path_0.append(all_path_0[i])
-            type_melee_path_1.append(all_path_1[i])
-            type_melee_type.append(all_type[i])
-            type_melee_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "워프레임":
-            type_warframe_item.append(all_item[i])
-            type_warframe_item_kr.append(all_item_kr[i])
-            type_warframe_path.append(all_path[i])
-            type_warframe_path_0.append(all_path_0[i])
-            type_warframe_path_1.append(all_path_1[i])
-            type_warframe_type.append(all_type[i])
-            type_warframe_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "워프레임 모드":
-            type_warframe_mod_item.append(all_item[i])
-            type_warframe_mod_item_kr.append(all_item_kr[i])
-            type_warframe_mod_path.append(all_path[i])
-            type_warframe_mod_path_0.append(all_path_0[i])
-            type_warframe_mod_path_1.append(all_path_1[i])
-            type_warframe_mod_type.append(all_type[i])
-            type_warframe_mod_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "아케인":
-            type_arcane_item.append(all_item[i])
-            type_arcane_item_kr.append(all_item_kr[i])
-            type_arcane_path.append(all_path[i])
-            type_arcane_path_0.append(all_path_0[i])
-            type_arcane_path_1.append(all_path_1[i])
-            type_arcane_type.append(all_type[i])
-            type_arcane_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "주무기 모드":
-            type_primary_mod_item.append(all_item[i])
-            type_primary_mod_item_kr.append(all_item_kr[i])
-            type_primary_mod_path.append(all_path[i])
-            type_primary_mod_path_0.append(all_path_0[i])
-            type_primary_mod_path_1.append(all_path_1[i])
-            type_primary_mod_type.append(all_type[i])
-            type_primary_mod_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "보조무기 모드":
-            type_secondary_mod_item.append(all_item[i])
-            type_secondary_mod_item_kr.append(all_item_kr[i])
-            type_secondary_mod_path.append(all_path[i])
-            type_secondary_mod_path_0.append(all_path_0[i])
-            type_secondary_mod_path_1.append(all_path_1[i])
-            type_secondary_mod_type.append(all_type[i])
-            type_secondary_mod_type_kr.append(all_type_kr[i])
-        elif all_type_kr[i] == "근접무기 모드":
-            type_melee_mod_item.append(all_item[i])
-            type_melee_mod_item_kr.append(all_item_kr[i])
-            type_melee_mod_path.append(all_path[i])
-            type_melee_mod_path_0.append(all_path_0[i])
-            type_melee_mod_path_1.append(all_path_1[i])
-            type_melee_mod_type.append(all_type[i])
-            type_melee_mod_type_kr.append(all_type_kr[i])
-        else:
-            type_etc_item.append(all_item[i])
-            type_etc_item_kr.append(all_item_kr[i])
-            type_etc_path.append(all_path[i])
-            type_etc_path_0.append(all_path_0[i])
-            type_etc_path_1.append(all_path_1[i])
-            type_etc_type.append(all_type[i])
-            type_etc_type_kr.append(all_type_kr[i])
+    
+    def en_to_kr(item):
+        for i, v in enumerate(item):
+            if all_type_kr[i] == "주무기":
+                type_primary_item.append(all_item[i])
+                type_primary_item_kr.append(all_item_kr[i])
+                type_primary_path.append(all_path[i])
+                type_primary_path_0.append(all_path_0[i])
+                type_primary_path_1.append(all_path_1[i])
+                type_primary_type.append(all_type[i])
+                type_primary_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "보조무기":
+                type_secondary_item.append(all_item[i])
+                type_secondary_item_kr.append(all_item_kr[i])
+                type_secondary_path.append(all_path[i])
+                type_secondary_path_0.append(all_path_0[i])
+                type_secondary_path_1.append(all_path_1[i])
+                type_secondary_type.append(all_type[i])
+                type_secondary_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "근접무기":
+                type_melee_item.append(all_item[i])
+                type_melee_item_kr.append(all_item_kr[i])
+                type_melee_path.append(all_path[i])
+                type_melee_path_0.append(all_path_0[i])
+                type_melee_path_1.append(all_path_1[i])
+                type_melee_type.append(all_type[i])
+                type_melee_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "워프레임":
+                type_warframe_item.append(all_item[i])
+                type_warframe_item_kr.append(all_item_kr[i])
+                type_warframe_path.append(all_path[i])
+                type_warframe_path_0.append(all_path_0[i])
+                type_warframe_path_1.append(all_path_1[i])
+                type_warframe_type.append(all_type[i])
+                type_warframe_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "워프레임 모드":
+                type_warframe_mod_item.append(all_item[i])
+                type_warframe_mod_item_kr.append(all_item_kr[i])
+                type_warframe_mod_path.append(all_path[i])
+                type_warframe_mod_path_0.append(all_path_0[i])
+                type_warframe_mod_path_1.append(all_path_1[i])
+                type_warframe_mod_type.append(all_type[i])
+                type_warframe_mod_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "아케인":
+                type_arcane_item.append(all_item[i])
+                type_arcane_item_kr.append(all_item_kr[i])
+                type_arcane_path.append(all_path[i])
+                type_arcane_path_0.append(all_path_0[i])
+                type_arcane_path_1.append(all_path_1[i])
+                type_arcane_type.append(all_type[i])
+                type_arcane_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "주무기 모드":
+                type_primary_mod_item.append(all_item[i])
+                type_primary_mod_item_kr.append(all_item_kr[i])
+                type_primary_mod_path.append(all_path[i])
+                type_primary_mod_path_0.append(all_path_0[i])
+                type_primary_mod_path_1.append(all_path_1[i])
+                type_primary_mod_type.append(all_type[i])
+                type_primary_mod_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "보조무기 모드":
+                type_secondary_mod_item.append(all_item[i])
+                type_secondary_mod_item_kr.append(all_item_kr[i])
+                type_secondary_mod_path.append(all_path[i])
+                type_secondary_mod_path_0.append(all_path_0[i])
+                type_secondary_mod_path_1.append(all_path_1[i])
+                type_secondary_mod_type.append(all_type[i])
+                type_secondary_mod_type_kr.append(all_type_kr[i])
+            elif all_type_kr[i] == "근접무기 모드":
+                type_melee_mod_item.append(all_item[i])
+                type_melee_mod_item_kr.append(all_item_kr[i])
+                type_melee_mod_path.append(all_path[i])
+                type_melee_mod_path_0.append(all_path_0[i])
+                type_melee_mod_path_1.append(all_path_1[i])
+                type_melee_mod_type.append(all_type[i])
+                type_melee_mod_type_kr.append(all_type_kr[i])
+            else:
+                type_etc_item.append(all_item[i])
+                type_etc_item_kr.append(all_item_kr[i])
+                type_etc_path.append(all_path[i])
+                type_etc_path_0.append(all_path_0[i])
+                type_etc_path_1.append(all_path_1[i])
+                type_etc_type.append(all_type[i])
+                type_etc_type_kr.append(all_type_kr[i])
+    
+    en_to_kr(all_item_kr);
 
     type_primary_len = len(type_primary_item)
     type_secondary_len = len(type_secondary_item)
@@ -1105,44 +1110,90 @@ def category():
     for i, v in enumerate(all_item):
         if v in type_primary_item:
             type_primary_price.append(today_price[i])
-            type_primary_percent.append(today_price[i])
-            type_primary_volume.append(today_price[i])
+            type_primary_percent.append(today_percent[i])
+            type_primary_volume.append(today_volume[i])
         if v in type_secondary_item:
             type_secondary_price.append(today_price[i])
-            type_secondary_percent.append(today_price[i])
-            type_secondary_volume.append(today_price[i])
+            type_secondary_percent.append(today_percent[i])
+            type_secondary_volume.append(today_volume[i])
         if v in type_melee_item:
             type_melee_price.append(today_price[i])
-            type_melee_percent.append(today_price[i])
-            type_melee_volume.append(today_price[i])
+            type_melee_percent.append(today_percent[i])
+            type_melee_volume.append(today_volume[i])
         if v in type_warframe_item:
             type_warframe_price.append(today_price[i])
-            type_warframe_percent.append(today_price[i])
-            type_warframe_volume.append(today_price[i])
+            type_warframe_percent.append(today_percent[i])
+            type_warframe_volume.append(today_volume[i])
         if v in type_warframe_mod_item:
             type_warframe_mod_price.append(today_price[i])
-            type_warframe_mod_percent.append(today_price[i])
-            type_warframe_mod_volume.append(today_price[i])
+            type_warframe_mod_percent.append(today_percent[i])
+            type_warframe_mod_volume.append(today_volume[i])
         if v in type_arcane_item:
             type_arcane_price.append(today_price[i])
-            type_arcane_percent.append(today_price[i])
-            type_arcane_volume.append(today_price[i])
+            type_arcane_percent.append(today_percent[i])
+            type_arcane_volume.append(today_volume[i])
         if v in type_etc_item:
             type_etc_price.append(today_price[i])
-            type_etc_percent.append(today_price[i])
-            type_etc_volume.append(today_price[i])
+            type_etc_percent.append(today_percent[i])
+            type_etc_volume.append(today_volume[i])
         if v in type_primary_mod_item:
             type_primary_mod_price.append(today_price[i])
-            type_primary_mod_percent.append(today_price[i])
-            type_primary_mod_volume.append(today_price[i])
+            type_primary_mod_percent.append(today_percent[i])
+            type_primary_mod_volume.append(today_volume[i])
         if v in type_secondary_mod_item:
             type_secondary_mod_price.append(today_price[i])
-            type_secondary_mod_percent.append(today_price[i])
-            type_secondary_mod_volume.append(today_price[i])
+            type_secondary_mod_percent.append(today_percent[i])
+            type_secondary_mod_volume.append(today_volume[i])
         if v in type_melee_mod_item:
             type_melee_mod_price.append(today_price[i])
-            type_melee_mod_percent.append(today_price[i])
-            type_melee_mod_volume.append(today_price[i])
+            type_melee_mod_percent.append(today_percent[i])
+            type_melee_mod_volume.append(today_volume[i])
+
+    def sort_array(index, t_f, array_name, array_name_kr, array_price, array_percent, array_volume, array_path_1):
+        value = {"name" : pd.Series(array_name), "kr_name" : pd.Series(array_name_kr), "price" : pd.Series(array_price), "percent" : pd.Series(array_percent), "volume" : pd.Series(array_volume), "path_1" : pd.Series(array_path_1)}
+        today_data = pd.DataFrame(value)
+
+        if t_f == "True":
+            tf = True
+
+        if t_f == "False":
+            tf = False
+
+        if index == "가격":
+            today_data_1 = today_data.sort_values(by = 'price', ascending = tf)
+            name1 = today_data_1['name'].tolist()
+            kr_name1 = today_data_1['kr_name'].tolist()
+            price1 = today_data_1['price'].tolist()
+            path1 = today_data_1['path_1'].tolist()
+            return name1, kr_name1, price1, path1
+        if index == "퍼센트":
+            today_data_2 = today_data.sort_values(by = 'percent', ascending = tf)
+            name2 = today_data_2['name'].tolist()
+            kr_name2 = today_data_2['kr_name'].tolist()
+            percent2 = today_data_2['percent'].tolist()
+            path2 = today_data_2['path_1'].tolist()
+            return name2, kr_name2, percent2, path2
+        if index == "거래량":
+            today_data_3 = today_data.sort_values(by = 'volume', ascending = tf)
+            name3 = today_data_3['name'].tolist()
+            kr_name3 = today_data_3['kr_name'].tolist()
+            volume3 = today_data_3['volume'].tolist()
+            path3 = today_data_3['path_1'].tolist()
+            return name3, kr_name3, volume3, path3
+
+    type_primary_item_pr1, type_primary_item_kr_pr1, type_primary_price_pr1, type_primary_path_1_pr1 = sort_array("가격", "False", type_primary_item, type_primary_item_kr, type_primary_price, type_primary_percent, type_primary_volume, type_primary_path_1)
+    type_primary_item_pr2, type_primary_item_kr_pr2, type_primary_price_pr2, type_primary_path_1_pr2 = sort_array("가격", "True", type_primary_item, type_primary_item_kr, type_primary_price, type_primary_percent, type_primary_volume, type_primary_path_1)
+    type_primary_item_pe1, type_primary_item_kr_pe1, type_primary_percent_pe1, type_primary_path_1_pe1 = sort_array("퍼센트", "False", type_primary_item, type_primary_item_kr, type_primary_price, type_primary_percent, type_primary_volume, type_primary_path_1)
+    type_primary_item_pe2, type_primary_item_kr_pe2, type_primary_percent_pe2, type_primary_path_1_pe2 = sort_array("퍼센트", "True", type_primary_item, type_primary_item_kr, type_primary_price, type_primary_percent, type_primary_volume, type_primary_path_1)
+    type_primary_item_vo1, type_primary_item_kr_vo1, type_primary_volume_vo1, type_primary_path_1_vo1 = sort_array("거래량", "False", type_primary_item, type_primary_item_kr, type_primary_price, type_primary_percent, type_primary_volume, type_primary_path_1)
+    type_primary_item_vo2, type_primary_item_kr_vo2, type_primary_volume_vo2, type_primary_path_1_vo2 = sort_array("거래량", "True", type_primary_item, type_primary_item_kr, type_primary_price, type_primary_percent, type_primary_volume, type_primary_path_1)
+    
+    type_warframe_item_pr1, type_warframe_item_kr_pr1, type_warframe_price_pr1, type_warframe_path_1_pr1 = sort_array("가격", "False", type_warframe_item, type_warframe_item_kr, type_warframe_price, type_warframe_percent, type_warframe_volume, type_warframe_path_1)
+    type_warframe_item_pr2, type_warframe_item_kr_pr2, type_warframe_price_pr2, type_warframe_path_1_pr2 = sort_array("가격", "True", type_warframe_item, type_warframe_item_kr, type_warframe_price, type_warframe_percent, type_warframe_volume, type_warframe_path_1)
+    type_warframe_item_pe1, type_warframe_item_kr_pe1, type_warframe_percent_pe1, type_warframe_path_1_pe1 = sort_array("퍼센트", "False", type_warframe_item, type_warframe_item_kr, type_warframe_price, type_warframe_percent, type_warframe_volume, type_warframe_path_1)
+    type_warframe_item_pe2, type_warframe_item_kr_pe2, type_warframe_percent_pe2, type_warframe_path_1_pe2 = sort_array("퍼센트", "True", type_warframe_item, type_warframe_item_kr, type_warframe_price, type_warframe_percent, type_warframe_volume, type_warframe_path_1)
+    type_warframe_item_vo1, type_warframe_item_kr_vo1, type_warframe_volume_vo1, type_warframe_path_1_vo1 = sort_array("거래량", "False", type_warframe_item, type_warframe_item_kr, type_warframe_price, type_warframe_percent, type_warframe_volume, type_warframe_path_1)
+    type_warframe_item_vo2, type_warframe_item_kr_vo2, type_warframe_volume_vo2, type_warframe_path_1_vo2 = sort_array("거래량", "True", type_warframe_item, type_warframe_item_kr, type_warframe_price, type_warframe_percent, type_warframe_volume, type_warframe_path_1)
 
     return render_template('category.html', **locals())
 

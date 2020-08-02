@@ -81,6 +81,33 @@
     margin: 0px;
 }
 
+.category_top_1 {
+    padding: 0px;
+    margin: 4px;
+    width: 32.5%;
+    min-width: 120px;
+    background: #dbdcd9;
+    float: left;
+    display: table;
+}
+
+.category_top_1:hover {
+    background-color: lightyellow;
+    cursor: pointer;
+    transform: scale( 1.025 );
+    border: 1px solid #323232;
+}
+
+.category_top_1 a {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 18px;
+    color: #323232;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0px;
+}
+
 .category_2 {
     width: 100%;
     height: 50px;
@@ -193,6 +220,15 @@
     position: relative;
 }
 
+.category_4 {
+    margin: 0px;
+    width: 100%;
+    min-height: 32px;
+    float: left;
+    border: 1px solid #000000;
+    position: relative;
+}
+
 .category_box {
     width: 100%;
     height: 700px;
@@ -275,8 +311,17 @@
         height: 50px;
     }
     
+    .category_top_1 {
+        width: 32.8%;
+        margin: 1px;
+    }
+    
     .category_2 {
         height: auto;
+    }
+    
+    .category_4 {
+        min-height: 36px;
     }
     
     .weapon li {

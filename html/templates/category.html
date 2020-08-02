@@ -307,6 +307,122 @@
         </div>
         
         <div class="menu_1">
+            <div style="background-color: #ffffff; float: left; width: 100%; min-height: 50px; height: auto;">
+                <script>
+                    function find_menu_value(){
+                        var value = document.getElementById("category_value").innerHTML;
+                        return value;
+                    };
+                    
+                    function search_value_1(click_id){
+                        var menu_value = find_menu_value();
+                        var button = click_id.value;
+                        
+                        if(menu_value == "워프레임") {
+                            if(button == 1) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_warframe_len) %}<div class='item_0'><p><img alt='{{ type_warframe_item_kr_pr1[i] }}' src='{{ url_for('static', filename = type_warframe_path_1_pr1[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_warframe_item_pr1[i] }}'>{{ type_warframe_item_kr_pr1[i] }}</a><div class='item_0_text'>가격: {{ type_warframe_price_pr1[i] }}</div></div>{% endfor %}";
+                                click_id.value = 2;
+                            }else if(button == 2) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_warframe_len) %}<div class='item_0'><p><img alt='{{ type_warframe_item_kr_pr2[i] }}' src='{{ url_for('static', filename = type_warframe_path_1_pr2[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_warframe_item_pr2[i] }}'>{{ type_warframe_item_kr_pr2[i] }}</a><div class='item_0_text'>가격: {{ type_warframe_price_pr2[i] }}</div></div>{% endfor %}";
+                                click_id.value = 1;
+                            }else if(button == 3) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_warframe_len) %}<div class='item_0'><p><img alt='{{ type_warframe_item_kr_pe1[i] }}' src='{{ url_for('static', filename = type_warframe_path_1_pe1[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_warframe_item_pe1[i] }}'>{{ type_warframe_item_kr_pe1[i] }}</a><div class='item_0_text'>퍼센트: {{ type_warframe_percent_pe1[i] }}%</div></div>{% endfor %}";
+                                click_id.value = 4;
+                            }else if(button == 4) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_warframe_len) %}<div class='item_0'><p><img alt='{{ type_warframe_item_kr_pe2[i] }}' src='{{ url_for('static', filename = type_warframe_path_1_pe2[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_warframe_item_pe2[i] }}'>{{ type_warframe_item_kr_pe2[i] }}</a><div class='item_0_text'>퍼센트: {{ type_warframe_percent_pe2[i] }}%</div></div>{% endfor %}";
+                                click_id.value = 3;
+                            }else if(button == 5) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_warframe_len) %}<div class='item_0'><p><img alt='{{ type_warframe_item_kr_vo1[i] }}' src='{{ url_for('static', filename = type_warframe_path_1_vo1[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_warframe_item_vo1[i] }}'>{{ type_warframe_item_kr_vo1[i] }}</a><div class='item_0_text'>거래량: {{ type_warframe_volume_vo1[i] }}</div></div>{% endfor %}";
+                                click_id.value = 6;
+                            }else if(button == 6) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_warframe_len) %}<div class='item_0'><p><img alt='{{ type_warframe_item_kr_vo2[i] }}' src='{{ url_for('static', filename = type_warframe_path_1_vo2[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_warframe_item_vo2[i] }}'>{{ type_warframe_item_kr_vo2[i] }}</a><div class='item_0_text'>거래량: {{ type_warframe_volume_vo2[i] }}</div></div>{% endfor %}";
+                                click_id.value = 5;
+                            }else {
+                                console.log("오류!");
+                            };
+                        }else if(menu_value == "주무기") {
+                            if(button == 1) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_primary_len) %}<div class='item_0'><p><img alt='{{ type_primary_item_kr_pr1[i] }}' src='{{ url_for('static', filename = type_primary_path_1_pr1[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_primary_item_pr1[i] }}'>{{ type_primary_item_kr_pr1[i] }}</a><div class='item_0_text'>가격: {{ type_primary_price_pr1[i] }}</div></div>{% endfor %}";
+                                click_id.value = 2;
+                            }else if(button == 2) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_primary_len) %}<div class='item_0'><p><img alt='{{ type_primary_item_kr_pr2[i] }}' src='{{ url_for('static', filename = type_primary_path_1_pr2[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_primary_item_pr2[i] }}'>{{ type_primary_item_kr_pr2[i] }}</a><div class='item_0_text'>가격: {{ type_primary_price_pr2[i] }}</div></div>{% endfor %}";
+                                click_id.value = 1;
+                            }else if(button == 3) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_primary_len) %}<div class='item_0'><p><img alt='{{ type_primary_item_kr_pe1[i] }}' src='{{ url_for('static', filename = type_primary_path_1_pe1[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_primary_item_pe1[i] }}'>{{ type_primary_item_kr_pe1[i] }}</a><div class='item_0_text'>퍼센트: {{ type_primary_percent_pe1[i] }}%</div></div>{% endfor %}";
+                                click_id.value = 4;
+                            }else if(button == 4) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_primary_len) %}<div class='item_0'><p><img alt='{{ type_primary_item_kr_pe2[i] }}' src='{{ url_for('static', filename = type_primary_path_1_pe2[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_primary_item_pe2[i] }}'>{{ type_primary_item_kr_pe2[i] }}</a><div class='item_0_text'>퍼센트: {{ type_primary_percent_pe2[i] }}%</div></div>{% endfor %}";
+                                click_id.value = 3;
+                            }else if(button == 5) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_primary_len) %}<div class='item_0'><p><img alt='{{ type_primary_item_kr_vo1[i] }}' src='{{ url_for('static', filename = type_primary_path_1_vo1[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_primary_item_vo1[i] }}'>{{ type_primary_item_kr_vo1[i] }}</a><div class='item_0_text'>거래량: {{ type_primary_volume_vo1[i] }}</div></div>{% endfor %}";
+                                click_id.value = 6;
+                            }else if(button == 6) {
+                                document.getElementById("change_category").innerHTML = "{% for i in range(0, type_primary_len) %}<div class='item_0'><p><img alt='{{ type_primary_item_kr_vo2[i] }}' src='{{ url_for('static', filename = type_primary_path_1_vo2[i], v = 0.1) }}'></p><a onclick='href_site(this);' value='{{ type_primary_item_vo2[i] }}'>{{ type_primary_item_kr_vo2[i] }}</a><div class='item_0_text'>거래량: {{ type_primary_volume_vo2[i] }}</div></div>{% endfor %}";
+                                click_id.value = 5;
+                            }else {
+                                console.log("오류!");
+                            };
+                        }else if(menu_value == "보조무기") {
+                            console.log("보조무기 정렬!");
+                        }else if(menu_value == "근접무기") {
+                            console.log("근접무기 정렬!");
+                        }else if(menu_value == "워프레임 모드") {
+                            console.log("워프레임 모드 정렬!");
+                        }else if(menu_value == "주무기 모드") {
+                            console.log("주무기 모드 정렬!");
+                        }else if(menu_value == "보조무기 모드") {
+                            console.log("보조무기 모드 정렬!");
+                        }else if(menu_value == "근접무기 모드") {
+                            console.log("근접무기 모드 정렬!");
+                        }else if(menu_value == "아케인") {
+                            console.log("아케인 정렬!");
+                        }else {
+                            console.log("오류!");
+                        };
+
+                        /*if(button == 1) {
+                            console.log("오름차순 가격");
+                            click_id.value = 2;
+                        }else if(button == 2) {
+                            console.log("내림차순 가격");
+                            click_id.value = 1;
+                        }else if(button == 3) {
+                            console.log("오름차순 퍼센트");
+                            click_id.value = 4;
+                        }else if(button == 4) {
+                            console.log("내림차순 퍼센트");
+                            click_id.value = 3;
+                        }else if(button == 5) {
+                            console.log("오름차순 거래량");
+                            click_id.value = 6;
+                        }else if(button == 6) {
+                            console.log("내림차순 거래량");
+                            click_id.value = 5;
+                        }else {
+                            console.log("오류!");
+                        };*/
+                    };
+                </script>
+                <div class="category_0">
+                    <a id="category_value_1">정렬</a>
+                </div>
+                <div class="category_4">
+                    <ul>
+                        <li class="category_top_1" onclick="search_value_1(this)" value="1">
+                            <a>가격</a>
+                        </li>
+                        <li class="category_top_1" onclick="search_value_1(this)" value="3">
+                            <a>퍼센트</a>
+                        </li>
+                        <li class="category_top_1" onclick="search_value_1(this)" value="5">
+                            <a>거래량</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu_1">
             <div style="background-color: #ffffff; float: left; width: 100%; min-height: 750px; height: auto;">
                 <script>
                     
