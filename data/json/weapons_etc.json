@@ -67,12 +67,6 @@
             "kr_name": "프리즈마 그라카타"
         },
         {
-            "name": "telos_boltor",
-            "type": "primary",
-            "en_name": "Telos Boltor",
-            "kr_name": "텔로스 볼터"
-        },
-        {
             "name": "viper_wraith",
             "type": "secondary",
             "en_name": "Viper Wraith",
@@ -197,12 +191,6 @@
             "type": "melee",
             "en_name": "Secura Lecta",
             "kr_name": "세큐라 렉타"
-        },
-        {
-            "name": "prisma_veritux",
-            "type": "melee",
-            "en_name": "Prisma Veritux",
-            "kr_name": "프리즈마 베리턱스"
         }
     ]
 }

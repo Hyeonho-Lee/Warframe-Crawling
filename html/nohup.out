@@ -12012,3 +12012,97 @@ TypeError: The view function did not return a valid response. The function eithe
 172.17.0.1 - - [02/Aug/2020 06:58:37] "[32mGET /result/바자%20프라임 HTTP/1.1[0m" 308 -
 172.17.0.1 - - [02/Aug/2020 06:58:37] "[37mGET /result/바자%20프라임/ HTTP/1.1[0m" 200 -
 172.17.0.1 - - [02/Aug/2020 07:00:56] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:01:14] "[32mGET /result/baza_prime_set HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 07:01:14] "[37mGET /result/baza_prime_set/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:01:17] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:01:25] "[32mGET /result/이바라%20프라임 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 07:01:25] "[37mGET /result/이바라%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:03:29] "[37mGET /category/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:04:57] "[37mGET /result/티그리스%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:04:58] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:04:58] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:04:58] "[37mGET /static/css/result.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:04:58] "[36mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 304 -
+172.17.0.1 - - [02/Aug/2020 07:04:58] "[37mGET /static/image/icon/logo.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:04:58] "[37mGET /static/image/item_image/weapon/Tigris_Prime/Tigris_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:04:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/js/jquery-3.5.1.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/js/jquery-ui.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/warframe/Ash_Prime/Ash_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/weapon/Baza_Prime/Baza_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/mod/Primed_Pistol_Gambit/Primed_Pistol_Gambit.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/weapon/Sancti_Tigris/Sancti_Tigris.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/mod/Hammer_Shot/Hammer_Shot.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/weapon/Sancti_Magistar/Sancti_Magistar.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/warframe/Atlas_Prime/Atlas_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/weapon/Destreza_Prime/Destreza_Prime.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/mod/Voltaic_Strike/Voltaic_Strike.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/weapon/Synoid_Simulor/Synoid_Simulor.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/weapon/Synoid_Heliocor/Synoid_Heliocor.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:00] "[37mGET /static/image/item_image/weapon/Mara_Detron/Mara_Detron.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:05:07] "[32mGET /result/스모킹 HTTP/1.1[0m" 308 -
+[2020-08-02 07:05:08,010] ERROR in app: Exception on /result/스모킹/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+172.17.0.1 - - [02/Aug/2020 07:05:08] "[1m[35mGET /result/스모킹/ HTTP/1.1[0m" 500 -
+172.17.0.1 - - [02/Aug/2020 07:05:24] "[32mGET /result/이페메라 HTTP/1.1[0m" 308 -
+[2020-08-02 07:05:24,243] ERROR in app: Exception on /result/이페메라/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+172.17.0.1 - - [02/Aug/2020 07:05:24] "[1m[35mGET /result/이페메라/ HTTP/1.1[0m" 500 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[37mGET /result/마구스%20엘레베이트/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[37mGET /static/css/result.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[37mGET /static/css/table.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[37mGET /static/css/index.css?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[37mGET /static/js/AutoComplete.min.js HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[37mGET /static/image/icon/logo.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[37mGET /static/image/item_image/etc/Magus_Elevate/Magus_Elevate.png?v=0.1 HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 07:48:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 08:42:38] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 08:42:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 08:42:57] "[37mGET /category/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 09:42:55] "[32mGET /result/프로스트%20프라임 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 09:42:56] "[37mGET /result/프로스트%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 09:42:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 09:55:44] "[37mGET /result/프로스트%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 09:55:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 09:55:52] "[32mGET /result/로키%20프라임 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 09:55:52] "[37mGET /result/로키%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 09:59:08] "[32mGET /result/아틀라스%20프라임 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 09:59:09] "[37mGET /result/아틀라스%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 09:59:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 10:14:19] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 10:14:19] "[37mGET /result/프라임드%20프레셔%20포인트/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:38:35] "[32mGET /result/벡티스%20프라임 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 10:38:35] "[37mGET /result/벡티스%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:38:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 10:52:18] "[32mGET /result/팬서라%20프라임 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 10:52:18] "[37mGET /result/팬서라%20프라임/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:52:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [02/Aug/2020 10:52:26] "[32mGET /result/프라임드%20컨티뉴어티 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 10:52:26] "[37mGET /result/프라임드%20컨티뉴어티/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:52:41] "[32mGET /result/스피드%20홀스터 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 10:52:41] "[37mGET /result/스피드%20홀스터/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:52:54] "[37mGET /result/프라임드%20컨티뉴어티/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:53:12] "[32mGET /result/피스톨%20페스틸런스 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 10:53:12] "[37mGET /result/피스톨%20페스틸런스/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:53:22] "[32mGET /result/위핑%20운즈 HTTP/1.1[0m" 308 -
+172.17.0.1 - - [02/Aug/2020 10:53:22] "[37mGET /result/위핑%20운즈/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [02/Aug/2020 10:54:22] "[37mGET / HTTP/1.1[0m" 200 -
