@@ -223,12 +223,6 @@
             "kr_name": "라임 라운즈"
         },
         {
-            "name": "ripper_rounds",
-            "type": "rifle_mod",
-            "en_name": "Ripper Rounds",
-            "kr_name": "리퍼 라운즈"
-        },
-        {
             "name": "serrated_rounds",
             "type": "rifle_mod",
             "en_name": "Serrated Rounds",
@@ -547,12 +541,6 @@
             "kr_name": "프라임드 샷건 애모 뮤테이션"
         },
         {
-            "name": "prize_kill",
-            "type": "shotgun_mod",
-            "en_name": "Prize Kill",
-            "kr_name": "프라이즈 킬"
-        },
-        {
             "name": "ravage",
             "type": "shotgun_mod",
             "en_name": "Ravage",
@@ -821,32 +809,7 @@
             "type": "pistol_mod",
             "en_name": "Embedded Catalyzer",
             "kr_name": "임베디드 카탈라이저"
-        },
-        {
-            "name": "expel_corpus",
-            "type": "pistol_mod",
-            "en_name": "Expel Corpus",
-            "kr_name": "익스펠 코퍼스"
-        },
-        {
-            "name": "expel_corrupted",
-            "type": "pistol_mod",
-            "en_name": "Expel Corrupted",
-            "kr_name": "익스펠 커럽티드"
-        },
-        {
-            "name": "expel_grineer",
-            "type": "pistol_mod",
-            "en_name": "Expel Grineer",
-            "kr_name": "익스펠 그리니어"
-        },
-        {
-            "name": "expel_infested",
-            "type": "pistol_mod",
-            "en_name": "Expel Infested",
-            "kr_name": "익스펠 인페스티드"
-        },
-        {
+        },{
             "name": "frostbite",
             "type": "pistol_mod",
             "en_name": "Frostbite",
@@ -1404,18 +1367,6 @@
             "kr_name": "퀴크닝"
         },
         {
-            "name": "reach",
-            "type": "melee_mod",
-            "en_name": "Reach",
-            "kr_name": "리치"
-        },
-        {
-            "name": "rebound",
-            "type": "melee_mod",
-            "en_name": "Rebound",
-            "kr_name": "리바운드"
-        },
-        {
             "name": "reflex_coil",
             "type": "melee_mod",
             "en_name": "Reflex Coil",
@@ -1426,6 +1377,7 @@
             "type": "melee_mod",
             "en_name": "Relentless Assault",
             "kr_name": "릴렌트리스 어설트"
+            
         },
         {
             "name": "relentless_combination",
@@ -1468,12 +1420,6 @@
             "type": "melee_mod",
             "en_name": "Spoiled Strike",
             "kr_name": "스포일드 스트라이크"
-        },
-        {
-            "name": "stand_ground",
-            "type": "melee_mod",
-            "en_name": "Stand Ground",
-            "kr_name": "스탠드 그라운즈"
         },
         {
             "name": "strain_infection",

@@ -1249,6 +1249,10 @@ def category():
     type_melee_mod_item_vo1, type_melee_mod_item_kr_vo1, type_melee_mod_volume_vo1, type_melee_mod_path_1_vo1 = sort_array("거래량", "False", type_melee_mod_item, type_melee_mod_item_kr, type_melee_mod_price, type_melee_mod_percent, type_melee_mod_volume, type_melee_mod_path_1)
     type_melee_mod_item_vo2, type_melee_mod_item_kr_vo2, type_melee_mod_volume_vo2, type_melee_mod_path_1_vo2 = sort_array("거래량", "True", type_melee_mod_item, type_melee_mod_item_kr, type_melee_mod_price, type_melee_mod_percent, type_melee_mod_volume, type_melee_mod_path_1)
 
+    #test = {"name" : pd.Series(all_item), "price" : pd.Series(today_price)}
+    #test_data = pd.DataFrame(test)
+    #test_data.to_excel('test.xlsx')
+
     path = '/workspace/crawling/data/json/recommend_0.json'
     with open(path, "r", encoding="UTF-8") as json_file:
         json_data = json.load(json_file, strict = False)

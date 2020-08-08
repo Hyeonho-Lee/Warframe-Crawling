@@ -142,8 +142,8 @@
                         <a>추천</a>
                     </div>
                     <div class = "content_1_img">
-                        <div class = "content_1_main0" onClick="location.href='/result/{{ a_top_name[0] }}'">
-                            <img alt="{{ a_top_name[0] }}" src="{{ url_for('static', filename = a_top_path_1[0], v = 0.1) }}">
+                        <div class = "content_1_main0" onClick="location.href='/result/{{ a_top_kr_name[0] }}/'">
+                            <img alt="{{ a_top_kr_name[0] }}" src="{{ url_for('static', filename = a_top_path_1[0], v = 0.1) }}">
                             <div class = "content_1_title">
                                 <a>추천 상승 아이템</a><br>
                                 <a>{{ a_top_price[0] }}({{ a_top_percent[0] }}%)</a>
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class = "content_1_img">
-                        <div class = "content_1_main1" onClick="location.href='/result/{{ a_bottom_name[0] }}'">
+                        <div class = "content_1_main1" onClick="location.href='/result/{{ a_bottom_kr_name[0] }}/'">
                             <img alt="{{ a_bottom_name[0] }}" src="{{ url_for('static', filename = a_bottom_path_1[0], v = 0.1) }}">
                             <div class = "content_1_title">
                                 <a>위험 하락 아이템</a><br>
@@ -185,7 +185,7 @@
                                 table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_top_percent[i - 1] }}%</a>";
                                 table_value.rows[{{i}}].cells[2].innerHTML = "<a >▲</a>";
                                 var result = table_value.rows[{{i}}].cells[1].innerText;
-                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_top_name[i - 1] }}'>{{ t_top_kr_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_top_name[i - 1] }}'src='{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_top_kr_name[i - 1] }}'>{{ t_top_kr_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_top_kr_name[i - 1] }}'src='{{ url_for('static', filename = t_top_path_1[i - 1], v = 0.1) }}'></div></div>";
                                 {% endfor %}
                             }
 
@@ -196,7 +196,7 @@
                                 table_value.rows[{{i}}].cells[0].innerHTML = "<a>{{ t_bottom_percent[i - 1] }}%</a>";
                                 table_value.rows[{{i}}].cells[2].innerHTML = "<a style='color:blue;'>▼</a>";
                                 var result = table_value.rows[{{i}}].cells[1].innerText;
-                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_bottom_name[i - 1] }}'>{{ t_bottom_kr_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_bottom_name[i - 1] }}'src='{{ url_for('static', filename = t_bottom_path_1[i - 1], v = 0.1) }}'></div></div>";
+                                table_value.rows[{{i}}].cells[1].innerHTML = "<div><div class='item_name'><a href='result/{{ t_bottom_kr_name[i - 1] }}'>{{ t_bottom_kr_name[i - 1] }}</a></div><div class = 'item_box'><img alt='{{ t_bottom_kr_name[i - 1] }}'src='{{ url_for('static', filename = t_bottom_path_1[i - 1], v = 0.1) }}'></div></div>";
                                 {% endfor %}
                             }
                             
