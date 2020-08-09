@@ -19,6 +19,7 @@ def pandas_value(name, types):
     path = '/workspace/crawling/data/csv/{types}/{name}/{name_csv}'.format(types = types, name = name, name_csv = name_csv)
 
     result = read_csv(path)
+    result_mnd = find_mnd.find_mmd(path)
 
     result['day_before'] = np.nan
     result['yn_before'] = np.nan
@@ -33,7 +34,7 @@ def pandas_value(name, types):
     for i in range(1, len(result)):
         value = result['avg_price'][i] - result['avg_price'][i-1]
         result.loc[i, ['day_before']] = round(value, 1)
-        
+
         values = round(value, 1)
         before = result['avg_price'][i-1]
         percents = float(values) / float(before) * 100

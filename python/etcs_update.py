@@ -54,7 +54,7 @@ def warframe_crawling(item, path, path_0):
 
     for i in result_data['moving_avg']:
         avg_price.append(str(i))
-        
+
     for i in result_data['volume']:
         volume.append(str(i))
 
