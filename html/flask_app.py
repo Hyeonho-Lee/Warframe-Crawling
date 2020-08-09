@@ -987,7 +987,7 @@ def category():
     type_melee_mod_percent = []
     type_melee_mod_volume = []
     type_melee_mod_len = 0
-    
+
     def en_to_kr(item):
         for i, v in enumerate(item):
             if all_type_kr[i] == "주무기":
@@ -1298,6 +1298,15 @@ def category():
     return render_template('category.html', **locals())
 
 #=======================================================================#
+
+@app.route('/calculator/')
+def calculator():
+    visit_count = get_visit()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
+    
+    return render_template('calculator.html', **locals())
+
+#=======================================================================#
 if __name__ == '__main__':
     app.static_folder = 'static'
-    app.run(host = '0.0.0.0', port = '5000', debug=False)
+    app.run(host = '0.0.0.0', port = '5000', debug=True)
