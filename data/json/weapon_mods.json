@@ -157,12 +157,6 @@
             "kr_name": "인펙티드 클립"
         },
         {
-            "name": "lucky_shot",
-            "type": "rifle_mod",
-            "en_name": "Lucky Shot",
-            "kr_name": "럭키 샷"
-        },
-        {
             "name": "malignant_force",
             "type": "rifle_mod",
             "en_name": "Malignant Force",
@@ -709,28 +703,10 @@
             "kr_name": "애로우 뮤테이션"
         },
         {
-            "name": "plan_b",
-            "type": "bow_mod",
-            "en_name": "Plan B",
-            "kr_name": "플랜 B"
-        },
-        {
-            "name": "soaring_strike",
-            "type": "bow_mod",
-            "en_name": "Soaring Strike",
-            "kr_name": "소어링 스트라이크"
-        },
-        {
             "name": "split_flights",
             "type": "bow_mod",
             "en_name": "Split Flights",
             "kr_name": "스플릿 플라이츠"
-        },
-        {
-            "name": "thunderbolt",
-            "type": "bow_mod",
-            "en_name": "Thunderbolt",
-            "kr_name": "썬더볼트"
         },
         {
             "name": "anemic_agility",
@@ -755,12 +731,6 @@
             "type": "pistol_mod",
             "en_name": "Barrel Diffusion",
             "kr_name": "배럴 디퓨전"
-        },
-        {
-            "name": "blind_shot",
-            "type": "pistol_mod",
-            "en_name": "Blind Shot",
-            "kr_name": "블라인드 샷"
         },
         {
             "name": "bore",
@@ -1228,7 +1198,8 @@
             "type": "melee_mod",
             "en_name": "Impenetrable Offense",
             "kr_name": "임페네트러블 오펜스"
-        },{
+        },
+        {
             "name": "jagged_edge",
             "type": "melee_mod",
             "en_name": "Jagged Edge",
@@ -1257,12 +1228,6 @@
             "type": "melee_mod",
             "en_name": "Maiming Strike",
             "kr_name": "메이밍 스트라이크"
-        },
-        {
-            "name": "martial_fury",
-            "type": "melee_mod",
-            "en_name": "Martial Fury",
-            "kr_name": "마샬 퓨리"
         },
         {
             "name": "molten_impact",

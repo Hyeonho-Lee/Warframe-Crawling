@@ -987,7 +987,7 @@ def category():
     type_melee_mod_percent = []
     type_melee_mod_volume = []
     type_melee_mod_len = 0
-    
+
     def en_to_kr(item):
         for i, v in enumerate(item):
             if all_type_kr[i] == "주무기":
@@ -1296,6 +1296,15 @@ def category():
     rec_name_0_vo2, rec_kr_name_0_vo2, rec_volume_0_vo2, rec_image_0_vo2 = sort_array("거래량", "True", rec_name_0, rec_kr_name_0, rec_price_0, rec_percent_0, rec_volume_0, rec_image_0)
     
     return render_template('category.html', **locals())
+
+#=======================================================================#
+
+@app.route('/calculator/')
+def calculator():
+    visit_count = get_visit()
+    all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
+    
+    return render_template('calculator.html', **locals())
 
 #=======================================================================#
 if __name__ == '__main__':

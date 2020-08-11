@@ -36,11 +36,11 @@ def warframe_crawling(item, path, path_0):
         file.write(json_data_1)
 
     warframe_data = json_data_1
-    
+
     json_data = json.loads(warframe_data)
 
     result_data = pd.DataFrame(json_data['payload']['statistics_closed']['90days'])
-    
+
     datetime = []
     avg_price = []
     volume = []
@@ -51,11 +51,26 @@ def warframe_crawling(item, path, path_0):
 
     for i in result_data['moving_avg']:
         avg_price.append(str(i))
-        
+
     for i in result_data['volume']:
         volume.append(str(i))
+    """
+    max_price = []
+    min_price = []
+    open_price = []
+    closed_price = []
 
+    for i in result_data['max_price']:
+        max_price.append(str(i))
+    for i in result_data['min_price']:
+        min_price.append(str(i))
+    for i in result_data['open_price']:
+        open_price.append(str(i))
+    for i in result_data['closed_price']:
+        closed_price.append(str(i))
+    """
     all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume})
+    #all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume, 'max_price' : max_price, 'min_price' : min_price, 'open_price' : open_price, 'closed_price' : closed_price})
     #all_data_list = all_data_list[::-1]
     
     def make_file(item, path):
@@ -85,7 +100,6 @@ def warframe_crawling(item, path, path_0):
     print(str(get_item) + ' 업데이트를 하였습니다.')
 
 ######################################################
-
 startTime = time.time()
 
 input_items = input_warframe.input_item('warframes')
@@ -94,12 +108,19 @@ for i, v in enumerate(input_items):
     item = str(v) + '_set'
     path = '/workspace/crawling/data/csv/warframe/' + item + '/' + item + '.csv'
     path_0 = '/workspace/crawling/data/csv/warframe/' + item
-    
+
     save_data = warframe_crawling(item, path, path_0)
     #save_png = data_result.write_plot(item)
     endTime = time.time() - startTime
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
 
+"""
+t_name = 'ivara_prime'
+item = str(t_name) + '_set'
+path = '/workspace/crawling/data/csv/warframe/' + item + '/' + item + '.csv'
+path_0 = '/workspace/crawling/data/csv/warframe/' + item
+save_data = warframe_crawling(item, path, path_0)
+"""
 print("업데이트가 모두 완료했습니다.")
 
 ######################################################
