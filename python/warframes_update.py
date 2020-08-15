@@ -54,6 +54,7 @@ def warframe_crawling(item, path, path_0):
 
     for i in result_data['volume']:
         volume.append(str(i))
+<<<<<<< Updated upstream
     """
     max_price = []
     min_price = []
@@ -64,13 +65,30 @@ def warframe_crawling(item, path, path_0):
         max_price.append(str(i))
     for i in result_data['min_price']:
         min_price.append(str(i))
+=======
+
+    min_price = []
+    max_price = []
+    open_price = []
+    closed_price = []
+
+    for i in result_data['min_price']:
+        min_price.append(str(i))
+    for i in result_data['max_price']:
+        max_price.append(str(i))
+>>>>>>> Stashed changes
     for i in result_data['open_price']:
         open_price.append(str(i))
     for i in result_data['closed_price']:
         closed_price.append(str(i))
+<<<<<<< Updated upstream
     """
     all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume})
     #all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume, 'max_price' : max_price, 'min_price' : min_price, 'open_price' : open_price, 'closed_price' : closed_price})
+=======
+
+    all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume, 'min_price' : min_price, 'max_price' : max_price, 'open_price' : open_price, 'closed_price' : closed_price})
+>>>>>>> Stashed changes
     #all_data_list = all_data_list[::-1]
     
     def make_file(item, path):
@@ -115,12 +133,20 @@ for i, v in enumerate(input_items):
     print(str(round(i / len(input_items) * 100)) + "% 완료했습니다. 시간: " + str(round(endTime)) + "초")
 
 """
+<<<<<<< Updated upstream
 t_name = 'ivara_prime'
+=======
+t_name = 'loki_prime'
+>>>>>>> Stashed changes
 item = str(t_name) + '_set'
 path = '/workspace/crawling/data/csv/warframe/' + item + '/' + item + '.csv'
 path_0 = '/workspace/crawling/data/csv/warframe/' + item
 save_data = warframe_crawling(item, path, path_0)
 """
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 print("업데이트가 모두 완료했습니다.")
 
 ######################################################

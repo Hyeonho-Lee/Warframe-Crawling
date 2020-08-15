@@ -21,7 +21,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-105%, -50%);
+    float: left;
 }
 
 .market_button a {
@@ -37,6 +38,33 @@
 }
 
 .market_button a:hover{
+    text-decoration: underline;
+}
+
+.calculator_button {
+    width: 200px;
+    height: 50px;
+    background-color: #323232;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(5%, -50%);
+    float: left;
+}
+
+.calculator_button a {
+    width: 100%;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+}
+
+.calculator_button a:hover{
     text-decoration: underline;
 }
 
@@ -143,10 +171,23 @@
     .content_2 {
         width: 100% !important;
     }
+    
+    .calculator_button, .market_button {
+        width: 175px;
+    }
 }
 
 @media screen and (max-width: 1220px) {
-    .content_0, .content_1, .content_2 {
+    .content_1, .content_2 {
         width: 100% !important;
+    }
+    
+    .content_0 {
+        width: 100% !important;
+        height: 450px !important;
+    }
+    
+    .calculator_button, .market_button {
+        width: 150px;
     }
 }

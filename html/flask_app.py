@@ -1,5 +1,6 @@
 import os
 import json
+import math
 import datetime
 import pandas as pd
 import numpy as np
@@ -1299,12 +1300,240 @@ def category():
 
 #=======================================================================#
 
-@app.route('/calculator/')
-def calculator():
+@app.route('/calculator/<get_name>/', methods=['GET', 'POST'])
+def calculator(get_name):
+
     visit_count = get_visit()
     all_item, all_item_kr, all_path, all_path_0, all_path_1, all_type, all_type_kr = get_all_item()
     
-    return render_template('calculator.html', **locals())
+    def find_path(name, types):
+        if types == 'path':
+            for i, v in enumerate(all_item):
+                if str(v) == name:
+                    path = all_path[i]
+                    return path
+        elif types == 'path_0':
+            for i, v in enumerate(all_item):
+                if str(v) == name:
+                    path_0 = all_path_0[i]
+                    return path_0
+        elif types == 'path_1':
+            for i, v in enumerate(all_item):
+                if str(v) == name:
+                    path_1 = all_path_1[i]
+                    return path_1
+
+    if get_name not in all_item_kr:
+        return redirect('/error/')
+    else:
+
+        input_warframe = input_item('warframes')
+        input_weapon = input_item('weapons')
+        input_weapon_etc = input_item('weapons_etc')
+        input_aura_mods = input_item('aura_mods')
+        input_warframe_mods = input_item('warframe_mods')
+        input_items_etc = input_item('items_etc')
+        input_weapon_mods = input_item('weapon_mods')
+
+        result_name = '%s' % get_name
+        for i, v in enumerate(all_item_kr):
+            if str(v) == result_name:
+                result_name = all_item[i]
+        name = result_name.replace('_set', '')
+
+        name_set = name.replace(' ', '_')
+        name_sets = name_set + '_set'
+
+        for i, v in enumerate(all_item):
+            if str(v) == result_name:
+                kr_name = all_item_kr[i]
+
+        for i in input_weapon_etc:
+            if str(name) in i:
+                name_sets = name
+
+        for i in input_aura_mods:
+            if str(name) in i:
+                name_sets = name
+
+        for i in input_warframe_mods:
+            if str(name) in i:
+                name_sets = name
+
+        for i in input_items_etc:
+            if str(name) in i:
+                name_sets = name
+
+        for i in input_weapon_mods:
+            if str(name) in i:
+                name_sets = name
+
+        search_path = find_path(name_sets, 'path')
+        search_path_0 = find_path(name_sets, 'path_0')
+        search_path_1 = find_path(name_sets, 'path_1')
+
+        get_find = False
+        is_warframe = False
+        is_weapon = False
+        is_weapon_etc = False
+        is_aura_mods = False
+        is_warframe_mods = False
+        is_items_etc = False
+        is_weapon_mods = False
+
+        if get_find == False:
+            for finds in input_warframe:
+                if name in finds:
+                    result = read_csv(name, 'warframe')
+                    get_find = True
+                    is_warframe = True
+                    break
+
+        if get_find == False:
+            for finds in input_weapon:
+                if name in finds:
+                    result = read_csv(name, 'weapon')
+                    get_find = True
+                    is_weapon = True
+                    break
+
+        if get_find == False:
+            for finds in input_weapon_etc:
+                if name in finds:
+                    result = read_csv(name, 'weapon_etc')
+                    get_find = True
+                    is_weapon_etc = True
+                    break
+
+        if get_find == False:
+            for finds in input_aura_mods:
+                if name in finds:
+                    result = read_csv(name, 'aura_mods')
+                    get_find = True
+                    is_aura_mods = True
+                    break
+
+        if get_find == False:
+            for finds in input_warframe_mods:
+                if name in finds:
+                    result = read_csv(name, 'warframe_mods')
+                    get_find = True
+                    is_aura_mods = True
+                    break
+
+        if get_find == False:
+            for finds in input_items_etc:
+                if name in finds:
+                    result = read_csv(name, 'items_etc')
+                    get_find = True
+                    is_items_etc = True
+                    break
+
+        if get_find == False:
+            for finds in input_weapon_mods:
+                if name in finds:
+                    result = read_csv(name, 'weapon_mods')
+                    get_find = True
+                    is_items_etc = True
+                    break
+
+        if(is_warframe == False and is_weapon == False and is_weapon_etc == False and is_aura_mods == False and is_warframe_mods == False and is_items_etc == False and is_weapon_mods):
+            return redirect('/error/')
+
+        if get_find == True:
+            if(result.empty != True):
+
+                today_datetime = get_today_date()
+                min_date = str(result['datetime'][0])
+                max_date = str(result['datetime'][len(result) - 1])
+                input_first_date = '시작일'
+                input_second_date = '종료일'
+                min_price = 0
+                max_price = 0
+                input_cash = 0
+                input_count = 0
+                input_count_0 = 0
+                cal_price_0 = 0 #지불한 플레티넘
+                cal_price_1 = 0 #지불후 남는 플레티넘
+                cal_price_2 = 0 #개당 이윤
+                cal_price_3 = 0 #총 이윤
+                cal_price_4 = 0 #최종 소지 플레티넘
+                cal_percent = 0 #이윤 퍼센트
+
+                if request.method == 'POST':
+                    post_result = request.form
+                    names = []
+                    values = []
+                    for name, value in post_result.items():
+                        names.append(name)
+                        values.append(value)
+                    if int(values[3]) == 0:
+                        input_first_date = str(values[0])
+                        input_second_date = str(values[1])
+                        if datetime.datetime.strptime(values[1], '%Y-%m-%d') >= datetime.datetime.strptime(values[0], '%Y-%m-%d'):
+                            input_cash = int(values[2])
+                            search_date = result[(result['datetime'] == input_first_date) | (result['datetime'] == input_second_date)]
+                            search_index = search_date.index
+                            search_index = search_index.tolist()
+                            search_all_date = result[(result.index >= search_index[0]) & (result.index <= search_index[1])]
+                            min_price = result['avg_price'][search_index[1]]
+                            max_price = result['avg_price'][search_index[0]]
+
+                            input_first_price = search_date['avg_price'][search_index[0]]
+                            input_second_price = search_date['avg_price'][search_index[1]]
+                            input_count = math.trunc(input_cash / min_price) #소지가능 갯수
+                            input_count_0 = 0
+                            cal_price_0 = 0
+                            cal_price_1 = 0
+                            cal_price_2 = 0
+                            cal_price_3 = 0
+                            cal_price_4 = 0
+                            cal_percent = 0
+                    else:
+                        input_first_date = str(values[0])
+                        input_second_date = str(values[1])
+                        if datetime.datetime.strptime(values[1], '%Y-%m-%d') >= datetime.datetime.strptime(values[0], '%Y-%m-%d'):
+                            #min_date = datetime.datetime.strptime(values[1], '%Y-%m-%d') - datetime.timedelta(days=1)
+                            #min_date = min_date.strftime('%Y-%m-%d')
+                            input_cash = int(values[2])
+                            search_date = result[(result['datetime'] == input_first_date) | (result['datetime'] == input_second_date)]
+                            search_index = search_date.index
+                            search_index = search_index.tolist()
+                            search_all_date = result[(result.index >= search_index[0]) & (result.index <= search_index[1])]
+                            min_price = result['avg_price'][search_index[1]]
+                            max_price = result['avg_price'][search_index[0]]
+
+                            input_first_price = search_date['avg_price'][search_index[0]]
+                            input_second_price = search_date['avg_price'][search_index[1]]
+                            input_count = math.trunc(input_cash / min_price) #소지가능 갯수
+                            input_count_0 = int(values[3]) #소지가능 갯수
+
+                            cal_price_0 = round((input_second_price * input_count_0), 2)
+                            cal_price_1 = input_cash - cal_price_0
+                            cal_price_2 = round((input_second_price - input_first_price) * -1, 2) #개당 이윤
+                            cal_price_3 = round(cal_price_2 * input_count_0, 2)
+                            cal_price_4 = cal_price_3 + input_cash
+                            cal_percent = round(float(cal_price_3) / float(cal_price_0) * 100, 2)
+#https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input
+                label = 'market'
+                xlabels = []
+                dataset = []
+                xlabels = result['datetime'].tolist()
+                xlabels.reverse()
+                dataset = result['avg_price'].tolist()
+                dataset.reverse()
+
+                all_datetime = result['datetime'].tolist()
+                all_price = result['avg_price'].tolist()
+                all_volume = result['volume'].tolist()
+                all_day_before = result['day_before'].tolist()
+                all_yn_before = result['yn_before'].tolist()
+                all_day_percent = result['day_percent'].tolist()
+                all_count = len(all_datetime)
+
+                return render_template('calculator.html', **locals())
+            else:
+                return redirect('/error/')
 
 #=======================================================================#
 if __name__ == '__main__':

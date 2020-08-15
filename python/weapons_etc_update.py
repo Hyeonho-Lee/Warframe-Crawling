@@ -54,8 +54,22 @@ def warframe_crawling(item, path, path_0):
 
     for i in result_data['volume']:
         volume.append(str(i))
+        
+    min_price = []
+    max_price = []
+    open_price = []
+    closed_price = []
 
-    all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume})
+    for i in result_data['min_price']:
+        min_price.append(str(i))
+    for i in result_data['max_price']:
+        max_price.append(str(i))
+    for i in result_data['open_price']:
+        open_price.append(str(i))
+    for i in result_data['closed_price']:
+        closed_price.append(str(i))
+
+    all_data_list = pd.DataFrame({'datetime' : datetime, 'avg_price' : avg_price, 'volume' : volume, 'min_price' : min_price, 'max_price' : max_price, 'open_price' : open_price, 'closed_price' : closed_price})
     #all_data_list = all_data_list[::-1]
     
     def make_file(item, path):

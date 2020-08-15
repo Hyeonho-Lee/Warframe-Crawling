@@ -10,6 +10,7 @@
         <title>Warframe Trade Status</title>
         <!---------------------------------------------------------------------->
         <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/calculator.css', v = 0.1) }}" />
+        <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/result.css', v = 0.1) }}" />
         <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/index.css', v = 0.1) }}" />
         <link rel="stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'css/table.css', v = 0.1) }}" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -133,290 +134,242 @@
             </ul>
         </div>
         
-        
-        
-        
-        <div class="menu">
-            
-            <div class="content_4">
-                <div class="labels">
-                    <a>포트폴리오</a>
-                </div>
-                <div class="value_2">
-                    <div class="name_button">
-                        <a>비율 그래프</a>
+        <form method="POST">
+            <div class="menu">
+                <div class="content_4">
+                    <div class="labels">
+                        <a>포트폴리오</a>
                     </div>
-                </div>
-                <div class="value_1">
-                    <div class="img_button">
-                        <a>동그란 그래프</a>
+                    <div class="value_11">
+                        <div class="name_buttons">
+                            <a>{{ kr_name }}</a>
+                        </div>
                     </div>
-                </div>
-                <div class="value_3">
-                    <div class="table_button">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="2"><a>기간 선택</a></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class = "items" onclick="">
-                                    <td><a>시작일</a></td>
-                                    <td><a>2020-06-03</a></td>
-                                </tr>
-                                <tr class = "items" onclick="">
-                                    <td><a>종료일</a></td>
-                                    <td><a>2020-08-03</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="value_1">
+                        <div class="img_button">
+                            <img src="{{ url_for('static', filename = search_path_1, v = 0.1) }}">
+                        </div>
                     </div>
-                </div>
-                <div class="value_4">
-                    <div class="table_button">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="2"><a>금액 입력</a></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class = "items" onclick="">
-                                    <td><a>보유 플레티넘</a></td>
-                                    <td><a>3200</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="value_33">
+                        <div class="table_button">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2"><a>기간 선택</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class = "items" onclick="">
+                                        <td><a>시작일</a></td>
+                                        <td>
+                                            <input type="date" name="first_date" min="{{ min_date }}" max="{{ max_date }}" value="{{ input_first_date }}">
+                                        </td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>종료일</a></td>
+                                        <td>
+                                            <input type="date" name="second_date" min="{{ min_date }}" max="{{ max_date }}" value="{{ input_second_date }}">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="content_5">
-                <div class="labels">
-                    <a>아이템 비율 입력</a>
-                </div>
-                <div class="value_2">
-                    <div class="name_button">
-                        <a>원하는 아이템 검색</a>
+                    <div class="value_4">
+                        <div class="table_button">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2"><a>금액 입력</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class = "items" onclick="">
+                                        <td><a>보유 플레티넘</a></td>
+                                        <td>
+                                            <input type="text" name="my_price" value="{{ input_cash }}">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div class="value_6">
-                    <div class="table_button">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="2"><a>소모 현황</a></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class = "items" onclick="">
-                                    <td><a>누적 소모 플레티넘</a></td>
-                                    <td><a>2800</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="value_8">
+                        <button class="market_buttons" type="submit">
+                            <a>계산하기</a>
+                        </button>
                     </div>
                 </div>
 
-                <div class="value_7">
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
+                <div class="content_5">
+                    <div class="labels">
+                        <a>아이템 비율 입력</a>
+                    </div>
+                    <div class="value_6">
+                        <div class="table_button">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2"><a>{{ input_first_date }} 현황</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class = "items" onclick="">
+                                        <td><a>보유 플레티넘</a></td>
+                                        <td><a>{{ input_cash }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>시작일 아이템 가격</a></td>
+                                        <td><a>{{ min_price }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>최대 소지가능 갯수</a></td>
+                                        <td><a>{{ input_count }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>매수 갯수</a></td>
+                                        <script>
+                                            function range(value) {
+                                                document.getElementById("result_range").value = value;
+                                            }
+                                        </script>
+                                        <td>
+                                            <input type="range" min="1" max="{{ input_count }}" value="0" step="1" onchange="range(this.value)">
+                                            <input type="text" name="ranges" id="result_range" value="0">
+                                        </td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>총 매수 플레티넘</a></td>
+                                        <td><a>{{ cal_price_0 }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>남은 플레티넘</a></td>
+                                        <td><a>{{ cal_price_1 }}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
-                    </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
-                    </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
+
+                    <div class="value_10">
+                        <div class="table_button">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2"><a>{{ input_second_date }} 종합 상황</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class = "items" onclick="">
+                                        <td><a>누적 가치 플레티넘</a></td>
+                                        <td><a>{{ cal_price_4 }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>종료일 아이템 가격</a></td>
+                                        <td><a>{{ max_price }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>개당 이윤 플레티넘</a></td>
+                                        <td><a>{{ cal_price_2 }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>소지 갯수</a></td>
+                                        <td><a>{{ input_count_0 }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>총 이윤 플레티넘</a></td>
+                                        <td><a>{{ cal_price_3 }}</a></td>
+                                    </tr>
+                                    <tr class = "items" onclick="">
+                                        <td><a>이윤 퍼센트</a></td>
+                                        <td><a>{{ cal_percent }}%</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
-                    </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
-                    </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
-                    </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
-                    </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
-                    </div>
-                    
-                    <div class="value_5">
-                        <div class="left_img">
-                            <div class="img_box">
-                                <img src="{{ url_for('static', filename = '/image/item_image/warframe/Loki_Prime/Loki_Prime.png', v = 0.1) }}">
-                            </div>
-                        </div>
-                        <div class="right_text">
-                            <a>6월 로키 프라임 가격: 280p / 수량: </a>
-                            <input style="width: 50px;" type="text" name="volume">
-                            <a>개 / 합: 2800p</a>
-                        </div>
-                        <div class="right_exit">
-                            <a>X</a>
-                            <a>적용</a>
-                        </div>
+
+                    <div class="value_8">
+                        <button class="market_buttons" type="submit">
+                            <a>계산하기</a>
+                        </button>
                     </div>
                 </div>
-                
-                <div class="value_8">
-                    <div class="market_button">
-                        <a>계산하기</a>
-                    </div>
-                </div>
-            </div>
-                
-            <div class = "content_6" style="display: table;">
-                <div class="labelss">
-                    <a>성과 보고서</a>
-                </div>
-            </div>
             
             <div class = "content_7" style="display: table;">
                 <div class="labelss">
-                    <a>수익률 그래프</a>
+                    <a>그래프</a>
+                </div>
+                <div class="labelss_float">
+                <div class="labelss_floats">
+                    <div style="width:99%;">
+                        <canvas id="canvas" style="height: 68vh; width:100%;"></canvas>
+                    </div>
+                    <script>
+                        new Chart(document.getElementById("canvas"), {
+                            type: 'line',
+                            data: {
+                                labels: {{ xlabels | tojson }},
+                                datasets: [{
+                                    label: '',
+                                    data: {{ dataset | tojson }},
+                                    backgroundColor: 'rgb(255, 99, 132)',
+                                    borderColor: 'rgb(255, 99, 132)',
+                                    fill: false,
+                                    lineTension: 0.3
+                                }]
+                            },
+                            options: {
+                                responsive: false,
+                                title: {
+                                    display: true,
+                                    text: ''
+                                },
+                                tooltips: {
+                                    mode: 'index',
+                                    intersect: false,
+                                },
+                                hover: {
+                                    mode: 'nearest',
+                                    intersect: true
+                                },
+                                scales: {
+                                    xAxes: [{
+                                        display: true,
+                                        scaleLabel: {
+                                            display: true,
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        display: true,
+                                        ticks: {
+                                        },
+                                        scaleLabel: {
+                                            display: true,
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+
+                    </script>
+                </div>
+                </div>
+            </div>
+            
+            <div class = "content_6" style="display: table;">
+                <div class="labelss">
+                    <a>보고서</a>
                 </div>
             </div>
             
             <div class = "content_8" style="display: table;">
                 <div class="labelss">
-                    <a>종목별 수익률</a>
+                    <a>수익률</a>
                 </div>
             </div>
-                
         </div>
+        
             
         <div class="footer">
             <div class="footer_box_0">
@@ -448,18 +401,19 @@
                     <a>
                         이 사이트에 사용된 데이터는 https://warframe.market/ 에서 제공 받았습니다.
                     </a>
-                </div>
-            </div>
-
-            <div class="footer_box_2">
-                <div class="footer_count">
-                    <div class="footer_count_1">
-                        <h3>누적 접속자</h3>
-                        <a>{{ visit_count }}</a>
                     </div>
                 </div>
+
+                <div class="footer_box_2">
+                    <div class="footer_count">
+                        <div class="footer_count_1">
+                            <h3>누적 접속자</h3>
+                            <a>{{ visit_count }}</a>
+                        </div>
+                    </div>
+                </div>
+            
             </div>
-        </div>
-        
+        </form>
     </body>
 </html>

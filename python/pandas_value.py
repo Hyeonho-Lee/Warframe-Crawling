@@ -24,11 +24,19 @@ def pandas_value(name, types):
     result['yn_before'] = np.nan
     result['lank'] = np.nan
     result['day_percent'] = np.nan
+    #result['min_price'] = np.nan
+    #result['max_price'] = np.nan
+    #result['open_price'] = np.nan
+    #result['closed_price'] = np.nan
 
     result.loc[0, ['day_before']] = 0.0
     result.loc[0, ['yn_before']] = '-'
     result.loc[0, ['lank']] = 0
     result.loc[0, ['day_percent']] = 0.0
+    #result.loc[0, ['min_price']] = 0.0
+    #result.loc[0, ['max_price']] = 0.0
+    #result.loc[0, ['open_price']] = 0.0
+    #result.loc[0, ['closed_price']] = 0.0
 
     for i in range(1, len(result)):
         value = result['avg_price'][i] - result['avg_price'][i-1]
